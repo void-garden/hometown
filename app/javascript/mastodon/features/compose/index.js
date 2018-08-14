@@ -3,9 +3,12 @@ import ComposeFormContainer from './containers/compose_form_container';
 import NavigationContainer from './containers/navigation_container';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
+import { fetchFollowRequests } from '../../actions/accounts';
+import { List as ImmutableList } from 'immutable';
 import { connect } from 'react-redux';
 import { mountCompose, unmountCompose } from '../../actions/compose';
 import { Link } from 'react-router-dom';
+import { me, invitesEnabled } from '../../initial_state';
 import { injectIntl, defineMessages } from 'react-intl';
 import SearchContainer from './containers/search_container';
 import Motion from '../ui/util/optional_motion';
@@ -27,6 +30,8 @@ const messages = defineMessages({
 const mapStateToProps = (state, ownProps) => ({
   columns: state.getIn(['settings', 'columns']),
   showSearch: ownProps.multiColumn ? state.getIn(['search', 'submitted']) && !state.getIn(['search', 'hidden']) : ownProps.isSearchPage,
+  unreadFollowRequests: state.getIn(['user_lists', 'follow_requests', 'items'], ImmutableList()).size,
+  myAccount: state.getIn(['accounts', me]),
 });
 
 @connect(mapStateToProps)
@@ -38,12 +43,15 @@ export default class Compose extends React.PureComponent {
     columns: ImmutablePropTypes.list.isRequired,
     multiColumn: PropTypes.bool,
     showSearch: PropTypes.bool,
+    unreadFollowRequests: PropTypes.number,
     isSearchPage: PropTypes.bool,
     intl: PropTypes.object.isRequired,
   };
 
   componentDidMount () {
-    const { isSearchPage } = this.props;
+    const { isSearchPage, myAccount } = this.props;
+
+    this.props.dispatch(fetchFollowRequests());
 
     if (!isSearchPage) {
       this.props.dispatch(mountCompose());
@@ -67,7 +75,7 @@ export default class Compose extends React.PureComponent {
   }
 
   render () {
-    const { multiColumn, showSearch, isSearchPage, intl } = this.props;
+    const { multiColumn, showSearch, isSearchPage, intl, unreadFollowRequests, myAccount } = this.props;
 
     let header = '';
 
@@ -104,6 +112,10 @@ export default class Compose extends React.PureComponent {
           {!isSearchPage && <div className='drawer__inner' onFocus={this.onFocus}>
             <NavigationContainer onClose={this.onBlur} />
             <ComposeFormContainer />
+            { myAccount.get('locked') && unreadFollowRequests > 0 ?
+            <div className='follow-requests-reminder'>Psst! You have <Link className='follow-requests-link' to='/follow_requests'>{unreadFollowRequests} unread follow request{(unreadFollowRequests > 1) ? 's' : ''}</Link>.</div>
+            :
+            <div></div>}
             {multiColumn && (
               <div className='drawer__inner__mastodon'>
                 <img alt='' draggable='false' src={elephantUIPlane} />

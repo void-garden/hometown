@@ -1,0 +1,9 @@
+@import 'application';
+
+.follow-requests-reminder {
+  text-align: right;
+  padding: 10px;
+  .follow-requests-link {
+    color: $highlight-text-color;
+  }
+}
