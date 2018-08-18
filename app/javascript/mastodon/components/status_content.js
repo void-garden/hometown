@@ -44,6 +44,12 @@ export default class StatusContent extends React.PureComponent {
       if (mention) {
         link.addEventListener('click', this.onMentionClick.bind(this, mention), false);
         link.setAttribute('title', mention.get('acct'));
+        if (mention.get('acct') === mention.get('username')) {
+          link.innerHTML = `@<span class="fc-mention-local">${mention.get('acct')}</span>`;
+        }
+        else {
+          link.innerHTML = `@<span class="fc-mention-remote">${mention.get('acct')}</span>`;
+        }
       } else if (link.textContent[0] === '#' || (link.previousSibling && link.previousSibling.textContent && link.previousSibling.textContent[link.previousSibling.textContent.length - 1] === '#')) {
         link.addEventListener('click', this.onHashtagClick.bind(this, link.text), false);
       } else {
