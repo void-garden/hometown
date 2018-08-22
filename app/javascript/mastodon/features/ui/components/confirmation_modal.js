@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import Button from '../../../components/button';
+import Checkbox from '../../../components/checkbox';
 
 @injectIntl
 export default class ConfirmationModal extends React.PureComponent {
@@ -12,6 +13,7 @@ export default class ConfirmationModal extends React.PureComponent {
     onClose: PropTypes.func.isRequired,
     onConfirm: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
+    fcNeverAsk: PropTypes.bool
   };
 
   componentDidMount() {
@@ -38,6 +40,17 @@ export default class ConfirmationModal extends React.PureComponent {
       <div className='modal-root__modal confirmation-modal'>
         <div className='confirmation-modal__container'>
           {message}
+
+          {
+            this.props.fcNeverAsk ?
+              <p className="fc-never-ask">
+                <Checkbox>Never ask me again.</Checkbox>
+              </p>
+              :
+              <span></span>
+          }
+
+
         </div>
 
         <div className='confirmation-modal__action-bar'>
