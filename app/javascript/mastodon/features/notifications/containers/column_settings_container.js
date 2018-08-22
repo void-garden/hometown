@@ -27,11 +27,18 @@ const mapDispatchToProps = (dispatch, { intl }) => ({
   },
 
   onClear () {
-    dispatch(openModal('CONFIRM', {
-      message: intl.formatMessage(messages.clearMessage),
-      confirm: intl.formatMessage(messages.clearConfirm),
-      onConfirm: () => dispatch(clearNotifications()),
-    }));
+    let fcLocal = JSON.parse(localStorage.getItem('friend-camp'));
+    if (fcLocal && fcLocal.confirmClearNotificationsNeverAsk) {
+      dispatch(clearNotifications());
+    }
+    else {
+      dispatch(openModal('CONFIRM', {
+        fcNeverAsk: true,
+        message: intl.formatMessage(messages.clearMessage),
+        confirm: intl.formatMessage(messages.clearConfirm),
+        onConfirm: () => dispatch(clearNotifications()),
+      }));
+    }
   },
 
 });
