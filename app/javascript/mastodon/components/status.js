@@ -7,7 +7,6 @@ import RelativeTimestamp from './relative_timestamp';
 import DisplayName from './display_name';
 import StatusContent from './status_content';
 import StatusActionBar from './status_action_bar';
-import AttachmentList from './attachment_list';
 import { FormattedMessage } from 'react-intl';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import { MediaGallery, Video } from '../features/ui/util/async-components';
@@ -137,7 +136,6 @@ export default class Status extends ImmutablePureComponent {
   }
 
   render () {
-    let media = null;
     let statusAvatar, prepend;
 
     const { hidden, featured } = this.props;
@@ -193,41 +191,6 @@ export default class Status extends ImmutablePureComponent {
       status  = status.get('reblog');
     }
 
-    if (status.get('media_attachments').size > 0) {
-      if (this.props.muted || status.get('media_attachments').some(item => item.get('type') === 'unknown')) {
-        media = (
-          <AttachmentList
-            compact
-            media={status.get('media_attachments')}
-          />
-        );
-      } else if (status.getIn(['media_attachments', 0, 'type']) === 'video') {
-        const video = status.getIn(['media_attachments', 0]);
-
-        media = (
-          <Bundle fetchComponent={Video} loading={this.renderLoadingVideoPlayer} >
-            {Component => (
-              <Component
-                preview={video.get('preview_url')}
-                src={video.get('url')}
-                width={239}
-                height={110}
-                inline
-                sensitive={status.get('sensitive')}
-                onOpenVideo={this.handleOpenVideo}
-              />
-            )}
-          </Bundle>
-        );
-      } else {
-        media = (
-          <Bundle fetchComponent={MediaGallery} loading={this.renderLoadingMediaGallery}>
-            {Component => <Component media={status.get('media_attachments')} sensitive={status.get('sensitive')} height={110} onOpenMedia={this.props.onOpenMedia} />}
-          </Bundle>
-        );
-      }
-    }
-
     if (account === undefined || account === null) {
       statusAvatar = <Avatar account={status.get('account')} size={48} />;
     }else{
@@ -264,9 +227,7 @@ export default class Status extends ImmutablePureComponent {
               </a>
             </div>
 
-            <StatusContent status={status} onClick={this.handleClick} expanded={!status.get('hidden')} onExpandedToggle={this.handleExpandedToggle} />
-
-            {media}
+            <StatusContent status={status} onClick={this.handleClick} expanded={!status.get('hidden')} onExpandedToggle={this.handleExpandedToggle} onOpenMedia={this.props.onOpenMedia} />
 
             <StatusActionBar status={status} account={account} {...other} />
           </div>

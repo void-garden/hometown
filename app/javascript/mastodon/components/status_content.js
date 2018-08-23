@@ -5,6 +5,10 @@ import { isRtl } from '../rtl';
 import { FormattedMessage } from 'react-intl';
 import Permalink from './permalink';
 import classnames from 'classnames';
+import { MediaGallery, Video } from '../features/ui/util/async-components';
+import Bundle from '../features/ui/components/bundle';
+import AttachmentList from './attachment_list';
+import ReactDOMServer from 'react-dom/server';
 
 export default class StatusContent extends React.PureComponent {
 
@@ -17,6 +21,8 @@ export default class StatusContent extends React.PureComponent {
     expanded: PropTypes.bool,
     onExpandedToggle: PropTypes.func,
     onClick: PropTypes.func,
+    onOpenMedia: PropTypes.func,
+    detailed: PropTypes.bool,
   };
 
   state = {
@@ -67,6 +73,10 @@ export default class StatusContent extends React.PureComponent {
 
   componentDidUpdate () {
     this._updateStatusLinks();
+  }
+
+  handleOpenVideo = (media, startTime) => {
+    this.props.onOpenVideo(media, startTime);
   }
 
   onMentionClick = (mention, e) => {
@@ -126,7 +136,9 @@ export default class StatusContent extends React.PureComponent {
   render () {
     const { status } = this.props;
 
-    if (status.get('content').length === 0) {
+    let media = null;
+
+    if (status.get('content').length === 0 && status.get('media_attachments').size === 0) {
       return null;
     }
 
@@ -142,6 +154,41 @@ export default class StatusContent extends React.PureComponent {
 
     if (isRtl(status.get('search_index'))) {
       directionStyle.direction = 'rtl';
+    }
+
+    if (!this.props.detailed && status.get('media_attachments').size > 0) {
+      if (this.props.muted || status.get('media_attachments').some(item => item.get('type') === 'unknown')) {
+        media = (
+          <AttachmentList
+            compact
+            media={status.get('media_attachments')}
+          />
+        );
+      } else if (status.getIn(['media_attachments', 0, 'type']) === 'video') {
+        const video = status.getIn(['media_attachments', 0]);
+
+        media = (
+          <Bundle fetchComponent={Video} loading={this.renderLoadingVideoPlayer} >
+            {Component => (
+              <Component
+                preview={video.get('preview_url')}
+                src={video.get('url')}
+                width={239}
+                height={110}
+                inline
+                sensitive={false}
+                onOpenVideo={this.handleOpenVideo}
+              />
+            )}
+          </Bundle>
+        );
+      } else {
+        media = (
+          <Bundle fetchComponent={MediaGallery} loading={this.renderLoadingMediaGallery}>
+            {Component => <Component media={status.get('media_attachments')} sensitive={false} height={110} onOpenMedia={this.props.onOpenMedia ? this.props.onOpenMedia.bind(this) : undefined} />}
+          </Bundle>
+        );
+      }
     }
 
     if (status.get('spoiler_text').length > 0) {
@@ -164,12 +211,15 @@ export default class StatusContent extends React.PureComponent {
           <p style={{ marginBottom: hidden && status.get('mentions').isEmpty() ? '0px' : null }}>
             <span dangerouslySetInnerHTML={spoilerContent} />
             {' '}
-            <button tabIndex='0' className={`status__content__spoiler-link ${hidden ? 'status__content__spoiler-link--show-more' : 'status__content__spoiler-link--show-less'}`} onClick={this.handleSpoilerClick}>{toggleText}</button>
+            <button tabIndex='0' className={`status__content__spoiler-link ${hidden ? 'status__content__spoiler-link--show-more' : 'status__content__spoiler-link--show-less'}`} onClick={this.handleSpoilerClick}>{toggleText}</button> <span>{media ? <i className='fa fa-eye' /> : ''}</span>
           </p>
 
           {mentionsPlaceholder}
 
-          <div tabIndex={!hidden ? 0 : null} className={`status__content__text ${!hidden ? 'status__content__text--visible' : ''}`} style={directionStyle} dangerouslySetInnerHTML={content} />
+          <div tabIndex={!hidden ? 0 : null} className={`status__content__text ${!hidden ? 'status__content__text--visible' : ''}`} style={directionStyle}>
+           <span dangerouslySetInnerHTML={content}></span>
+           {media}
+          </div>
         </div>
       );
     } else if (this.props.onClick) {
@@ -181,8 +231,10 @@ export default class StatusContent extends React.PureComponent {
           style={directionStyle}
           onMouseDown={this.handleMouseDown}
           onMouseUp={this.handleMouseUp}
-          dangerouslySetInnerHTML={content}
-        />
+        >
+          <span dangerouslySetInnerHTML={content} />
+          {media ? media : <span></span>}
+        </div>
       );
     } else {
       return (
@@ -191,8 +243,10 @@ export default class StatusContent extends React.PureComponent {
           ref={this.setRef}
           className='status__content'
           style={directionStyle}
-          dangerouslySetInnerHTML={content}
-        />
+        >
+          <span dangerouslySetInnerHTML={content} />
+          {media ? media : <span></span>}
+        </div>
       );
     }
   }
