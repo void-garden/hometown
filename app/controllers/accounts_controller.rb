@@ -56,7 +56,7 @@ class AccountsController < ApplicationController
   end
 
   def filtered_statuses
-    default_statuses.tap do |statuses|
+    default_statuses.without_local_only.tap do |statuses|
       statuses.merge!(only_media_scope) if media_requested?
       statuses.merge!(no_replies_scope) unless replies_requested?
     end
