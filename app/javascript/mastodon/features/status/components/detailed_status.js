@@ -7,11 +7,16 @@ import StatusContent from '../../../components/status_content';
 import MediaGallery from '../../../components/media_gallery';
 import AttachmentList from '../../../components/attachment_list';
 import { Link } from 'react-router-dom';
-import { FormattedDate, FormattedNumber } from 'react-intl';
+import { defineMessages, injectIntl, FormattedDate, FormattedNumber } from 'react-intl';
 import CardContainer from '../containers/card_container';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import Video from '../../video';
 
+const messages = defineMessages({
+  local_only: { id: 'status.local_only', defaultMessage: 'This post is only visible by other users of your instance' },
+});
+
+@injectIntl
 export default class DetailedStatus extends ImmutablePureComponent {
 
   static contextTypes = {
@@ -26,7 +31,7 @@ export default class DetailedStatus extends ImmutablePureComponent {
   };
 
   handleAccountClick = (e) => {
-    if (e.button === 0) {
+    if (e.button === 0 && !(e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       this.context.router.history.push(`/accounts/${this.props.status.getIn(['account', 'id'])}`);
     }
@@ -44,10 +49,12 @@ export default class DetailedStatus extends ImmutablePureComponent {
 
   render () {
     const status = this.props.status.get('reblog') ? this.props.status.get('reblog') : this.props.status;
+    const intl = this.props.intl;
 
     let media           = '';
     let applicationLink = '';
     let reblogLink = '';
+    let localOnly = '';
     let reblogIcon = 'retweet';
 
     if (status.get('media_attachments').size > 0) {
@@ -60,6 +67,7 @@ export default class DetailedStatus extends ImmutablePureComponent {
           <Video
             preview={video.get('preview_url')}
             src={video.get('url')}
+            alt={video.get('description')}
             width={300}
             height={150}
             inline
@@ -103,6 +111,10 @@ export default class DetailedStatus extends ImmutablePureComponent {
       </Link>);
     }
 
+    if(status.get('local_only')) {
+      localOnly = <span> · <i className='fa fa-chain-broken' title={intl.formatMessage(messages.local_only)} /></span>;
+    }
+
     return (
       <div className='detailed-status'>
         <a href={status.getIn(['account', 'url'])} onClick={this.handleAccountClick} className='detailed-status__display-name'>
@@ -122,7 +134,7 @@ export default class DetailedStatus extends ImmutablePureComponent {
             <span className='detailed-status__favorites'>
               <FormattedNumber value={status.get('favourites_count')} />
             </span>
-          </Link>
+          </Link>{localOnly}
         </div>
       </div>
     );

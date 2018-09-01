@@ -182,6 +182,27 @@ RSpec.describe Status, type: :model do
       reblog.destroy
       expect(subject.reblogs_count).to eq 0
     end
+
+    it 'does not fail when original is deleted before reblog' do
+      reblog = Fabricate(:status, account: bob, reblog: subject)
+      expect(subject.reblogs_count).to eq 1
+      expect { subject.destroy }.to_not raise_error
+      expect(Status.find_by(id: reblog.id)).to be_nil
+    end
+  end
+
+  describe '#replies_count' do
+    it 'is the number of replies' do
+      reply = Fabricate(:status, account: bob, thread: subject)
+      expect(subject.replies_count).to eq 1
+    end
+
+    it 'is decremented when reply is removed' do
+      reply = Fabricate(:status, account: bob, thread: subject)
+      expect(subject.replies_count).to eq 1
+      reply.destroy
+      expect(subject.replies_count).to eq 0
+    end
   end
 
   describe '#favourites_count' do
@@ -552,17 +573,32 @@ RSpec.describe Status, type: :model do
           expect(results).to include(es_status)
         end
       end
+    end
 
-      context 'where that account is silenced' do
-        it 'includes statuses from other accounts that are silenced' do
-          @account.update(silenced: true)
-          other_silenced_account = Fabricate(:account, silenced: true)
-          other_status = Fabricate(:status, account: other_silenced_account)
+    context 'with local-only statuses' do
+      let(:status) { Fabricate(:status, local_only: true) }
 
-          results = Status.as_public_timeline(@account)
-          expect(results).to include(other_status)
+      subject { Status.as_public_timeline(viewer) }
+
+      context 'without a viewer' do
+        let(:viewer) { nil }
+
+        it 'excludes local-only statuses' do
+          expect(subject).to_not include(status)
         end
       end
+
+      context 'with a viewer' do
+        let(:viewer) { Fabricate(:account, username: 'viewer') }
+
+        it 'includes local-only statuses' do
+          expect(subject).to include(status)
+        end
+      end
+
+      # TODO: What happens if the viewer is remote?
+      # Can the viewer be remote?
+      # What prevents the viewer from being remote?
     end
   end
 
@@ -584,6 +620,27 @@ RSpec.describe Status, type: :model do
 
       results = Status.as_tag_timeline(tag)
       expect(results).to include(status)
+    end
+
+    context 'on a local-only status' do
+      let(:tag) { Fabricate(:tag) }
+      let(:status) { Fabricate(:status, local_only: true, tags: [tag]) }
+
+      context 'without a viewer' do
+        let(:viewer) { nil }
+
+        it 'filters the local-only status out of the result set' do
+          expect(Status.as_tag_timeline(tag, viewer)).not_to include(status)
+        end
+      end
+
+      context 'with a viewer' do
+        let(:viewer) { Fabricate(:account, username: 'viewer', domain: nil) }
+
+        it 'keeps the local-only status in the result set' do
+          expect(Status.as_tag_timeline(tag, viewer)).to include(status)
+        end
+      end
     end
   end
 
