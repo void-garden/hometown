@@ -17,8 +17,7 @@ class Api::V1::StatusesController < Api::BaseController
   CONTEXT_LIMIT = 4_096
 
   def show
-    cached  = Rails.cache.read(@status.cache_key)
-    @status = cached unless cached.nil?
+    @status = cache_collection([@status], Status).first
     render json: @status, serializer: REST::StatusSerializer
   end
 
@@ -53,7 +52,8 @@ class Api::V1::StatusesController < Api::BaseController
                                          spoiler_text: status_params[:spoiler_text],
                                          visibility: status_params[:visibility],
                                          application: doorkeeper_token.application,
-                                         idempotency: request.headers['Idempotency-Key'])
+                                         idempotency: request.headers['Idempotency-Key'],
+                                         local_only: status_params[:local_only])
 
     render json: @status, serializer: REST::StatusSerializer
   end
@@ -78,7 +78,7 @@ class Api::V1::StatusesController < Api::BaseController
   end
 
   def status_params
-    params.permit(:status, :in_reply_to_id, :sensitive, :spoiler_text, :visibility, media_ids: [])
+    params.permit(:status, :in_reply_to_id, :sensitive, :spoiler_text, :visibility, :local_only, media_ids: [])
   end
 
   def pagination_params(core_params)

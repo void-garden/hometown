@@ -31,7 +31,8 @@ class PostStatusService < BaseService
                                         spoiler_text: options[:spoiler_text] || '',
                                         visibility: options[:visibility] || account.user&.setting_default_privacy,
                                         language: language_from_option(options[:language]) || account.user&.setting_default_language&.presence || LanguageDetector.instance.detect(text, account),
-                                        application: options[:application])
+                                        application: options[:application],
+                                        local_only: local_only_option(options[:local_only], in_reply_to))
     end
 
     process_hashtags_service.call(status)
@@ -39,9 +40,12 @@ class PostStatusService < BaseService
 
     LinkCrawlWorker.perform_async(status.id) unless status.spoiler_text?
     DistributionWorker.perform_async(status.id)
-    Pubsubhubbub::DistributionWorker.perform_async(status.stream_entry.id)
-    ActivityPub::DistributionWorker.perform_async(status.id)
-    ActivityPub::ReplyDistributionWorker.perform_async(status.id) if status.reply? && status.thread.account.local?
+
+    unless status.local_only?
+      Pubsubhubbub::DistributionWorker.perform_async(status.stream_entry.id)
+      ActivityPub::DistributionWorker.perform_async(status.id)
+      ActivityPub::ReplyDistributionWorker.perform_async(status.id) if status.reply? && status.thread.account.local?
+    end
 
     if options[:idempotency].present?
       redis.setex("idempotency:status:#{account.id}:#{options[:idempotency]}", 3_600, status.id)
@@ -53,6 +57,11 @@ class PostStatusService < BaseService
   end
 
   private
+
+  def local_only_option(local_only, in_reply_to)
+    return in_reply_to&.local_only? if local_only.nil? # XXX temporary, just until clients implement to avoid leaking local_only posts
+    local_only
+  end
 
   def validate_media!(media_ids)
     return if media_ids.blank? || !media_ids.is_a?(Enumerable)
@@ -83,7 +92,9 @@ class PostStatusService < BaseService
   end
 
   def bump_potential_friendship(account, status)
-    return if !status.reply? || account.following?(status.in_reply_to_account_id)
+    return if !status.reply? || account.id == status.in_reply_to_account_id
+    ActivityTracker.increment('activity:interactions')
+    return if account.following?(status.in_reply_to_account_id)
     PotentialFriendshipTracker.record(account.id, status.in_reply_to_account_id, :reply)
   end
 end
