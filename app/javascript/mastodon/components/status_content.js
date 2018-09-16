@@ -8,7 +8,6 @@ import classnames from 'classnames';
 import { MediaGallery, Video } from '../features/ui/util/async-components';
 import Bundle from '../features/ui/components/bundle';
 import AttachmentList from './attachment_list';
-import ReactDOMServer from 'react-dom/server';
 
 export default class StatusContent extends React.PureComponent {
 
@@ -22,6 +21,8 @@ export default class StatusContent extends React.PureComponent {
     onExpandedToggle: PropTypes.func,
     onClick: PropTypes.func,
     onOpenMedia: PropTypes.func,
+    onOpenVideo: PropTypes.func,
+    muted: PropTypes.bool,
     detailed: PropTypes.bool,
   };
 
@@ -52,8 +53,7 @@ export default class StatusContent extends React.PureComponent {
         link.setAttribute('title', mention.get('acct'));
         if (mention.get('acct') === mention.get('username')) {
           link.innerHTML = `@<span class="fc-mention-local">${mention.get('acct')}</span>`;
-        }
-        else {
+        } else {
           link.innerHTML = `@<span class="fc-mention-remote">${mention.get('acct')}</span>`;
         }
       } else if (link.textContent[0] === '#' || (link.previousSibling && link.previousSibling.textContent && link.previousSibling.textContent[link.previousSibling.textContent.length - 1] === '#')) {
@@ -187,7 +187,7 @@ export default class StatusContent extends React.PureComponent {
       } else {
         media = (
           <Bundle fetchComponent={MediaGallery} loading={this.renderLoadingMediaGallery}>
-            {Component => <Component media={status.get('media_attachments')} sensitive={false} height={110} onOpenMedia={this.props.onOpenMedia ? this.props.onOpenMedia.bind(this) : undefined} />}
+            {Component => <Component media={status.get('media_attachments')} sensitive={false} height={110} onOpenMedia={this.props.onOpenMedia ? this.props.onOpenMedia : undefined} />}
           </Bundle>
         );
       }
@@ -219,8 +219,8 @@ export default class StatusContent extends React.PureComponent {
           {mentionsPlaceholder}
 
           <div tabIndex={!hidden ? 0 : null} className={`status__content__text ${!hidden ? 'status__content__text--visible' : ''}`} style={directionStyle}>
-           <span dangerouslySetInnerHTML={content}></span>
-           {media}
+            <span dangerouslySetInnerHTML={content} />
+            {media}
           </div>
         </div>
       );
@@ -235,7 +235,7 @@ export default class StatusContent extends React.PureComponent {
           onMouseUp={this.handleMouseUp}
         >
           <span dangerouslySetInnerHTML={content} />
-          {media ? media : <span></span>}
+          {media ? media : <span />}
         </div>
       );
     } else {
@@ -247,7 +247,7 @@ export default class StatusContent extends React.PureComponent {
           style={directionStyle}
         >
           <span dangerouslySetInnerHTML={content} />
-          {media ? media : <span></span>}
+          {media ? media : <span />}
         </div>
       );
     }

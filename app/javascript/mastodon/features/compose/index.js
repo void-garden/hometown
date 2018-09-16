@@ -8,7 +8,7 @@ import { List as ImmutableList } from 'immutable';
 import { connect } from 'react-redux';
 import { mountCompose, unmountCompose } from '../../actions/compose';
 import { Link } from 'react-router-dom';
-import { me, invitesEnabled } from '../../initial_state';
+import { me } from '../../initial_state';
 import { injectIntl, defineMessages } from 'react-intl';
 import SearchContainer from './containers/search_container';
 import Motion from '../ui/util/optional_motion';
@@ -45,12 +45,13 @@ export default class Compose extends React.PureComponent {
     multiColumn: PropTypes.bool,
     showSearch: PropTypes.bool,
     unreadFollowRequests: PropTypes.number,
+    myAccount: PropTypes.object.isRequired,
     isSearchPage: PropTypes.bool,
     intl: PropTypes.object.isRequired,
   };
 
   componentDidMount () {
-    const { isSearchPage, myAccount } = this.props;
+    const { isSearchPage } = this.props;
 
     this.props.dispatch(fetchFollowRequests());
 
@@ -114,9 +115,9 @@ export default class Compose extends React.PureComponent {
             <NavigationContainer onClose={this.onBlur} />
             <ComposeFormContainer />
             { myAccount.get('locked') && unreadFollowRequests > 0 ?
-            <div className='follow-requests-reminder'>Psst! You have <Link className='follow-requests-link' to='/follow_requests'>{unreadFollowRequests} unread follow request{(unreadFollowRequests > 1) ? 's' : ''}</Link>.</div>
-            :
-            <div></div>}
+              <div className='follow-requests-reminder'>Psst! You have <Link className='follow-requests-link' to='/follow_requests'>{unreadFollowRequests} unread follow request{(unreadFollowRequests > 1) ? 's' : ''}</Link>.</div>
+              :
+              <div />}
             {multiColumn && (
               <div className='drawer__inner__mastodon'>
                 <img alt='' draggable='false' src={elephantUIPlane} />

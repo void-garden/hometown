@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class Checkbox extends React.PureComponent {
+
   constructor() {
     super();
-    this.state = {isChecked: false};
+    this.state = { isChecked: false };
     this.handleChecked = this.handleChecked.bind(this);
   }
 
@@ -22,7 +23,7 @@ export default class Checkbox extends React.PureComponent {
     let fcLocal = JSON.parse(localStorage.getItem('friend-camp')) || {};
     fcLocal.confirmClearNotificationsNeverAsk = !this.state.isChecked;
     localStorage.setItem('friend-camp', JSON.stringify(fcLocal));
-    this.setState({isChecked: !this.state.isChecked});
+    this.setState({ isChecked: !this.state.isChecked });
   }
 
   setRef = (c) => {
@@ -42,7 +43,7 @@ export default class Checkbox extends React.PureComponent {
       >
         <input
           disabled={this.props.disabled}
-          type="checkbox"
+          type='checkbox'
           onChange={this.handleChecked}
           ref={this.setRef}
           style={style}

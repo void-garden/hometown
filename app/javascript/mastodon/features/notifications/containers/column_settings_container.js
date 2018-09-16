@@ -30,8 +30,7 @@ const mapDispatchToProps = (dispatch, { intl }) => ({
     let fcLocal = JSON.parse(localStorage.getItem('friend-camp'));
     if (fcLocal && fcLocal.confirmClearNotificationsNeverAsk) {
       dispatch(clearNotifications());
-    }
-    else {
+    } else {
       dispatch(openModal('CONFIRM', {
         fcNeverAsk: true,
         message: intl.formatMessage(messages.clearMessage),

@@ -13,7 +13,7 @@ export default class ConfirmationModal extends React.PureComponent {
     onClose: PropTypes.func.isRequired,
     onConfirm: PropTypes.func.isRequired,
     intl: PropTypes.object.isRequired,
-    fcNeverAsk: PropTypes.bool
+    fcNeverAsk: PropTypes.bool,
   };
 
   componentDidMount() {
@@ -43,11 +43,11 @@ export default class ConfirmationModal extends React.PureComponent {
 
           {
             this.props.fcNeverAsk ?
-              <p className="fc-never-ask">
+              <p className='fc-never-ask'>
                 <Checkbox>Never ask me again.</Checkbox>
               </p>
               :
-              <span></span>
+              <span />
           }
 
 

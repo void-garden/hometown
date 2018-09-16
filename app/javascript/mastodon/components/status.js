@@ -7,16 +7,10 @@ import RelativeTimestamp from './relative_timestamp';
 import DisplayName from './display_name';
 import StatusContent from './status_content';
 import StatusActionBar from './status_action_bar';
-import AttachmentList from './attachment_list';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import ImmutablePureComponent from 'react-immutable-pure-component';
-import { MediaGallery, Video } from '../features/ui/util/async-components';
 import { HotKeys } from 'react-hotkeys';
 import classNames from 'classnames';
-
-// We use the component (and not the container) since we do not want
-// to use the progress bar to show download progress
-import Bundle from '../features/ui/components/bundle';
 
 export const textForScreenReader = (intl, status, rebloggedByText = false) => {
   const displayName = status.getIn(['account', 'display_name']);
@@ -155,7 +149,6 @@ export default class Status extends ImmutablePureComponent {
   }
 
   render () {
-    let media = null;
     let statusAvatar, prepend, rebloggedByText;
 
     const { intl, hidden, featured } = this.props;
