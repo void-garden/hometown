@@ -636,7 +636,7 @@
   word-wrap: break-word;
   font-weight: 400;
   overflow: hidden;
-  white-space: pre-wrap;
+  white-space: normal;
   padding-top: 2px;
   color: $primary-text-color;
 
@@ -648,7 +648,7 @@
     white-space: normal;
 
     .status__content__text {
-      white-space: pre-wrap;
+      white-space: normal;
     }
   }
 
