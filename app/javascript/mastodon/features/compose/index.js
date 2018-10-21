@@ -16,6 +16,7 @@ import spring from 'react-motion/lib/spring';
 import SearchResultsContainer from './containers/search_results_container';
 import { changeComposing } from '../../actions/compose';
 import elephantUIPlane from '../../../images/elephant_ui_plane.svg';
+import { mascot } from '../../initial_state';
 
 const messages = defineMessages({
   start: { id: 'getting_started.heading', defaultMessage: 'Getting started' },
@@ -35,9 +36,9 @@ const mapStateToProps = (state, ownProps) => ({
   myAccount: state.getIn(['accounts', me]),
 });
 
-@connect(mapStateToProps)
+export default @connect(mapStateToProps)
 @injectIntl
-export default class Compose extends React.PureComponent {
+class Compose extends React.PureComponent {
 
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
@@ -120,7 +121,7 @@ export default class Compose extends React.PureComponent {
               <div />}
             {multiColumn && (
               <div className='drawer__inner__mastodon'>
-                <img alt='' draggable='false' src={elephantUIPlane} />
+                <img alt='' draggable='false' src={mascot || elephantUIPlane} />
               </div>
             )}
           </div>}

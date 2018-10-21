@@ -9,6 +9,8 @@ import { MediaGallery, Video } from '../features/ui/util/async-components';
 import Bundle from '../features/ui/components/bundle';
 import AttachmentList from './attachment_list';
 
+const MAX_HEIGHT = 642; // 20px * 32 (+ 2px padding at the top)
+
 export default class StatusContent extends React.PureComponent {
 
   static contextTypes = {
@@ -20,14 +22,12 @@ export default class StatusContent extends React.PureComponent {
     expanded: PropTypes.bool,
     onExpandedToggle: PropTypes.func,
     onClick: PropTypes.func,
-    onOpenMedia: PropTypes.func,
-    onOpenVideo: PropTypes.func,
-    muted: PropTypes.bool,
-    detailed: PropTypes.bool,
+    collapsable: PropTypes.bool,
   };
 
   state = {
     hidden: true,
+    collapsed: null, //  `collapsed: null` indicates that an element doesn't need collapsing, while `true` or `false` indicates that it does (and is/isn't).
   };
 
   _updateStatusLinks () {
@@ -66,6 +66,16 @@ export default class StatusContent extends React.PureComponent {
 
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noopener');
+    }
+
+    if (
+      this.props.collapsable
+      && this.props.onClick
+      && this.state.collapsed === null
+      && node.clientHeight > MAX_HEIGHT
+      && this.props.status.get('spoiler_text').length === 0
+    ) {
+      this.setState({ collapsed: true });
     }
   }
 
@@ -131,6 +141,11 @@ export default class StatusContent extends React.PureComponent {
     }
   }
 
+  handleCollapsedClick = (e) => {
+    e.preventDefault();
+    this.setState({ collapsed: !this.state.collapsed });
+  }
+
   setRef = (c) => {
     this.node = c;
   }
@@ -152,46 +167,18 @@ export default class StatusContent extends React.PureComponent {
     const classNames = classnames('status__content', {
       'status__content--with-action': this.props.onClick && this.context.router,
       'status__content--with-spoiler': status.get('spoiler_text').length > 0,
+      'status__content--collapsed': this.state.collapsed === true,
     });
 
     if (isRtl(status.get('search_index'))) {
       directionStyle.direction = 'rtl';
     }
 
-    if (!this.props.detailed && status.get('media_attachments').size > 0) {
-      if (this.props.muted || status.get('media_attachments').some(item => item.get('type') === 'unknown')) {
-        media = (
-          <AttachmentList
-            compact
-            media={status.get('media_attachments')}
-          />
-        );
-      } else if (status.getIn(['media_attachments', 0, 'type']) === 'video') {
-        const video = status.getIn(['media_attachments', 0]);
-
-        media = (
-          <Bundle fetchComponent={Video} loading={this.renderLoadingVideoPlayer} >
-            {Component => (
-              <Component
-                preview={video.get('preview_url')}
-                src={video.get('url')}
-                width={239}
-                height={110}
-                inline
-                sensitive={false}
-                onOpenVideo={this.handleOpenVideo}
-              />
-            )}
-          </Bundle>
-        );
-      } else {
-        media = (
-          <Bundle fetchComponent={MediaGallery} loading={this.renderLoadingMediaGallery}>
-            {Component => <Component media={status.get('media_attachments')} sensitive={false} height={110} onOpenMedia={this.props.onOpenMedia ? this.props.onOpenMedia : undefined} />}
-          </Bundle>
-        );
-      }
-    }
+    const readMoreButton = (
+      <button className='status__content__read-more-button' onClick={this.props.onClick}>
+        <FormattedMessage id='status.read_more' defaultMessage='Read more' /><i className='fa fa-fw fa-angle-right' />
+      </button>
+    );
 
     if (status.get('spoiler_text').length > 0) {
       let mentionsPlaceholder = '';
@@ -225,19 +212,23 @@ export default class StatusContent extends React.PureComponent {
         </div>
       );
     } else if (this.props.onClick) {
-      return (
+      const output = [
         <div
           ref={this.setRef}
           tabIndex='0'
           className={classNames}
           style={directionStyle}
+          dangerouslySetInnerHTML={content}
           onMouseDown={this.handleMouseDown}
           onMouseUp={this.handleMouseUp}
-        >
-          <span dangerouslySetInnerHTML={content} />
-          {media ? media : <span />}
-        </div>
-      );
+        />,
+      ];
+
+      if (this.state.collapsed) {
+        output.push(readMoreButton);
+      }
+
+      return output;
     } else {
       return (
         <div
