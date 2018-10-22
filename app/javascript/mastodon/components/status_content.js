@@ -5,9 +5,6 @@ import { isRtl } from '../rtl';
 import { FormattedMessage } from 'react-intl';
 import Permalink from './permalink';
 import classnames from 'classnames';
-import { MediaGallery, Video } from '../features/ui/util/async-components';
-import Bundle from '../features/ui/components/bundle';
-import AttachmentList from './attachment_list';
 
 const MAX_HEIGHT = 642; // 20px * 32 (+ 2px padding at the top)
 
@@ -85,10 +82,6 @@ export default class StatusContent extends React.PureComponent {
 
   componentDidUpdate () {
     this._updateStatusLinks();
-  }
-
-  handleOpenVideo = (media, startTime) => {
-    this.props.onOpenVideo(media, startTime);
   }
 
   onMentionClick = (mention, e) => {
