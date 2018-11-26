@@ -7,16 +7,15 @@ import StatusContent from '../../../components/status_content';
 import MediaGallery from '../../../components/media_gallery';
 import AttachmentList from '../../../components/attachment_list';
 import { Link } from 'react-router-dom';
-import { defineMessages, injectIntl, FormattedDate, FormattedNumber } from 'react-intl';
-import CardContainer from '../containers/card_container';
+import { defineMessages, FormattedDate, FormattedNumber } from 'react-intl';
+import Card from './card';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import Video from '../../video';
 
 const messages = defineMessages({
-  local_only: { id: 'status.local_only', defaultMessage: 'This post is only visible by other users of your instance' },
+  local_only: { id: 'status.local_only', defaultMessage: 'This post is only visible to other users of your instance' },
 });
 
-@injectIntl
 export default class DetailedStatus extends ImmutablePureComponent {
 
   static contextTypes = {
@@ -87,7 +86,7 @@ export default class DetailedStatus extends ImmutablePureComponent {
         );
       }
     } else if (status.get('spoiler_text').length === 0) {
-      media = <CardContainer onOpenMedia={this.props.onOpenMedia} statusId={status.get('id')} />;
+      media = <Card onOpenMedia={this.props.onOpenMedia} card={status.get('card', null)} />;
     }
 
     if (status.get('application')) {
