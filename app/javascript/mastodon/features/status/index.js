@@ -438,6 +438,7 @@ class Status extends ImmutablePureComponent {
                   onOpenVideo={this.handleOpenVideo}
                   onOpenMedia={this.handleOpenMedia}
                   onToggleHidden={this.handleToggleHidden}
+                  intl={intl}
                 />
 
                 <ActionBar
