@@ -7,7 +7,7 @@ import StatusContent from '../../../components/status_content';
 import MediaGallery from '../../../components/media_gallery';
 import AttachmentList from '../../../components/attachment_list';
 import { Link } from 'react-router-dom';
-import { defineMessages, FormattedDate, FormattedNumber } from 'react-intl';
+import { defineMessages, injectIntl, FormattedDate, FormattedNumber } from 'react-intl';
 import Card from './card';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import Video from '../../video';
@@ -16,6 +16,7 @@ const messages = defineMessages({
   local_only: { id: 'status.local_only', defaultMessage: 'This post is only visible to other users of your instance' },
 });
 
+@injectIntl
 export default class DetailedStatus extends ImmutablePureComponent {
 
   static contextTypes = {
