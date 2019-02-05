@@ -1,4 +1,3 @@
-@import 'application';
 @charset "UTF-8";
 @font-face {
     font-family: "mastodon-font-sans-serif";
@@ -153,8 +152,7 @@ section {
 }
 
 body {
-    line-height: 1;
-    background: #2e2b3b
+    line-height: 1
 }
 
 ol,
@@ -181,7 +179,7 @@ table {
 }
 
 html {
-    scrollbar-color: #5A5475 transparent
+    scrollbar-color: #ffcbcb transparent
 }
 
 ::-webkit-scrollbar {
@@ -190,28 +188,28 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #5A5475;
-    border: 0 #F8F8F2;
+    background: #ffcbcb;
+    border: 0 #fff;
     border-radius: 50px
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #353a49
+    background: #ffcdcb
 }
 
 ::-webkit-scrollbar-thumb:active {
-    background: #5A5475
+    background: #ffcbcb
 }
 
 ::-webkit-scrollbar-track {
-    border: 0 #F8F8F2;
+    border: 0 #fff;
     border-radius: 0;
-    background: rgba(0, 0, 0, .1)
+    background: hsla(0, 0%, 100%, .1)
 }
 
 ::-webkit-scrollbar-track:active,
 ::-webkit-scrollbar-track:hover {
-    background: #504b68;
+    background: #dff6eb
 }
 
 ::-webkit-scrollbar-corner {
@@ -220,11 +218,11 @@ html {
 
 body {
     font-family: "mastodon-font-sans-serif", sans-serif;
-    background: #2e2b3b;
+    background: #fffdef;
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
-    color: #F8F8F2;
+    color: #000;
     text-rendering: optimizelegibility;
     -webkit-font-feature-settings: "kern";
     font-feature-settings: "kern";
@@ -245,7 +243,7 @@ body.app-body {
     width: 100%;
     height: 100%;
     padding: 0;
-    background: #504b68;
+    background: #dff6eb
 }
 
 body.app-body.with-modals--active {
@@ -253,7 +251,7 @@ body.app-body.with-modals--active {
 }
 
 body.lighter {
-    background: #504b68;
+    background: #dff6eb
 }
 
 body.with-modals {
@@ -271,7 +269,7 @@ body.player {
 }
 
 body.embed {
-    background: #5A5475;
+    background: #c8c4dd;
     margin: 0;
     padding-bottom: 0
 }
@@ -284,7 +282,7 @@ body.embed .container {
 }
 
 body.admin {
-    background: #2e2b3b;
+    background: #fffdef;
     position: fixed
 }
 
@@ -298,8 +296,8 @@ body.error {
 body.error {
     position: absolute;
     text-align: center;
-    color: #c8c4d4;
-    background: #504b68;;
+    color: #282c37;
+    background: #dff6eb;
     display: flex;
     justify-content: center;
     align-items: center
@@ -380,7 +378,7 @@ button:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #F8F8F2;
+    color: #000;
     text-decoration: none;
     outline: 0;
     padding: 12px 16px;
@@ -439,7 +437,7 @@ button:focus {
 
 .account-header .name {
     flex: 1 1 auto;
-    color: #c8c4d4;
+    color: #282c37;
     width: calc(100% - 88px)
 }
 
@@ -549,7 +547,7 @@ button:focus {
 }
 
 .public-layout .header {
-    background: #5f5676;
+    background: #c8dbee;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
     border-radius: 4px;
     height: 48px;
@@ -622,7 +620,7 @@ button:focus {
 .public-layout .header .brand:active,
 .public-layout .header .brand:focus,
 .public-layout .header .brand:hover {
-    background: #42485a
+    background: #ffcbcb
 }
 
 .public-layout .header .nav-link {
@@ -632,7 +630,7 @@ button:focus {
     font-size: 12px;
     font-weight: 500;
     text-decoration: none;
-    color: #c8c4d4;
+    color: #282c37;
     white-space: nowrap;
     text-align: center
 }
@@ -641,7 +639,7 @@ button:focus {
 .public-layout .header .nav-link:focus,
 .public-layout .header .nav-link:hover {
     text-decoration: underline;
-    color: #F8F8F2
+    color: #000
 }
 
 @media screen and (max-width:550px) {
@@ -651,7 +649,7 @@ button:focus {
 }
 
 .public-layout .header .nav-button {
-    background: #474059;
+    background: #ffdfdf;
     margin: 8px 8px 8px 0;
     border-radius: 4px
 }
@@ -660,7 +658,7 @@ button:focus {
 .public-layout .header .nav-button:focus,
 .public-layout .header .nav-button:hover {
     text-decoration: none;
-    background: #2e2b3b
+    background: #fff3f3
 }
 
 .public-layout .grid {
@@ -709,11 +707,11 @@ button:focus {
 }
 
 .public-layout .public-account-header.inactive .logo-button {
-    background-color: #c8c4d4
+    background-color: #282c37
 }
 
 .public-layout .public-account-header.inactive .logo-button svg path:last-child {
-    fill: #c8c4d4
+    fill: #282c37
 }
 
 .public-layout .public-account-header__image {
@@ -721,7 +719,7 @@ button:focus {
     overflow: hidden;
     height: 300px;
     position: relative;
-    background: #0e1014
+    background: #fff
 }
 
 .public-layout .public-account-header__image:after {
@@ -792,7 +790,7 @@ button:focus {
 .public-layout .public-account-header__bar:before {
     content: "";
     display: block;
-    background: #5A5475;
+    background: #c8c4dd;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -816,14 +814,14 @@ button:focus {
     height: 100%;
     margin: 0;
     border-radius: 50%;
-    border: 4px solid #5A5475;
-    background: #2e2b3b
+    border: 4px solid #c8c4dd;
+    background: #fffdef
 }
 
 @media screen and (max-width:600px) {
     .public-layout .public-account-header__bar {
         margin-top: 0;
-        background: #5A5475;
+        background: #c8c4dd;
         border-radius: 0 0 4px 4px;
         padding: 5px
     }
@@ -872,18 +870,18 @@ button:focus {
 .public-layout .public-account-header__tabs__name h1 {
     font-size: 20px;
     line-height: 27px;
-    color: #F8F8F2;
+    color: #000;
     font-weight: 500;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-shadow: 1px 1px 1px #2e2b3b
+    text-shadow: 1px 1px 1px #000
 }
 
 .public-layout .public-account-header__tabs__name h1 small {
     display: block;
     font-size: 14px;
-    color: #F8F8F2;
+    color: #000;
     font-weight: 400;
     overflow: hidden;
     text-overflow: ellipsis
@@ -906,7 +904,7 @@ button:focus {
         text-shadow: none
     }
     .public-layout .public-account-header__tabs__name h1 small {
-        color: #c8c4d4
+        color: #282c37
     }
 }
 
@@ -933,9 +931,9 @@ button:focus {
     width: 33.3%;
     box-sizing: border-box;
     flex: 0 0 auto;
-    color: #c8c4d4;
+    color: #282c37;
     padding: 10px;
-    border-right: 1px solid #5A5475;
+    border-right: 1px solid #c8c4dd;
     cursor: default;
     text-align: center;
     position: relative
@@ -956,18 +954,18 @@ button:focus {
     bottom: 0;
     left: 0;
     width: 100%;
-    border-bottom: 4px solid #c8c4d4;
+    border-bottom: 4px solid #9bcbed;
     opacity: .5;
     transition: all .4s ease
 }
 
 .public-layout .public-account-header__tabs__tabs .counter.active:after {
-    border-bottom: 4px solid #fdf6a2;
+    border-bottom: 4px solid #5971AD;
     opacity: 1
 }
 
 .public-layout .public-account-header__tabs__tabs .counter.active.inactive:after {
-    border-bottom-color: #c8c4d4
+    border-bottom-color: #282c37
 }
 
 .public-layout .public-account-header__tabs__tabs .counter:hover:after {
@@ -989,7 +987,7 @@ button:focus {
     font-weight: 500;
     font-size: 18px;
     margin-bottom: 5px;
-    color: #F8F8F2;
+    color: #000;
     font-family: mastodon-font-display, sans-serif
 }
 
@@ -1015,7 +1013,7 @@ button:focus {
 }
 
 .public-layout .public-account-header__extra .public-account-bio .account__header__fields {
-    border-top: 1px solid #42485a
+    border-top: 1px solid #ffcbcb
 }
 
 .public-layout .public-account-header__extra .public-account-bio .roles {
@@ -1025,19 +1023,19 @@ button:focus {
 .public-layout .public-account-header__extra__links {
     margin-top: -15px;
     font-size: 14px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .public-layout .public-account-header__extra__links a {
     display: inline-block;
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     padding: 15px
 }
 
 .public-layout .public-account-header__extra__links a strong {
     font-weight: 700;
-    color: #F8F8F2
+    color: #000
 }
 
 @media screen and (max-width:600px) {
@@ -1062,7 +1060,7 @@ button:focus {
 }
 
 .public-layout .public-account-bio {
-    background: #5f5676;
+    background: #c8dbee;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
     border-radius: 4px;
     overflow: hidden;
@@ -1083,7 +1081,7 @@ button:focus {
 }
 
 .public-layout .public-account-bio .account__header__fields a {
-    color: #FF857F
+    color: #5971AD
 }
 
 .public-layout .public-account-bio .account__header__fields dl:first-child .verified {
@@ -1091,19 +1089,19 @@ button:focus {
 }
 
 .public-layout .public-account-bio .account__header__fields .verified a {
-    color: #79bd9a
+    color: #3c754d
 }
 
 .public-layout .public-account-bio .account__header__content {
     padding: 20px 20px 0;
-    color: #F8F8F2
+    color: #000
 }
 
 .public-layout .public-account-bio .roles,
 .public-layout .public-account-bio__extra {
     padding: 20px;
     font-size: 14px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .public-layout .public-account-bio .roles {
@@ -1111,7 +1109,7 @@ button:focus {
 }
 
 .public-layout .static-icon-button {
-    color: #ada6bf;
+    color: #606984;
     font-size: 18px
 }
 
@@ -1151,24 +1149,24 @@ button:focus {
 @media screen and (max-width:415px) {
     .public-layout .card-grid {
         margin: 0;
-        border-top: 1px solid #5f5676
+        border-top: 1px solid #c8dbee
     }
     .public-layout .card-grid>div {
         width: 100%;
         padding: 0;
         margin-bottom: 0;
-        border-bottom: 1px solid #5f5676
+        border-bottom: 1px solid #c8dbee
     }
     .public-layout .card-grid>div:last-child {
         border-bottom: 0
     }
     .public-layout .card-grid>div .card__bar {
-        background: #504b68;
+        background: #dff6eb
     }
     .public-layout .card-grid>div .card__bar:active,
     .public-layout .card-grid>div .card__bar:focus,
     .public-layout .card-grid>div .card__bar:hover {
-        background: #5A5475
+        background: #c8c4dd
     }
 }
 
@@ -1197,7 +1195,7 @@ button:focus {
     padding-top: 20px;
     padding-bottom: 60px;
     font-size: 12px;
-    color: #737d99
+    color: #6d8ca7
 }
 
 @media screen and (max-width:415px) {
@@ -1233,7 +1231,7 @@ button:focus {
 }
 
 .public-layout .footer .grid .column-2 h4 a {
-    color: #737d99
+    color: #6d8ca7
 }
 
 .public-layout .footer .grid .column-3 {
@@ -1290,7 +1288,7 @@ button:focus {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 8px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .public-layout .footer h4 a {
@@ -1300,7 +1298,7 @@ button:focus {
 
 .public-layout .footer ul a {
     text-decoration: none;
-    color: #737d99
+    color: #6d8ca7
 }
 
 .public-layout .footer ul a:active,
@@ -1317,19 +1315,19 @@ button:focus {
 }
 
 .public-layout .footer .brand svg path {
-    fill: #737d99
+    fill: #6d8ca7
 }
 
 .public-layout .footer .brand:active svg path,
 .public-layout .footer .brand:focus svg path,
 .public-layout .footer .brand:hover svg path {
-    fill: #7f88a2
+    fill: #60829f
 }
 
 .compact-header h1 {
     font-size: 24px;
     line-height: 28px;
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 500;
     margin-bottom: 20px;
     padding: 0 10px;
@@ -1350,7 +1348,7 @@ button:focus {
 
 .compact-header h1 small {
     font-weight: 400;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .compact-header h1 img {
@@ -1372,7 +1370,7 @@ button:focus {
     position: relative;
     overflow: hidden;
     border-radius: 4px 4px 0 0;
-    background: #2e2b3b
+    background: #000
 }
 
 .hero-widget__img img {
@@ -1387,11 +1385,11 @@ button:focus {
 }
 
 .hero-widget__text {
-    background: #504b68;;
+    background: #ffcbcb;
     padding: 20px;
     border-radius: 0 0 4px 4px;
     font-size: 15px;
-    color: #c8c4d4;
+    color: #282c37;
     line-height: 20px;
     word-wrap: break-word;
     font-weight: 400
@@ -1420,11 +1418,11 @@ button:focus {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color: #c8c4d4
+    color: #131419
 }
 
 .hero-widget__text a {
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none
 }
 
@@ -1448,7 +1446,7 @@ button:focus {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 13px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .endorsements-widget .account {
@@ -1475,7 +1473,7 @@ button:focus {
 .landing-page__information.contact-widget {
     padding: 20px;
     border-radius: 4px;
-    background: #504b68;;
+    background: #dff6eb;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2)
 }
 
@@ -1487,7 +1485,7 @@ button:focus {
 
 .contact-widget {
     font-size: 15px;
-    color: #c8c4d4;
+    color: #282c37;
     line-height: 20px;
     word-wrap: break-word;
     font-weight: 400
@@ -1510,16 +1508,16 @@ button:focus {
 }
 
 .contact-widget__mail a {
-    color: #F8F8F2;
+    color: #000;
     text-decoration: none
 }
 
 .moved-account-widget {
     padding: 15px 15px 20px;
     border-radius: 4px;
-    background: #504b68;;
+    background: #dff6eb;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 400;
     margin-bottom: 10px
 }
@@ -1567,7 +1565,7 @@ button:focus {
 
 .moved-account-widget__message .fa {
     margin-right: 5px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .moved-account-widget__card .detailed-status__display-avatar {
@@ -1586,9 +1584,9 @@ button:focus {
 
 .memoriam-widget {
     padding: 20px;
-    background: #2e2b3b;
+    background: #000;
     font-size: 14px;
-    color: #c8c4d4;
+    color: #282c37;
     margin-bottom: 10px
 }
 
@@ -1599,14 +1597,14 @@ button:focus {
 }
 
 .page-header {
-    background: #5f5676;
+    background: #c8dbee;
     padding: 60px 15px;
     text-align: center;
     margin: 10px 0
 }
 
 .page-header h1 {
-    color: #F8F8F2;
+    color: #000;
     font-size: 36px;
     line-height: 1.1;
     font-weight: 700;
@@ -1615,13 +1613,13 @@ button:focus {
 
 .page-header p {
     font-size: 15px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 @media screen and (max-width:415px) {
     .page-header {
         margin-top: 0;
-        background: #5A5475
+        background: #c8c4dd
     }
     .page-header h1 {
         font-size: 24px
@@ -1629,7 +1627,7 @@ button:focus {
 }
 
 .directory {
-    background: #504b68;;
+    background: #dff6eb;
     border-radius: 4px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2)
 }
@@ -1643,7 +1641,7 @@ button:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #504b68;;
+    background: #dff6eb;
     border-radius: 4px;
     padding: 15px;
     text-decoration: none;
@@ -1654,11 +1652,11 @@ button:focus {
 .directory__tag a:active,
 .directory__tag a:focus,
 .directory__tag a:hover {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .directory__tag.active a {
-    background: #C2FFDF;
+    background: #5971AD;
     cursor: default
 }
 
@@ -1666,14 +1664,14 @@ button:focus {
     flex: 1 1 auto;
     font-size: 18px;
     font-weight: 700;
-    color: #F8F8F2;
+    color: #000;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
 }
 
 .directory__tag h4 .fa {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .directory__tag h4 small {
@@ -1681,13 +1679,13 @@ button:focus {
     font-weight: 400;
     font-size: 15px;
     margin-top: 8px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .directory__tag.active h4,
 .directory__tag.active h4 .fa,
 .directory__tag.active h4 small {
-    color: #F8F8F2
+    color: #000
 }
 
 .directory__tag .avatar-stack {
@@ -1696,7 +1694,7 @@ button:focus {
 }
 
 .directory__tag.active .avatar-stack .account__avatar {
-    border-color: #C2FFDF
+    border-color: #5971AD
 }
 
 .avatar-stack {
@@ -1711,7 +1709,7 @@ button:focus {
     border-radius: 50%;
     position: relative;
     margin-left: -10px;
-    border: 2px solid #504b68;
+    border: 2px solid #dff6eb
 }
 
 .avatar-stack .account__avatar:first-child {
@@ -1738,7 +1736,7 @@ button:focus {
 .accounts-table thead th {
     text-align: center;
     text-transform: uppercase;
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 700;
     padding: 10px
 }
@@ -1750,7 +1748,7 @@ button:focus {
 .accounts-table tbody td {
     padding: 15px 0;
     vertical-align: middle;
-    border-bottom: 1px solid #5f5676
+    border-bottom: 1px solid #c8dbee
 }
 
 .accounts-table tbody tr:last-child td {
@@ -1762,12 +1760,12 @@ button:focus {
     text-align: center;
     font-size: 15px;
     font-weight: 500;
-    color: #F8F8F2
+    color: #000
 }
 
 .accounts-table__count small {
     display: block;
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 400;
     font-size: 14px
 }
@@ -1830,7 +1828,7 @@ button:focus {
 
 @media screen and (max-width:415px) {
     .statuses-grid .detailed-status {
-        border-top: 1px solid #474059
+        border-top: 1px solid #ffdfdf
     }
 }
 
@@ -1861,7 +1859,7 @@ button:focus {
 }
 
 .notice-widget {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .notice-widget,
@@ -1878,7 +1876,7 @@ button:focus {
     line-height: 20px;
     text-decoration: none;
     font-weight: 500;
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .notice-widget a:active,
@@ -1935,7 +1933,7 @@ code {
     font-family: inherit;
     font-size: 14px;
     padding-top: 5px;
-    color: #F8F8F2;
+    color: #000;
     display: block;
     width: auto
 }
@@ -1968,17 +1966,17 @@ code {
 }
 
 .simple_form .hint {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .simple_form .hint a {
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .simple_form .hint code {
     border-radius: 3px;
     padding: .2em .4em;
-    background: #0e1014
+    background: #fff
 }
 
 .simple_form span.hint {
@@ -1989,7 +1987,7 @@ code {
 
 .simple_form p.hint {
     margin-bottom: 15px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .simple_form p.hint.subtle-hint {
@@ -2023,7 +2021,7 @@ code {
 .simple_form .input.with_floating_label .label_input>label {
     font-family: inherit;
     font-size: 14px;
-    color: #F8F8F2;
+    color: #000;
     font-weight: 500;
     min-width: 150px;
     flex: 0 0 auto
@@ -2042,7 +2040,7 @@ code {
 .simple_form .input.with_label .label_input>label {
     font-family: inherit;
     font-size: 14px;
-    color: #F8F8F2;
+    color: #000;
     display: block;
     margin-bottom: 8px;
     word-wrap: break-word;
@@ -2064,7 +2062,7 @@ code {
 .simple_form .input.with_block_label>label {
     font-family: inherit;
     font-size: 16px;
-    color: #F8F8F2;
+    color: #000;
     display: block;
     font-weight: 500;
     padding-top: 5px
@@ -2081,7 +2079,7 @@ code {
 
 .simple_form .required abbr {
     text-decoration: none;
-    color: #e87487
+    color: #c1203b
 }
 
 .simple_form .fields-group {
@@ -2137,7 +2135,7 @@ code {
     margin-bottom: 5px;
     font-family: inherit;
     font-size: 14px;
-    color: #F8F8F2;
+    color: #000;
     display: block;
     width: auto
 }
@@ -2145,7 +2143,7 @@ code {
 .simple_form .check_boxes .checkbox label {
     font-family: inherit;
     font-size: 14px;
-    color: #F8F8F2;
+    color: #000;
     display: inline-block;
     width: auto;
     position: relative;
@@ -2168,14 +2166,14 @@ code {
 .simple_form textarea {
     box-sizing: border-box;
     font-size: 16px;
-    color: #F8F8F2;
+    color: #000;
     display: block;
     width: 100%;
     outline: 0;
     font-family: inherit;
     resize: vertical;
-    background: #131419;
-    border: 1px solid #0a0b0e;
+    background: #ffffff;
+    border: 1px solid #fff;
     border-radius: 4px;
     padding: 10px
 }
@@ -2193,7 +2191,7 @@ code {
 .simple_form input[type=password]:focus:invalid,
 .simple_form input[type=text]:focus:invalid,
 .simple_form textarea:focus:invalid {
-    border-color: #e87487
+    border-color: #c1203b
 }
 
 .simple_form input[type=email]:required:valid,
@@ -2201,7 +2199,7 @@ code {
 .simple_form input[type=password]:required:valid,
 .simple_form input[type=text]:required:valid,
 .simple_form textarea:required:valid {
-    border-color: #79bd9a
+    border-color: #3c754d
 }
 
 .simple_form input[type=email]:hover,
@@ -2209,7 +2207,7 @@ code {
 .simple_form input[type=password]:hover,
 .simple_form input[type=text]:hover,
 .simple_form textarea:hover {
-    border-color: #2e2b3b
+    border-color: #fff
 }
 
 .simple_form input[type=email]:active,
@@ -2222,12 +2220,12 @@ code {
 .simple_form input[type=text]:focus,
 .simple_form textarea:active,
 .simple_form textarea:focus {
-    border-color: #C2FFDF;
-    background: #2e2b3b
+    border-color: #5971AD;
+    background: #fff
 }
 
 .simple_form .input.field_with_errors label {
-    color: #e87487
+    color: #c1203b
 }
 
 .simple_form .input.field_with_errors input[type=email],
@@ -2236,13 +2234,13 @@ code {
 .simple_form .input.field_with_errors input[type=text],
 .simple_form .input.field_with_errors select,
 .simple_form .input.field_with_errors textarea {
-    border-color: #e87487
+    border-color: #c1203b
 }
 
 .simple_form .input.field_with_errors .error {
     display: block;
     font-weight: 500;
-    color: #e87487;
+    color: #c1203b;
     margin-top: 4px
 }
 
@@ -2263,8 +2261,8 @@ code {
     width: 100%;
     border: 0;
     border-radius: 4px;
-    background: #FF857F;
-    color: #F8F8F2;
+    background: #5971AD;
+    color: #000;
     font-size: 18px;
     line-height: inherit;
     height: auto;
@@ -2289,7 +2287,7 @@ code {
 .simple_form .block-button:hover,
 .simple_form .button:hover,
 .simple_form button:hover {
-    background-color: #ff9e99
+    background-color: #7387ba
 }
 
 .simple_form .block-button:active,
@@ -2298,7 +2296,7 @@ code {
 .simple_form .button:focus,
 .simple_form button:active,
 .simple_form button:focus {
-    background-color: #FF857F
+    background-color: #416fdd
 }
 
 .simple_form .block-button.negative,
@@ -2310,7 +2308,7 @@ code {
 .simple_form .block-button.negative:hover,
 .simple_form .button.negative:hover,
 .simple_form button.negative:hover {
-    background-color: #e3566d
+    background-color: #db2a47
 }
 
 .simple_form .block-button.negative:active,
@@ -2319,7 +2317,7 @@ code {
 .simple_form .button.negative:focus,
 .simple_form button.negative:active,
 .simple_form button.negative:focus {
-    background-color: #db2a47
+    background-color: #e3566d
 }
 
 .simple_form select {
@@ -2328,14 +2326,14 @@ code {
     appearance: none;
     box-sizing: border-box;
     font-size: 16px;
-    color: #F8F8F2;
+    color: #000;
     display: block;
     width: 100%;
     outline: 0;
     font-family: inherit;
     resize: vertical;
-    background: #131419 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.933 18.467' height='19.698' width='15.929'><path d='M3.467 14.967l-3.393-3.5H14.86l-3.392 3.5c-1.866 1.925-3.666 3.5-4 3.5-.335 0-2.135-1.575-4-3.5zm.266-11.234L7.467 0 11.2 3.733l3.733 3.734H0l3.733-3.734z' fill='%2342485A'/></svg>") no-repeat right 8px center/auto 16px;
-    border: 1px solid #0a0b0e;
+    background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.933 18.467' height='19.698' width='15.929'><path d='M3.467 14.967l-3.393-3.5H14.86l-3.392 3.5c-1.866 1.925-3.666 3.5-4 3.5-.335 0-2.135-1.575-4-3.5zm.266-11.234L7.467 0 11.2 3.733l3.733 3.734H0l3.733-3.734z' fill='#B3C3D1'/></svg>") no-repeat right 8px center/auto 16px;
+    border: 1px solid #fff;
     border-radius: 4px;
     padding-left: 10px;
     padding-right: 30px;
@@ -2352,7 +2350,7 @@ code {
     top: 1px;
     padding: 10px 10px 9px;
     font-size: 16px;
-    color: #ada6bf;
+    color: #444b5d;
     font-family: inherit;
     pointer-events: none;
     cursor: default;
@@ -2369,12 +2367,12 @@ code {
     right: 0;
     bottom: 1px;
     width: 5px;
-    background-image: linear-gradient(90deg, rgba(19, 20, 25, 0), #131419)
+    background-image: linear-gradient(90deg, rgba(249, 250, 251, 0), #ffffff)
 }
 
 .flash-message {
-    background: #5f5676;
-    color: #c8c4d4;
+    background: #c8dbee;
+    color: #282c37;
     border-radius: 4px;
     padding: 15px 10px;
     margin-bottom: 30px;
@@ -2382,9 +2380,9 @@ code {
 }
 
 .flash-message.notice {
-    border: 1px solid rgba(121, 189, 154, .5);
-    background: rgba(121, 189, 154, .25);
-    color: #79bd9a
+    border: 1px solid rgba(60, 117, 77, .5);
+    background: rgba(60, 117, 77, .25);
+    color: #3c754d
 }
 
 .flash-message.alert {
@@ -2405,8 +2403,8 @@ code {
     border: none;
     padding: 10px;
     font-family: "mastodon-font-monospace", monospace;
-    background: #504b68;;
-    color: #F8F8F2;
+    background: #dff6eb;
+    color: #000;
     font-size: 14px;
     margin: 0
 }
@@ -2422,7 +2420,7 @@ code {
 }
 
 .flash-message .oauth-code:focus {
-    background: #5A5475
+    background: #c8c4dd
 }
 
 .flash-message strong {
@@ -2449,7 +2447,7 @@ code {
 }
 
 .form-footer a {
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none
 }
 
@@ -2469,7 +2467,7 @@ code {
 }
 
 .quick-nav a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: 700
@@ -2478,13 +2476,13 @@ code {
 .quick-nav a:active,
 .quick-nav a:focus,
 .quick-nav a:hover {
-    color: #FF857F
+    color: #5971AD
 }
 
 .follow-prompt,
 .oauth-prompt {
     margin-bottom: 30px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .follow-prompt h2,
@@ -2496,7 +2494,7 @@ code {
 
 .follow-prompt strong,
 .oauth-prompt strong {
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 500
 }
 
@@ -2528,7 +2526,7 @@ code {
 
 .qr-code {
     flex: 0 0 auto;
-    background: #F8F8F2;
+    background: #fff;
     padding: 4px;
     margin: 0 10px 20px 0;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
@@ -2542,7 +2540,7 @@ code {
 
 .qr-alternative {
     margin-bottom: 20px;
-    color: #c8c4d4;
+    color: #282c37;
     flex: 150px
 }
 
@@ -2570,8 +2568,7 @@ code {
 .simple_form .warning,
 .table-form .warning {
     box-sizing: border-box;
-    background: rgba(223, 64, 90, .5);
-    color: #F8F8F2;
+    color: #000;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
     box-shadow: 0 2px 6px rgba(0, 0, 0, .4);
     border-radius: 4px;
@@ -2581,7 +2578,7 @@ code {
 
 .simple_form .warning a,
 .table-form .warning a {
-    color: #F8F8F2;
+    color: #000;
     text-decoration: underline
 }
 
@@ -2637,7 +2634,7 @@ code {
 
 .post-follow-actions {
     text-align: center;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .post-follow-actions div {
@@ -2651,7 +2648,7 @@ code {
 
 .alternative-login h4 {
     font-size: 16px;
-    color: #F8F8F2;
+    color: #000;
     text-align: center;
     margin-bottom: 20px;
     border: 0;
@@ -2676,8 +2673,8 @@ code {
 }
 
 .input-copy {
-    background: #131419;
-    border: 1px solid #0a0b0e;
+    background: #ffffff;
+    border: 1px solid #fff;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -2711,12 +2708,12 @@ code {
 }
 
 .input-copy.copied {
-    border-color: #79bd9a;
+    border-color: #3c754d;
     transition: none
 }
 
 .input-copy.copied button {
-    background: #79bd9a;
+    background: #3c754d;
     transition: none
 }
 
@@ -2736,13 +2733,13 @@ code {
 .card>a:active .card__bar,
 .card>a:focus .card__bar,
 .card>a:hover .card__bar {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .card__img {
     height: 130px;
     position: relative;
-    background: #0e1014;
+    background: #fff;
     border-radius: 4px 4px 0 0
 }
 
@@ -2775,7 +2772,7 @@ code {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: #5A5475;
+    background: #c8c4dd;
     border-radius: 0 0 4px 4px
 }
 
@@ -2798,7 +2795,7 @@ code {
     display: block;
     margin: 0;
     border-radius: 4px;
-    background: #2e2b3b
+    background: #fffdef
 }
 
 .card__bar .display-name {
@@ -2808,7 +2805,7 @@ code {
 
 .card__bar .display-name strong {
     font-size: 15px;
-    color: #F8F8F2;
+    color: #000;
     font-weight: 500;
     overflow: hidden;
     text-overflow: ellipsis
@@ -2817,7 +2814,7 @@ code {
 .card__bar .display-name span {
     display: block;
     font-size: 14px;
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 400;
     overflow: hidden;
     text-overflow: ellipsis
@@ -2836,7 +2833,7 @@ code {
 .pagination .page,
 .pagination a {
     font-size: 14px;
-    color: #F8F8F2;
+    color: #000;
     font-weight: 500;
     display: inline-block;
     padding: 6px 10px;
@@ -2844,9 +2841,9 @@ code {
 }
 
 .pagination .current {
-    background: #F8F8F2;
+    background: #fff;
     border-radius: 100px;
-    color: #504b68;;
+    color: #000;
     cursor: default;
     margin: 0 10px
 }
@@ -2858,7 +2855,7 @@ code {
 .pagination .newer,
 .pagination .older {
     text-transform: uppercase;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .pagination .older {
@@ -2883,7 +2880,7 @@ code {
 
 .pagination .disabled {
     cursor: default;
-    color: #3d4455
+    color: #000
 }
 
 @media screen and (max-width:700px) {
@@ -2900,9 +2897,9 @@ code {
 }
 
 .nothing-here {
-    background: #504b68;;
+    background: #dff6eb;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
-    color: #c8c4d4;
+    color: #444b5d;
     font-size: 14px;
     font-weight: 500;
     text-align: center;
@@ -2932,21 +2929,21 @@ code {
     font-size: 12px;
     line-height: 12px;
     font-weight: 500;
-    color: #c8c4d4;
-    background-color: rgba(217, 225, 232, .1);
-    border: 1px solid rgba(217, 225, 232, .5)
+    color: #282c37;
+    background-color: rgba(40, 44, 55, .1);
+    border: 1px solid rgba(40, 44, 55, .5)
 }
 
 .account-role.moderator {
-    color: #79bd9a;
-    background-color: rgba(121, 189, 154, .1);
-    border-color: rgba(121, 189, 154, .5)
+    color: #3c754d;
+    background-color: rgba(60, 117, 77, .1);
+    border-color: rgba(60, 117, 77, .5)
 }
 
 .account-role.admin {
-    color: #e87487;
-    background-color: rgba(232, 116, 135, .1);
-    border-color: rgba(232, 116, 135, .5)
+    color: #c1203b;
+    background-color: rgba(193, 32, 59, .1);
+    border-color: rgba(193, 32, 59, .5)
 }
 
 .account__header__fields {
@@ -2954,7 +2951,7 @@ code {
     margin: 15px -15px -15px;
     border-bottom: 0;
     border-top: 0;
-    border-color: #42485a currentcolor;
+    border-color: #ffcbcb currentcolor;
     border-style: solid none;
     border-width: 1px 0;
     font-size: 14px;
@@ -2963,7 +2960,7 @@ code {
 
 .account__header__fields dl {
     display: flex;
-    border-bottom: 1px solid #42485a
+    border-bottom: 1px solid #ffcbcb
 }
 
 .account__header__fields dd,
@@ -2981,17 +2978,17 @@ code {
     font-weight: 500;
     width: 120px;
     flex: 0 0 auto;
-    color: #c8c4d4;
-    background: rgba(23, 25, 31, .5)
+    color: #282c37;
+    background: rgba(242, 245, 247, .5)
 }
 
 .account__header__fields dd {
     flex: 1 1 auto;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .account__header__fields a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: none
 }
 
@@ -3002,17 +2999,17 @@ code {
 }
 
 .account__header__fields .verified {
-    border: 1px solid rgba(121, 189, 154, .5);
-    background: rgba(121, 189, 154, .25)
+    border: 1px solid rgba(60, 117, 77, .5);
+    background: rgba(60, 117, 77, .25)
 }
 
 .account__header__fields .verified a {
-    color: #79bd9a;
+    color: #3c754d;
     font-weight: 500
 }
 
 .account__header__fields .verified__mark {
-    color: #79bd9a
+    color: #3c754d
 }
 
 .account__header__fields dl:last-child {
@@ -3050,7 +3047,7 @@ code {
 }
 
 .activity-stream .entry {
-    background: #504b68;
+    background: #dff6eb
 }
 
 .activity-stream .entry .detailed-status,
@@ -3088,14 +3085,14 @@ code {
 }
 
 .activity-stream--highlighted .entry {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .button.logo-button {
     flex: 0 auto;
     font-size: 14px;
-    background: #FF857F;
-    color: #F8F8F2;
+    background: #5971AD;
+    color: #000;
     text-transform: none;
     line-height: 36px;
     height: auto;
@@ -3111,35 +3108,35 @@ code {
 }
 
 .button.logo-button svg path:first-child {
-    fill: #F8F8F2
+    fill: #000
 }
 
 .button.logo-button svg path:last-child {
-    fill: #FF857F
+    fill: #5971AD
 }
 
 .button.logo-button:active,
 .button.logo-button:focus,
 .button.logo-button:hover {
-    background: #FF857F
+    background: #7387ba
 }
 
 .button.logo-button:active svg path:last-child,
 .button.logo-button:focus svg path:last-child,
 .button.logo-button:hover svg path:last-child {
-    fill: #FF857F
+    fill: #7387ba
 }
 
 .button.logo-button.button--destructive:active,
 .button.logo-button.button--destructive:focus,
 .button.logo-button.button--destructive:hover {
-    background: #ffb6b3
+    background: #df405a
 }
 
 .button.logo-button.button--destructive:active svg path:last-child,
 .button.logo-button.button--destructive:focus svg path:last-child,
 .button.logo-button.button--destructive:hover svg path:last-child {
-    fill: #ffb6b3
+    fill: #df405a
 }
 
 @media screen and (max-width:415px) {
@@ -3191,15 +3188,15 @@ code {
 }
 
 button.icon-button i.fa-retweet {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='209'><path d='M4.97 3.16c-.1.03-.17.1-.22.18L.8 8.24c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77L5.5 3.35c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.02-2.4.02H7.1l2.32 2.85.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23ada6bf' stroke-width='0'/><path d='M7.78 19.66c-.24.02-.44.25-.44.5v2.46h-.06c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v4.47c0 4.26-.56 3.62 3.65 3.62H8.5l-1.3-1.06c-.1-.08-.18-.2-.2-.3-.02-.17.06-.35.2-.45l1.33-1.1H7.28c-.44 0-.72-.3-.72-.7v-4.48c0-.44.28-.72.72-.72h.06v2.5c0 .38.54.63.82.38l4.9-3.93c.25-.18.25-.6 0-.78l-4.9-3.92c-.1-.1-.24-.14-.38-.12zm9.34 2.93c-.54-.02-1.3.02-2.4.02h-1.25l1.3 1.07c.1.07.18.2.2.33.02.16-.06.3-.2.4l-1.33 1.1h1.28c.42 0 .72.28.72.72v4.47c0 .42-.3.72-.72.72h-.1v-2.47c0-.3-.3-.53-.6-.47-.07 0-.14.05-.2.1l-4.9 3.93c-.26.18-.26.6 0 .78l4.9 3.92c.27.25.82 0 .8-.38v-2.5h.1c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.15.4-3.62-1.25-3.66zM10.34 38.66c-.24.02-.44.25-.43.5v2.47H7.3c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.47c0 3.66-.23 3.7 2.34 3.66l-1.34-1.1c-.1-.08-.18-.2-.2-.3 0-.17.07-.35.2-.45l1.96-1.6c-.03-.06-.04-.13-.04-.2v-4.48c0-.44.28-.72.72-.72H9.9v2.5c0 .36.5.6.8.38l4.93-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.08-.23-.13-.36-.12zm5.63 2.93l1.34 1.1c.1.07.18.2.2.33.02.16-.03.3-.16.4l-1.96 1.6c.02.07.06.13.06.22v4.47c0 .42-.3.72-.72.72h-2.66v-2.47c0-.3-.3-.53-.6-.47-.06.02-.12.05-.18.1l-4.94 3.93c-.24.18-.24.6 0 .78l4.94 3.92c.28.22.78-.02.78-.38v-2.5h2.66c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.66.34-3.7-2.4-3.66zM13.06 57.66c-.23.03-.4.26-.4.5v2.47H7.28c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.87l2.93-2.37v-2.5c0-.44.28-.72.72-.72h5.38v2.5c0 .36.5.6.78.38l4.94-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.1-.24-.14-.38-.12zm5.3 6.15l-2.92 2.4v2.52c0 .42-.3.72-.72.72h-5.4v-2.47c0-.3-.32-.53-.6-.47-.07.02-.13.05-.2.1L3.6 70.52c-.25.18-.25.6 0 .78l4.93 3.92c.28.22.78-.02.78-.38v-2.5h5.42c4.27 0 3.65.67 3.65-3.62v-4.47-.44zM19.25 78.8c-.1.03-.2.1-.28.17l-.9.9c-.44-.3-1.36-.25-3.35-.25H7.28c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v.7l2.93.3v-1c0-.44.28-.72.72-.72h7.44c.2 0 .37.08.5.2l-1.8 1.8c-.25.26-.08.76.27.8l6.27.7c.28.03.56-.25.53-.53l-.7-6.25c0-.27-.3-.48-.55-.44zm-17.2 6.1c-.2.07-.36.3-.33.54l.7 6.25c.02.36.58.55.83.27l.8-.8c.02 0 .04-.02.04 0 .46.24 1.37.17 3.18.17h7.44c4.27 0 3.65.67 3.65-3.62v-.75l-2.93-.3v1.05c0 .42-.3.72-.72.72H7.28c-.15 0-.3-.03-.4-.1L8.8 86.4c.3-.24.1-.8-.27-.84l-6.28-.65h-.2zM4.88 98.6c-1.33 0-1.34.48-1.3 2.3l1.14-1.37c.08-.1.22-.17.34-.2.16 0 .34.08.44.2l1.66 2.03c.04 0 .07-.03.12-.03h7.44c.34 0 .57.2.65.5h-2.43c-.34.05-.53.52-.3.78l3.92 4.95c.18.24.6.24.78 0l3.94-4.94c.22-.27-.02-.76-.37-.77H18.4c.02-3.9.6-3.4-3.66-3.4H7.28c-1.08 0-1.86-.04-2.4-.04zm.15 2.46c-.1.03-.2.1-.28.2l-3.94 4.9c-.2.28.03.77.4.78H3.6c-.02 3.94-.45 3.4 3.66 3.4h7.44c3.65 0 3.74.3 3.7-2.25l-1.1 1.34c-.1.1-.2.17-.32.2-.16 0-.34-.08-.44-.2l-1.65-2.03c-.06.02-.1.04-.18.04H7.28c-.35 0-.57-.2-.66-.5h2.44c.37 0 .63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.23-.47-.2zM4.88 117.6c-1.16 0-1.3.3-1.3 1.56l1.14-1.38c.08-.1.22-.14.34-.16.16 0 .34.04.44.16l2.22 2.75h7c.42 0 .72.28.72.72v.53h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-.53c0-4.2.72-3.63-3.66-3.63H7.28c-1.08 0-1.86-.03-2.4-.03zm.1 1.74c-.1.03-.17.1-.23.16L.8 124.44c-.2.28.03.77.4.78H3.6v.5c0 4.26-.55 3.62 3.66 3.62h7.44c1.03 0 1.74.02 2.28 0-.16.02-.34-.03-.44-.15l-2.22-2.76H7.28c-.44 0-.72-.3-.72-.72v-.5h2.5c.37.02.63-.5.4-.78L5.5 119.5c-.12-.15-.34-.22-.53-.16zm12.02 10c1.2-.02 1.4-.25 1.4-1.53l-1.1 1.36c-.07.1-.17.17-.3.18zM5.94 136.6l2.37 2.93h6.42c.42 0 .72.28.72.72v1.25h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.25c0-4.2.72-3.63-3.66-3.63H7.28c-.6 0-.92-.02-1.34-.03zm-1.72.06c-.4.08-.54.3-.6.75l.6-.74zm.84.93c-.12 0-.24.08-.3.18l-3.95 4.9c-.24.3 0 .83.4.82H3.6v1.22c0 4.26-.55 3.62 3.66 3.62h7.44c.63 0 .97.02 1.4.03l-2.37-2.93H7.28c-.44 0-.72-.3-.72-.72v-1.22h2.5c.4.04.67-.53.4-.8l-3.96-4.92c-.1-.13-.27-.2-.44-.2zm13.28 10.03l-.56.7c.36-.07.5-.3.56-.7zM17.13 155.6c-.55-.02-1.32.03-2.4.03h-8.2l2.38 2.9h5.82c.42 0 .72.28.72.72v1.97H12.9c-.32.06-.48.52-.28.78l3.94 4.94c.2.23.6.22.78-.03l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.97c0-3.15.4-3.62-1.25-3.66zm-12.1.28c-.1.02-.2.1-.28.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v1.96c0 4.26-.55 3.62 3.66 3.62h8.24l-2.36-2.9H7.28c-.44 0-.72-.3-.72-.72v-1.97h2.5c.37.02.63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.22-.47-.2zM5.13 174.5c-.15 0-.3.07-.38.2L.8 179.6c-.24.27 0 .82.4.8H3.6v2.32c0 4.26-.55 3.62 3.66 3.62h7.94l-2.35-2.9h-5.6c-.43 0-.7-.3-.7-.72v-2.3h2.5c.38.03.66-.54.4-.83l-3.97-4.9c-.1-.13-.23-.2-.38-.2zm12 .1c-.55-.02-1.32.03-2.4.03H6.83l2.35 2.9h5.52c.42 0 .72.28.72.72v2.34h-2.6c-.3.1-.43.53-.2.78l3.92 4.9c.18.24.6.24.78 0l3.94-4.9c.22-.3-.02-.78-.37-.8H18.4v-2.33c0-3.15.4-3.62-1.25-3.66zM4.97 193.16c-.1.03-.17.1-.22.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77l-3.96-4.9c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.03-2.4.03H7.1l2.32 2.84.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23C2FFDF' stroke-width='0'/></svg>")
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='209'><path d='M4.97 3.16c-.1.03-.17.1-.22.18L.8 8.24c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77L5.5 3.35c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.02-2.4.02H7.1l2.32 2.85.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23606984' stroke-width='0'/><path d='M7.78 19.66c-.24.02-.44.25-.44.5v2.46h-.06c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v4.47c0 4.26-.56 3.62 3.65 3.62H8.5l-1.3-1.06c-.1-.08-.18-.2-.2-.3-.02-.17.06-.35.2-.45l1.33-1.1H7.28c-.44 0-.72-.3-.72-.7v-4.48c0-.44.28-.72.72-.72h.06v2.5c0 .38.54.63.82.38l4.9-3.93c.25-.18.25-.6 0-.78l-4.9-3.92c-.1-.1-.24-.14-.38-.12zm9.34 2.93c-.54-.02-1.3.02-2.4.02h-1.25l1.3 1.07c.1.07.18.2.2.33.02.16-.06.3-.2.4l-1.33 1.1h1.28c.42 0 .72.28.72.72v4.47c0 .42-.3.72-.72.72h-.1v-2.47c0-.3-.3-.53-.6-.47-.07 0-.14.05-.2.1l-4.9 3.93c-.26.18-.26.6 0 .78l4.9 3.92c.27.25.82 0 .8-.38v-2.5h.1c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.15.4-3.62-1.25-3.66zM10.34 38.66c-.24.02-.44.25-.43.5v2.47H7.3c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.47c0 3.66-.23 3.7 2.34 3.66l-1.34-1.1c-.1-.08-.18-.2-.2-.3 0-.17.07-.35.2-.45l1.96-1.6c-.03-.06-.04-.13-.04-.2v-4.48c0-.44.28-.72.72-.72H9.9v2.5c0 .36.5.6.8.38l4.93-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.08-.23-.13-.36-.12zm5.63 2.93l1.34 1.1c.1.07.18.2.2.33.02.16-.03.3-.16.4l-1.96 1.6c.02.07.06.13.06.22v4.47c0 .42-.3.72-.72.72h-2.66v-2.47c0-.3-.3-.53-.6-.47-.06.02-.12.05-.18.1l-4.94 3.93c-.24.18-.24.6 0 .78l4.94 3.92c.28.22.78-.02.78-.38v-2.5h2.66c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.66.34-3.7-2.4-3.66zM13.06 57.66c-.23.03-.4.26-.4.5v2.47H7.28c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.87l2.93-2.37v-2.5c0-.44.28-.72.72-.72h5.38v2.5c0 .36.5.6.78.38l4.94-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.1-.24-.14-.38-.12zm5.3 6.15l-2.92 2.4v2.52c0 .42-.3.72-.72.72h-5.4v-2.47c0-.3-.32-.53-.6-.47-.07.02-.13.05-.2.1L3.6 70.52c-.25.18-.25.6 0 .78l4.93 3.92c.28.22.78-.02.78-.38v-2.5h5.42c4.27 0 3.65.67 3.65-3.62v-4.47-.44zM19.25 78.8c-.1.03-.2.1-.28.17l-.9.9c-.44-.3-1.36-.25-3.35-.25H7.28c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v.7l2.93.3v-1c0-.44.28-.72.72-.72h7.44c.2 0 .37.08.5.2l-1.8 1.8c-.25.26-.08.76.27.8l6.27.7c.28.03.56-.25.53-.53l-.7-6.25c0-.27-.3-.48-.55-.44zm-17.2 6.1c-.2.07-.36.3-.33.54l.7 6.25c.02.36.58.55.83.27l.8-.8c.02 0 .04-.02.04 0 .46.24 1.37.17 3.18.17h7.44c4.27 0 3.65.67 3.65-3.62v-.75l-2.93-.3v1.05c0 .42-.3.72-.72.72H7.28c-.15 0-.3-.03-.4-.1L8.8 86.4c.3-.24.1-.8-.27-.84l-6.28-.65h-.2zM4.88 98.6c-1.33 0-1.34.48-1.3 2.3l1.14-1.37c.08-.1.22-.17.34-.2.16 0 .34.08.44.2l1.66 2.03c.04 0 .07-.03.12-.03h7.44c.34 0 .57.2.65.5h-2.43c-.34.05-.53.52-.3.78l3.92 4.95c.18.24.6.24.78 0l3.94-4.94c.22-.27-.02-.76-.37-.77H18.4c.02-3.9.6-3.4-3.66-3.4H7.28c-1.08 0-1.86-.04-2.4-.04zm.15 2.46c-.1.03-.2.1-.28.2l-3.94 4.9c-.2.28.03.77.4.78H3.6c-.02 3.94-.45 3.4 3.66 3.4h7.44c3.65 0 3.74.3 3.7-2.25l-1.1 1.34c-.1.1-.2.17-.32.2-.16 0-.34-.08-.44-.2l-1.65-2.03c-.06.02-.1.04-.18.04H7.28c-.35 0-.57-.2-.66-.5h2.44c.37 0 .63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.23-.47-.2zM4.88 117.6c-1.16 0-1.3.3-1.3 1.56l1.14-1.38c.08-.1.22-.14.34-.16.16 0 .34.04.44.16l2.22 2.75h7c.42 0 .72.28.72.72v.53h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-.53c0-4.2.72-3.63-3.66-3.63H7.28c-1.08 0-1.86-.03-2.4-.03zm.1 1.74c-.1.03-.17.1-.23.16L.8 124.44c-.2.28.03.77.4.78H3.6v.5c0 4.26-.55 3.62 3.66 3.62h7.44c1.03 0 1.74.02 2.28 0-.16.02-.34-.03-.44-.15l-2.22-2.76H7.28c-.44 0-.72-.3-.72-.72v-.5h2.5c.37.02.63-.5.4-.78L5.5 119.5c-.12-.15-.34-.22-.53-.16zm12.02 10c1.2-.02 1.4-.25 1.4-1.53l-1.1 1.36c-.07.1-.17.17-.3.18zM5.94 136.6l2.37 2.93h6.42c.42 0 .72.28.72.72v1.25h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.25c0-4.2.72-3.63-3.66-3.63H7.28c-.6 0-.92-.02-1.34-.03zm-1.72.06c-.4.08-.54.3-.6.75l.6-.74zm.84.93c-.12 0-.24.08-.3.18l-3.95 4.9c-.24.3 0 .83.4.82H3.6v1.22c0 4.26-.55 3.62 3.66 3.62h7.44c.63 0 .97.02 1.4.03l-2.37-2.93H7.28c-.44 0-.72-.3-.72-.72v-1.22h2.5c.4.04.67-.53.4-.8l-3.96-4.92c-.1-.13-.27-.2-.44-.2zm13.28 10.03l-.56.7c.36-.07.5-.3.56-.7zM17.13 155.6c-.55-.02-1.32.03-2.4.03h-8.2l2.38 2.9h5.82c.42 0 .72.28.72.72v1.97H12.9c-.32.06-.48.52-.28.78l3.94 4.94c.2.23.6.22.78-.03l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.97c0-3.15.4-3.62-1.25-3.66zm-12.1.28c-.1.02-.2.1-.28.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v1.96c0 4.26-.55 3.62 3.66 3.62h8.24l-2.36-2.9H7.28c-.44 0-.72-.3-.72-.72v-1.97h2.5c.37.02.63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.22-.47-.2zM5.13 174.5c-.15 0-.3.07-.38.2L.8 179.6c-.24.27 0 .82.4.8H3.6v2.32c0 4.26-.55 3.62 3.66 3.62h7.94l-2.35-2.9h-5.6c-.43 0-.7-.3-.7-.72v-2.3h2.5c.38.03.66-.54.4-.83l-3.97-4.9c-.1-.13-.23-.2-.38-.2zm12 .1c-.55-.02-1.32.03-2.4.03H6.83l2.35 2.9h5.52c.42 0 .72.28.72.72v2.34h-2.6c-.3.1-.43.53-.2.78l3.92 4.9c.18.24.6.24.78 0l3.94-4.9c.22-.3-.02-.78-.37-.8H18.4v-2.33c0-3.15.4-3.62-1.25-3.66zM4.97 193.16c-.1.03-.17.1-.22.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77l-3.96-4.9c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.03-2.4.03H7.1l2.32 2.84.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23C2FFDF' stroke-width='0'/></svg>");
 }
 
 button.icon-button i.fa-retweet:hover {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='209'><path d='M4.97 3.16c-.1.03-.17.1-.22.18L.8 8.24c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77L5.5 3.35c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.02-2.4.02H7.1l2.32 2.85.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23c8c4d4' stroke-width='0'/><path d='M7.78 19.66c-.24.02-.44.25-.44.5v2.46h-.06c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v4.47c0 4.26-.56 3.62 3.65 3.62H8.5l-1.3-1.06c-.1-.08-.18-.2-.2-.3-.02-.17.06-.35.2-.45l1.33-1.1H7.28c-.44 0-.72-.3-.72-.7v-4.48c0-.44.28-.72.72-.72h.06v2.5c0 .38.54.63.82.38l4.9-3.93c.25-.18.25-.6 0-.78l-4.9-3.92c-.1-.1-.24-.14-.38-.12zm9.34 2.93c-.54-.02-1.3.02-2.4.02h-1.25l1.3 1.07c.1.07.18.2.2.33.02.16-.06.3-.2.4l-1.33 1.1h1.28c.42 0 .72.28.72.72v4.47c0 .42-.3.72-.72.72h-.1v-2.47c0-.3-.3-.53-.6-.47-.07 0-.14.05-.2.1l-4.9 3.93c-.26.18-.26.6 0 .78l4.9 3.92c.27.25.82 0 .8-.38v-2.5h.1c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.15.4-3.62-1.25-3.66zM10.34 38.66c-.24.02-.44.25-.43.5v2.47H7.3c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.47c0 3.66-.23 3.7 2.34 3.66l-1.34-1.1c-.1-.08-.18-.2-.2-.3 0-.17.07-.35.2-.45l1.96-1.6c-.03-.06-.04-.13-.04-.2v-4.48c0-.44.28-.72.72-.72H9.9v2.5c0 .36.5.6.8.38l4.93-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.08-.23-.13-.36-.12zm5.63 2.93l1.34 1.1c.1.07.18.2.2.33.02.16-.03.3-.16.4l-1.96 1.6c.02.07.06.13.06.22v4.47c0 .42-.3.72-.72.72h-2.66v-2.47c0-.3-.3-.53-.6-.47-.06.02-.12.05-.18.1l-4.94 3.93c-.24.18-.24.6 0 .78l4.94 3.92c.28.22.78-.02.78-.38v-2.5h2.66c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.66.34-3.7-2.4-3.66zM13.06 57.66c-.23.03-.4.26-.4.5v2.47H7.28c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.87l2.93-2.37v-2.5c0-.44.28-.72.72-.72h5.38v2.5c0 .36.5.6.78.38l4.94-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.1-.24-.14-.38-.12zm5.3 6.15l-2.92 2.4v2.52c0 .42-.3.72-.72.72h-5.4v-2.47c0-.3-.32-.53-.6-.47-.07.02-.13.05-.2.1L3.6 70.52c-.25.18-.25.6 0 .78l4.93 3.92c.28.22.78-.02.78-.38v-2.5h5.42c4.27 0 3.65.67 3.65-3.62v-4.47-.44zM19.25 78.8c-.1.03-.2.1-.28.17l-.9.9c-.44-.3-1.36-.25-3.35-.25H7.28c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v.7l2.93.3v-1c0-.44.28-.72.72-.72h7.44c.2 0 .37.08.5.2l-1.8 1.8c-.25.26-.08.76.27.8l6.27.7c.28.03.56-.25.53-.53l-.7-6.25c0-.27-.3-.48-.55-.44zm-17.2 6.1c-.2.07-.36.3-.33.54l.7 6.25c.02.36.58.55.83.27l.8-.8c.02 0 .04-.02.04 0 .46.24 1.37.17 3.18.17h7.44c4.27 0 3.65.67 3.65-3.62v-.75l-2.93-.3v1.05c0 .42-.3.72-.72.72H7.28c-.15 0-.3-.03-.4-.1L8.8 86.4c.3-.24.1-.8-.27-.84l-6.28-.65h-.2zM4.88 98.6c-1.33 0-1.34.48-1.3 2.3l1.14-1.37c.08-.1.22-.17.34-.2.16 0 .34.08.44.2l1.66 2.03c.04 0 .07-.03.12-.03h7.44c.34 0 .57.2.65.5h-2.43c-.34.05-.53.52-.3.78l3.92 4.95c.18.24.6.24.78 0l3.94-4.94c.22-.27-.02-.76-.37-.77H18.4c.02-3.9.6-3.4-3.66-3.4H7.28c-1.08 0-1.86-.04-2.4-.04zm.15 2.46c-.1.03-.2.1-.28.2l-3.94 4.9c-.2.28.03.77.4.78H3.6c-.02 3.94-.45 3.4 3.66 3.4h7.44c3.65 0 3.74.3 3.7-2.25l-1.1 1.34c-.1.1-.2.17-.32.2-.16 0-.34-.08-.44-.2l-1.65-2.03c-.06.02-.1.04-.18.04H7.28c-.35 0-.57-.2-.66-.5h2.44c.37 0 .63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.23-.47-.2zM4.88 117.6c-1.16 0-1.3.3-1.3 1.56l1.14-1.38c.08-.1.22-.14.34-.16.16 0 .34.04.44.16l2.22 2.75h7c.42 0 .72.28.72.72v.53h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-.53c0-4.2.72-3.63-3.66-3.63H7.28c-1.08 0-1.86-.03-2.4-.03zm.1 1.74c-.1.03-.17.1-.23.16L.8 124.44c-.2.28.03.77.4.78H3.6v.5c0 4.26-.55 3.62 3.66 3.62h7.44c1.03 0 1.74.02 2.28 0-.16.02-.34-.03-.44-.15l-2.22-2.76H7.28c-.44 0-.72-.3-.72-.72v-.5h2.5c.37.02.63-.5.4-.78L5.5 119.5c-.12-.15-.34-.22-.53-.16zm12.02 10c1.2-.02 1.4-.25 1.4-1.53l-1.1 1.36c-.07.1-.17.17-.3.18zM5.94 136.6l2.37 2.93h6.42c.42 0 .72.28.72.72v1.25h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.25c0-4.2.72-3.63-3.66-3.63H7.28c-.6 0-.92-.02-1.34-.03zm-1.72.06c-.4.08-.54.3-.6.75l.6-.74zm.84.93c-.12 0-.24.08-.3.18l-3.95 4.9c-.24.3 0 .83.4.82H3.6v1.22c0 4.26-.55 3.62 3.66 3.62h7.44c.63 0 .97.02 1.4.03l-2.37-2.93H7.28c-.44 0-.72-.3-.72-.72v-1.22h2.5c.4.04.67-.53.4-.8l-3.96-4.92c-.1-.13-.27-.2-.44-.2zm13.28 10.03l-.56.7c.36-.07.5-.3.56-.7zM17.13 155.6c-.55-.02-1.32.03-2.4.03h-8.2l2.38 2.9h5.82c.42 0 .72.28.72.72v1.97H12.9c-.32.06-.48.52-.28.78l3.94 4.94c.2.23.6.22.78-.03l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.97c0-3.15.4-3.62-1.25-3.66zm-12.1.28c-.1.02-.2.1-.28.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v1.96c0 4.26-.55 3.62 3.66 3.62h8.24l-2.36-2.9H7.28c-.44 0-.72-.3-.72-.72v-1.97h2.5c.37.02.63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.22-.47-.2zM5.13 174.5c-.15 0-.3.07-.38.2L.8 179.6c-.24.27 0 .82.4.8H3.6v2.32c0 4.26-.55 3.62 3.66 3.62h7.94l-2.35-2.9h-5.6c-.43 0-.7-.3-.7-.72v-2.3h2.5c.38.03.66-.54.4-.83l-3.97-4.9c-.1-.13-.23-.2-.38-.2zm12 .1c-.55-.02-1.32.03-2.4.03H6.83l2.35 2.9h5.52c.42 0 .72.28.72.72v2.34h-2.6c-.3.1-.43.53-.2.78l3.92 4.9c.18.24.6.24.78 0l3.94-4.9c.22-.3-.02-.78-.37-.8H18.4v-2.33c0-3.15.4-3.62-1.25-3.66zM4.97 193.16c-.1.03-.17.1-.22.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77l-3.96-4.9c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.03-2.4.03H7.1l2.32 2.84.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23C2FFDF' stroke-width='0'/></svg>")
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='209'><path d='M4.97 3.16c-.1.03-.17.1-.22.18L.8 8.24c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77L5.5 3.35c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.02-2.4.02H7.1l2.32 2.85.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%2351596F' stroke-width='0'/><path d='M7.78 19.66c-.24.02-.44.25-.44.5v2.46h-.06c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v4.47c0 4.26-.56 3.62 3.65 3.62H8.5l-1.3-1.06c-.1-.08-.18-.2-.2-.3-.02-.17.06-.35.2-.45l1.33-1.1H7.28c-.44 0-.72-.3-.72-.7v-4.48c0-.44.28-.72.72-.72h.06v2.5c0 .38.54.63.82.38l4.9-3.93c.25-.18.25-.6 0-.78l-4.9-3.92c-.1-.1-.24-.14-.38-.12zm9.34 2.93c-.54-.02-1.3.02-2.4.02h-1.25l1.3 1.07c.1.07.18.2.2.33.02.16-.06.3-.2.4l-1.33 1.1h1.28c.42 0 .72.28.72.72v4.47c0 .42-.3.72-.72.72h-.1v-2.47c0-.3-.3-.53-.6-.47-.07 0-.14.05-.2.1l-4.9 3.93c-.26.18-.26.6 0 .78l4.9 3.92c.27.25.82 0 .8-.38v-2.5h.1c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.15.4-3.62-1.25-3.66zM10.34 38.66c-.24.02-.44.25-.43.5v2.47H7.3c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.47c0 3.66-.23 3.7 2.34 3.66l-1.34-1.1c-.1-.08-.18-.2-.2-.3 0-.17.07-.35.2-.45l1.96-1.6c-.03-.06-.04-.13-.04-.2v-4.48c0-.44.28-.72.72-.72H9.9v2.5c0 .36.5.6.8.38l4.93-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.08-.23-.13-.36-.12zm5.63 2.93l1.34 1.1c.1.07.18.2.2.33.02.16-.03.3-.16.4l-1.96 1.6c.02.07.06.13.06.22v4.47c0 .42-.3.72-.72.72h-2.66v-2.47c0-.3-.3-.53-.6-.47-.06.02-.12.05-.18.1l-4.94 3.93c-.24.18-.24.6 0 .78l4.94 3.92c.28.22.78-.02.78-.38v-2.5h2.66c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.66.34-3.7-2.4-3.66zM13.06 57.66c-.23.03-.4.26-.4.5v2.47H7.28c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.87l2.93-2.37v-2.5c0-.44.28-.72.72-.72h5.38v2.5c0 .36.5.6.78.38l4.94-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.1-.24-.14-.38-.12zm5.3 6.15l-2.92 2.4v2.52c0 .42-.3.72-.72.72h-5.4v-2.47c0-.3-.32-.53-.6-.47-.07.02-.13.05-.2.1L3.6 70.52c-.25.18-.25.6 0 .78l4.93 3.92c.28.22.78-.02.78-.38v-2.5h5.42c4.27 0 3.65.67 3.65-3.62v-4.47-.44zM19.25 78.8c-.1.03-.2.1-.28.17l-.9.9c-.44-.3-1.36-.25-3.35-.25H7.28c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v.7l2.93.3v-1c0-.44.28-.72.72-.72h7.44c.2 0 .37.08.5.2l-1.8 1.8c-.25.26-.08.76.27.8l6.27.7c.28.03.56-.25.53-.53l-.7-6.25c0-.27-.3-.48-.55-.44zm-17.2 6.1c-.2.07-.36.3-.33.54l.7 6.25c.02.36.58.55.83.27l.8-.8c.02 0 .04-.02.04 0 .46.24 1.37.17 3.18.17h7.44c4.27 0 3.65.67 3.65-3.62v-.75l-2.93-.3v1.05c0 .42-.3.72-.72.72H7.28c-.15 0-.3-.03-.4-.1L8.8 86.4c.3-.24.1-.8-.27-.84l-6.28-.65h-.2zM4.88 98.6c-1.33 0-1.34.48-1.3 2.3l1.14-1.37c.08-.1.22-.17.34-.2.16 0 .34.08.44.2l1.66 2.03c.04 0 .07-.03.12-.03h7.44c.34 0 .57.2.65.5h-2.43c-.34.05-.53.52-.3.78l3.92 4.95c.18.24.6.24.78 0l3.94-4.94c.22-.27-.02-.76-.37-.77H18.4c.02-3.9.6-3.4-3.66-3.4H7.28c-1.08 0-1.86-.04-2.4-.04zm.15 2.46c-.1.03-.2.1-.28.2l-3.94 4.9c-.2.28.03.77.4.78H3.6c-.02 3.94-.45 3.4 3.66 3.4h7.44c3.65 0 3.74.3 3.7-2.25l-1.1 1.34c-.1.1-.2.17-.32.2-.16 0-.34-.08-.44-.2l-1.65-2.03c-.06.02-.1.04-.18.04H7.28c-.35 0-.57-.2-.66-.5h2.44c.37 0 .63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.23-.47-.2zM4.88 117.6c-1.16 0-1.3.3-1.3 1.56l1.14-1.38c.08-.1.22-.14.34-.16.16 0 .34.04.44.16l2.22 2.75h7c.42 0 .72.28.72.72v.53h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-.53c0-4.2.72-3.63-3.66-3.63H7.28c-1.08 0-1.86-.03-2.4-.03zm.1 1.74c-.1.03-.17.1-.23.16L.8 124.44c-.2.28.03.77.4.78H3.6v.5c0 4.26-.55 3.62 3.66 3.62h7.44c1.03 0 1.74.02 2.28 0-.16.02-.34-.03-.44-.15l-2.22-2.76H7.28c-.44 0-.72-.3-.72-.72v-.5h2.5c.37.02.63-.5.4-.78L5.5 119.5c-.12-.15-.34-.22-.53-.16zm12.02 10c1.2-.02 1.4-.25 1.4-1.53l-1.1 1.36c-.07.1-.17.17-.3.18zM5.94 136.6l2.37 2.93h6.42c.42 0 .72.28.72.72v1.25h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.25c0-4.2.72-3.63-3.66-3.63H7.28c-.6 0-.92-.02-1.34-.03zm-1.72.06c-.4.08-.54.3-.6.75l.6-.74zm.84.93c-.12 0-.24.08-.3.18l-3.95 4.9c-.24.3 0 .83.4.82H3.6v1.22c0 4.26-.55 3.62 3.66 3.62h7.44c.63 0 .97.02 1.4.03l-2.37-2.93H7.28c-.44 0-.72-.3-.72-.72v-1.22h2.5c.4.04.67-.53.4-.8l-3.96-4.92c-.1-.13-.27-.2-.44-.2zm13.28 10.03l-.56.7c.36-.07.5-.3.56-.7zM17.13 155.6c-.55-.02-1.32.03-2.4.03h-8.2l2.38 2.9h5.82c.42 0 .72.28.72.72v1.97H12.9c-.32.06-.48.52-.28.78l3.94 4.94c.2.23.6.22.78-.03l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.97c0-3.15.4-3.62-1.25-3.66zm-12.1.28c-.1.02-.2.1-.28.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v1.96c0 4.26-.55 3.62 3.66 3.62h8.24l-2.36-2.9H7.28c-.44 0-.72-.3-.72-.72v-1.97h2.5c.37.02.63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.22-.47-.2zM5.13 174.5c-.15 0-.3.07-.38.2L.8 179.6c-.24.27 0 .82.4.8H3.6v2.32c0 4.26-.55 3.62 3.66 3.62h7.94l-2.35-2.9h-5.6c-.43 0-.7-.3-.7-.72v-2.3h2.5c.38.03.66-.54.4-.83l-3.97-4.9c-.1-.13-.23-.2-.38-.2zm12 .1c-.55-.02-1.32.03-2.4.03H6.83l2.35 2.9h5.52c.42 0 .72.28.72.72v2.34h-2.6c-.3.1-.43.53-.2.78l3.92 4.9c.18.24.6.24.78 0l3.94-4.9c.22-.3-.02-.78-.37-.8H18.4v-2.33c0-3.15.4-3.62-1.25-3.66zM4.97 193.16c-.1.03-.17.1-.22.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77l-3.96-4.9c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.03-2.4.03H7.1l2.32 2.84.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%235971AD' stroke-width='0'/></svg>");
 }
 
 button.icon-button.disabled i.fa-retweet {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='209'><path d='M4.97 3.16c-.1.03-.17.1-.22.18L.8 8.24c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77L5.5 3.35c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.02-2.4.02H7.1l2.32 2.85.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23444B5D' stroke-width='0'/><path d='M7.78 19.66c-.24.02-.44.25-.44.5v2.46h-.06c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v4.47c0 4.26-.56 3.62 3.65 3.62H8.5l-1.3-1.06c-.1-.08-.18-.2-.2-.3-.02-.17.06-.35.2-.45l1.33-1.1H7.28c-.44 0-.72-.3-.72-.7v-4.48c0-.44.28-.72.72-.72h.06v2.5c0 .38.54.63.82.38l4.9-3.93c.25-.18.25-.6 0-.78l-4.9-3.92c-.1-.1-.24-.14-.38-.12zm9.34 2.93c-.54-.02-1.3.02-2.4.02h-1.25l1.3 1.07c.1.07.18.2.2.33.02.16-.06.3-.2.4l-1.33 1.1h1.28c.42 0 .72.28.72.72v4.47c0 .42-.3.72-.72.72h-.1v-2.47c0-.3-.3-.53-.6-.47-.07 0-.14.05-.2.1l-4.9 3.93c-.26.18-.26.6 0 .78l4.9 3.92c.27.25.82 0 .8-.38v-2.5h.1c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.15.4-3.62-1.25-3.66zM10.34 38.66c-.24.02-.44.25-.43.5v2.47H7.3c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.47c0 3.66-.23 3.7 2.34 3.66l-1.34-1.1c-.1-.08-.18-.2-.2-.3 0-.17.07-.35.2-.45l1.96-1.6c-.03-.06-.04-.13-.04-.2v-4.48c0-.44.28-.72.72-.72H9.9v2.5c0 .36.5.6.8.38l4.93-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.08-.23-.13-.36-.12zm5.63 2.93l1.34 1.1c.1.07.18.2.2.33.02.16-.03.3-.16.4l-1.96 1.6c.02.07.06.13.06.22v4.47c0 .42-.3.72-.72.72h-2.66v-2.47c0-.3-.3-.53-.6-.47-.06.02-.12.05-.18.1l-4.94 3.93c-.24.18-.24.6 0 .78l4.94 3.92c.28.22.78-.02.78-.38v-2.5h2.66c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.66.34-3.7-2.4-3.66zM13.06 57.66c-.23.03-.4.26-.4.5v2.47H7.28c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.87l2.93-2.37v-2.5c0-.44.28-.72.72-.72h5.38v2.5c0 .36.5.6.78.38l4.94-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.1-.24-.14-.38-.12zm5.3 6.15l-2.92 2.4v2.52c0 .42-.3.72-.72.72h-5.4v-2.47c0-.3-.32-.53-.6-.47-.07.02-.13.05-.2.1L3.6 70.52c-.25.18-.25.6 0 .78l4.93 3.92c.28.22.78-.02.78-.38v-2.5h5.42c4.27 0 3.65.67 3.65-3.62v-4.47-.44zM19.25 78.8c-.1.03-.2.1-.28.17l-.9.9c-.44-.3-1.36-.25-3.35-.25H7.28c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v.7l2.93.3v-1c0-.44.28-.72.72-.72h7.44c.2 0 .37.08.5.2l-1.8 1.8c-.25.26-.08.76.27.8l6.27.7c.28.03.56-.25.53-.53l-.7-6.25c0-.27-.3-.48-.55-.44zm-17.2 6.1c-.2.07-.36.3-.33.54l.7 6.25c.02.36.58.55.83.27l.8-.8c.02 0 .04-.02.04 0 .46.24 1.37.17 3.18.17h7.44c4.27 0 3.65.67 3.65-3.62v-.75l-2.93-.3v1.05c0 .42-.3.72-.72.72H7.28c-.15 0-.3-.03-.4-.1L8.8 86.4c.3-.24.1-.8-.27-.84l-6.28-.65h-.2zM4.88 98.6c-1.33 0-1.34.48-1.3 2.3l1.14-1.37c.08-.1.22-.17.34-.2.16 0 .34.08.44.2l1.66 2.03c.04 0 .07-.03.12-.03h7.44c.34 0 .57.2.65.5h-2.43c-.34.05-.53.52-.3.78l3.92 4.95c.18.24.6.24.78 0l3.94-4.94c.22-.27-.02-.76-.37-.77H18.4c.02-3.9.6-3.4-3.66-3.4H7.28c-1.08 0-1.86-.04-2.4-.04zm.15 2.46c-.1.03-.2.1-.28.2l-3.94 4.9c-.2.28.03.77.4.78H3.6c-.02 3.94-.45 3.4 3.66 3.4h7.44c3.65 0 3.74.3 3.7-2.25l-1.1 1.34c-.1.1-.2.17-.32.2-.16 0-.34-.08-.44-.2l-1.65-2.03c-.06.02-.1.04-.18.04H7.28c-.35 0-.57-.2-.66-.5h2.44c.37 0 .63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.23-.47-.2zM4.88 117.6c-1.16 0-1.3.3-1.3 1.56l1.14-1.38c.08-.1.22-.14.34-.16.16 0 .34.04.44.16l2.22 2.75h7c.42 0 .72.28.72.72v.53h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-.53c0-4.2.72-3.63-3.66-3.63H7.28c-1.08 0-1.86-.03-2.4-.03zm.1 1.74c-.1.03-.17.1-.23.16L.8 124.44c-.2.28.03.77.4.78H3.6v.5c0 4.26-.55 3.62 3.66 3.62h7.44c1.03 0 1.74.02 2.28 0-.16.02-.34-.03-.44-.15l-2.22-2.76H7.28c-.44 0-.72-.3-.72-.72v-.5h2.5c.37.02.63-.5.4-.78L5.5 119.5c-.12-.15-.34-.22-.53-.16zm12.02 10c1.2-.02 1.4-.25 1.4-1.53l-1.1 1.36c-.07.1-.17.17-.3.18zM5.94 136.6l2.37 2.93h6.42c.42 0 .72.28.72.72v1.25h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.25c0-4.2.72-3.63-3.66-3.63H7.28c-.6 0-.92-.02-1.34-.03zm-1.72.06c-.4.08-.54.3-.6.75l.6-.74zm.84.93c-.12 0-.24.08-.3.18l-3.95 4.9c-.24.3 0 .83.4.82H3.6v1.22c0 4.26-.55 3.62 3.66 3.62h7.44c.63 0 .97.02 1.4.03l-2.37-2.93H7.28c-.44 0-.72-.3-.72-.72v-1.22h2.5c.4.04.67-.53.4-.8l-3.96-4.92c-.1-.13-.27-.2-.44-.2zm13.28 10.03l-.56.7c.36-.07.5-.3.56-.7zM17.13 155.6c-.55-.02-1.32.03-2.4.03h-8.2l2.38 2.9h5.82c.42 0 .72.28.72.72v1.97H12.9c-.32.06-.48.52-.28.78l3.94 4.94c.2.23.6.22.78-.03l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.97c0-3.15.4-3.62-1.25-3.66zm-12.1.28c-.1.02-.2.1-.28.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v1.96c0 4.26-.55 3.62 3.66 3.62h8.24l-2.36-2.9H7.28c-.44 0-.72-.3-.72-.72v-1.97h2.5c.37.02.63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.22-.47-.2zM5.13 174.5c-.15 0-.3.07-.38.2L.8 179.6c-.24.27 0 .82.4.8H3.6v2.32c0 4.26-.55 3.62 3.66 3.62h7.94l-2.35-2.9h-5.6c-.43 0-.7-.3-.7-.72v-2.3h2.5c.38.03.66-.54.4-.83l-3.97-4.9c-.1-.13-.23-.2-.38-.2zm12 .1c-.55-.02-1.32.03-2.4.03H6.83l2.35 2.9h5.52c.42 0 .72.28.72.72v2.34h-2.6c-.3.1-.43.53-.2.78l3.92 4.9c.18.24.6.24.78 0l3.94-4.9c.22-.3-.02-.78-.37-.8H18.4v-2.33c0-3.15.4-3.62-1.25-3.66zM4.97 193.16c-.1.03-.17.1-.22.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77l-3.96-4.9c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.03-2.4.03H7.1l2.32 2.84.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%23C2FFDF' stroke-width='0'/></svg>")
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='209'><path d='M4.97 3.16c-.1.03-.17.1-.22.18L.8 8.24c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77L5.5 3.35c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.02-2.4.02H7.1l2.32 2.85.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%2328BA4' stroke-width='0'/><path d='M7.78 19.66c-.24.02-.44.25-.44.5v2.46h-.06c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v4.47c0 4.26-.56 3.62 3.65 3.62H8.5l-1.3-1.06c-.1-.08-.18-.2-.2-.3-.02-.17.06-.35.2-.45l1.33-1.1H7.28c-.44 0-.72-.3-.72-.7v-4.48c0-.44.28-.72.72-.72h.06v2.5c0 .38.54.63.82.38l4.9-3.93c.25-.18.25-.6 0-.78l-4.9-3.92c-.1-.1-.24-.14-.38-.12zm9.34 2.93c-.54-.02-1.3.02-2.4.02h-1.25l1.3 1.07c.1.07.18.2.2.33.02.16-.06.3-.2.4l-1.33 1.1h1.28c.42 0 .72.28.72.72v4.47c0 .42-.3.72-.72.72h-.1v-2.47c0-.3-.3-.53-.6-.47-.07 0-.14.05-.2.1l-4.9 3.93c-.26.18-.26.6 0 .78l4.9 3.92c.27.25.82 0 .8-.38v-2.5h.1c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.15.4-3.62-1.25-3.66zM10.34 38.66c-.24.02-.44.25-.43.5v2.47H7.3c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.47c0 3.66-.23 3.7 2.34 3.66l-1.34-1.1c-.1-.08-.18-.2-.2-.3 0-.17.07-.35.2-.45l1.96-1.6c-.03-.06-.04-.13-.04-.2v-4.48c0-.44.28-.72.72-.72H9.9v2.5c0 .36.5.6.8.38l4.93-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.08-.23-.13-.36-.12zm5.63 2.93l1.34 1.1c.1.07.18.2.2.33.02.16-.03.3-.16.4l-1.96 1.6c.02.07.06.13.06.22v4.47c0 .42-.3.72-.72.72h-2.66v-2.47c0-.3-.3-.53-.6-.47-.06.02-.12.05-.18.1l-4.94 3.93c-.24.18-.24.6 0 .78l4.94 3.92c.28.22.78-.02.78-.38v-2.5h2.66c4.27 0 3.65.67 3.65-3.62v-4.47c0-3.66.34-3.7-2.4-3.66zM13.06 57.66c-.23.03-.4.26-.4.5v2.47H7.28c-1.08 0-1.86-.04-2.4-.04-1.64 0-1.25.43-1.25 3.65v4.87l2.93-2.37v-2.5c0-.44.28-.72.72-.72h5.38v2.5c0 .36.5.6.78.38l4.94-3.93c.24-.18.24-.6 0-.78l-4.94-3.92c-.1-.1-.24-.14-.38-.12zm5.3 6.15l-2.92 2.4v2.52c0 .42-.3.72-.72.72h-5.4v-2.47c0-.3-.32-.53-.6-.47-.07.02-.13.05-.2.1L3.6 70.52c-.25.18-.25.6 0 .78l4.93 3.92c.28.22.78-.02.78-.38v-2.5h5.42c4.27 0 3.65.67 3.65-3.62v-4.47-.44zM19.25 78.8c-.1.03-.2.1-.28.17l-.9.9c-.44-.3-1.36-.25-3.35-.25H7.28c-1.08 0-1.86-.03-2.4-.03-1.64 0-1.25.43-1.25 3.65v.7l2.93.3v-1c0-.44.28-.72.72-.72h7.44c.2 0 .37.08.5.2l-1.8 1.8c-.25.26-.08.76.27.8l6.27.7c.28.03.56-.25.53-.53l-.7-6.25c0-.27-.3-.48-.55-.44zm-17.2 6.1c-.2.07-.36.3-.33.54l.7 6.25c.02.36.58.55.83.27l.8-.8c.02 0 .04-.02.04 0 .46.24 1.37.17 3.18.17h7.44c4.27 0 3.65.67 3.65-3.62v-.75l-2.93-.3v1.05c0 .42-.3.72-.72.72H7.28c-.15 0-.3-.03-.4-.1L8.8 86.4c.3-.24.1-.8-.27-.84l-6.28-.65h-.2zM4.88 98.6c-1.33 0-1.34.48-1.3 2.3l1.14-1.37c.08-.1.22-.17.34-.2.16 0 .34.08.44.2l1.66 2.03c.04 0 .07-.03.12-.03h7.44c.34 0 .57.2.65.5h-2.43c-.34.05-.53.52-.3.78l3.92 4.95c.18.24.6.24.78 0l3.94-4.94c.22-.27-.02-.76-.37-.77H18.4c.02-3.9.6-3.4-3.66-3.4H7.28c-1.08 0-1.86-.04-2.4-.04zm.15 2.46c-.1.03-.2.1-.28.2l-3.94 4.9c-.2.28.03.77.4.78H3.6c-.02 3.94-.45 3.4 3.66 3.4h7.44c3.65 0 3.74.3 3.7-2.25l-1.1 1.34c-.1.1-.2.17-.32.2-.16 0-.34-.08-.44-.2l-1.65-2.03c-.06.02-.1.04-.18.04H7.28c-.35 0-.57-.2-.66-.5h2.44c.37 0 .63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.23-.47-.2zM4.88 117.6c-1.16 0-1.3.3-1.3 1.56l1.14-1.38c.08-.1.22-.14.34-.16.16 0 .34.04.44.16l2.22 2.75h7c.42 0 .72.28.72.72v.53h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-.53c0-4.2.72-3.63-3.66-3.63H7.28c-1.08 0-1.86-.03-2.4-.03zm.1 1.74c-.1.03-.17.1-.23.16L.8 124.44c-.2.28.03.77.4.78H3.6v.5c0 4.26-.55 3.62 3.66 3.62h7.44c1.03 0 1.74.02 2.28 0-.16.02-.34-.03-.44-.15l-2.22-2.76H7.28c-.44 0-.72-.3-.72-.72v-.5h2.5c.37.02.63-.5.4-.78L5.5 119.5c-.12-.15-.34-.22-.53-.16zm12.02 10c1.2-.02 1.4-.25 1.4-1.53l-1.1 1.36c-.07.1-.17.17-.3.18zM5.94 136.6l2.37 2.93h6.42c.42 0 .72.28.72.72v1.25h-2.6c-.3.1-.43.54-.2.78l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.25c0-4.2.72-3.63-3.66-3.63H7.28c-.6 0-.92-.02-1.34-.03zm-1.72.06c-.4.08-.54.3-.6.75l.6-.74zm.84.93c-.12 0-.24.08-.3.18l-3.95 4.9c-.24.3 0 .83.4.82H3.6v1.22c0 4.26-.55 3.62 3.66 3.62h7.44c.63 0 .97.02 1.4.03l-2.37-2.93H7.28c-.44 0-.72-.3-.72-.72v-1.22h2.5c.4.04.67-.53.4-.8l-3.96-4.92c-.1-.13-.27-.2-.44-.2zm13.28 10.03l-.56.7c.36-.07.5-.3.56-.7zM17.13 155.6c-.55-.02-1.32.03-2.4.03h-8.2l2.38 2.9h5.82c.42 0 .72.28.72.72v1.97H12.9c-.32.06-.48.52-.28.78l3.94 4.94c.2.23.6.22.78-.03l3.94-4.9c.22-.28-.02-.77-.37-.78H18.4v-1.97c0-3.15.4-3.62-1.25-3.66zm-12.1.28c-.1.02-.2.1-.28.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v1.96c0 4.26-.55 3.62 3.66 3.62h8.24l-2.36-2.9H7.28c-.44 0-.72-.3-.72-.72v-1.97h2.5c.37.02.63-.5.4-.78l-3.96-4.9c-.1-.15-.3-.22-.47-.2zM5.13 174.5c-.15 0-.3.07-.38.2L.8 179.6c-.24.27 0 .82.4.8H3.6v2.32c0 4.26-.55 3.62 3.66 3.62h7.94l-2.35-2.9h-5.6c-.43 0-.7-.3-.7-.72v-2.3h2.5c.38.03.66-.54.4-.83l-3.97-4.9c-.1-.13-.23-.2-.38-.2zm12 .1c-.55-.02-1.32.03-2.4.03H6.83l2.35 2.9h5.52c.42 0 .72.28.72.72v2.34h-2.6c-.3.1-.43.53-.2.78l3.92 4.9c.18.24.6.24.78 0l3.94-4.9c.22-.3-.02-.78-.37-.8H18.4v-2.33c0-3.15.4-3.62-1.25-3.66zM4.97 193.16c-.1.03-.17.1-.22.18l-3.94 4.9c-.2.3.03.78.4.8H3.6v2.68c0 4.26-.55 3.62 3.66 3.62h7.66l-2.3-2.84c-.03-.02-.03-.04-.05-.06H7.27c-.44 0-.72-.3-.72-.72v-2.7h2.5c.37.03.63-.48.4-.77l-3.96-4.9c-.12-.17-.34-.25-.53-.2zm12.16.43c-.55-.02-1.32.03-2.4.03H7.1l2.32 2.84.03.06h5.25c.42 0 .72.28.72.72v2.7h-2.5c-.36.02-.56.54-.3.8l3.92 4.9c.18.25.6.25.78 0l3.94-4.9c.26-.28 0-.83-.37-.8H18.4v-2.7c0-3.15.4-3.62-1.25-3.66z' fill='%235971AD' stroke-width='0'/></svg>");
 }
 
 .app-body {
@@ -3208,11 +3205,11 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .button {
-    background-color: #FF857F;
+    background-color: #5971AD;
     border: 10px;
     border-radius: 4px;
     box-sizing: border-box;
-    color: #F8F8F2;
+    color: #000;
     cursor: pointer;
     display: inline-block;
     font-family: inherit;
@@ -3236,7 +3233,7 @@ button.icon-button.disabled i.fa-retweet {
 .button:active,
 .button:focus,
 .button:hover {
-    background-color: #ff9e99;
+    background-color: #7387ba;
     transition: all .2s ease-out
 }
 
@@ -3252,7 +3249,7 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .button:disabled {
-    background-color: #c8c4d4;
+    background-color: #9bcbed;
     cursor: default
 }
 
@@ -3278,38 +3275,38 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .button.button-alternative {
-    color: #504b68;
-    background: #c8c4d4
+    color: #000;
+    background: #9bcbed
 }
 
 .button.button-alternative:active,
 .button.button-alternative:focus,
 .button.button-alternative:hover {
-    background-color: #ada6bf
+    background-color: #8ac2ea
 }
 
 .button.button-alternative-2 {
-    background: #ada6bf
+    background: #ffcbcb
 }
 
 .button.button-alternative-2:active,
 .button.button-alternative-2:focus,
 .button.button-alternative-2:hover {
-    background-color: #c8c4d4
+    background-color: #a3b6c7
 }
 
 .button.button-secondary {
-    color: #c8c4d4;
+    color: #282c37;
     background: transparent;
     padding: 3px 15px;
-    border: 1px solid #c8c4d4
+    border: 1px solid #9bcbed
 }
 
 .button.button-secondary:active,
 .button.button-secondary:focus,
 .button.button-secondary:hover {
-    border-color: #a8b9cf;
-    color: #a8b9cf
+    border-color: #8ac2ea;
+    color: #1f232b
 }
 
 .button.button--block {
@@ -3326,7 +3323,7 @@ button.icon-button.disabled i.fa-retweet {
 .icon-button {
     display: inline-block;
     padding: 0;
-    color: #ada6bf;
+    color: #606984;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -3336,17 +3333,17 @@ button.icon-button.disabled i.fa-retweet {
 .icon-button:active,
 .icon-button:focus,
 .icon-button:hover {
-    color: #c8c4d4;
+    color: #51596f;
     transition: color .2s ease-out
 }
 
 .icon-button.disabled {
-    color: #ada6bf;
+    color: #828ba4;
     cursor: default
 }
 
 .icon-button.active {
-    color: #fdf6a2
+    color: #9C6B98
 }
 
 .icon-button::-moz-focus-inner {
@@ -3360,41 +3357,41 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .icon-button.inverted {
-    color: #5A5475
+    color: #282c37
 }
 
 .icon-button.inverted:active,
 .icon-button.inverted:focus,
 .icon-button.inverted:hover {
-    color: #474059
+    color: #373d4c
 }
 
 .icon-button.inverted.disabled {
-    color: #c8c4d4
+    color: #191b22
 }
 
 .icon-button.inverted.active {
-    color: #5A5475
+    color: #5971AD
 }
 
 .icon-button.inverted.active.disabled {
-    color: #ada6bf
+    color: #1d46a4
 }
 
 .icon-button.overlayed {
     box-sizing: content-box;
-    background: rgba(0, 0, 0, .6);
-    color: hsla(0, 0%, 100%, .7);
+    background: hsla(0, 0%, 100%, .6);
+    color: rgba(0, 0, 0, .7);
     border-radius: 4px;
     padding: 2px
 }
 
 .icon-button.overlayed:hover {
-    background: rgba(0, 0, 0, .9)
+    background: hsla(0, 0%, 100%, .9)
 }
 
 .text-icon-button {
-    color: #ada6bf;
+    color: #282c37;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -3409,17 +3406,17 @@ button.icon-button.disabled i.fa-retweet {
 .text-icon-button:active,
 .text-icon-button:focus,
 .text-icon-button:hover {
-    color: #51596f;
+    color: #373d4c;
     transition: color .2s ease-out
 }
 
 .text-icon-button.disabled {
-    color: #979eb3;
+    color: #000;
     cursor: default
 }
 
 .text-icon-button.active {
-    color: #5A5475
+    color: #7387ba
 }
 
 .text-icon-button::-moz-focus-inner {
@@ -3463,9 +3460,9 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .compose-form .compose-form__warning {
-    color: #504b68;;
+    color: #000;
     margin-bottom: 10px;
-    background: #c8c4d4;
+    background: #9bcbed;
     box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
     padding: 8px 10px;
     border-radius: 4px;
@@ -3474,7 +3471,7 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .compose-form .compose-form__warning strong {
-    color: #504b68;;
+    color: #000;
     font-weight: 500
 }
 
@@ -3487,7 +3484,7 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .compose-form .compose-form__warning a {
-    color: #ada6bf;
+    color: #282c37;
     font-weight: 500;
     text-decoration: underline
 }
@@ -3531,8 +3528,8 @@ button.icon-button.disabled i.fa-retweet {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    color: #504b68;;
-    background: #F8F8F2;
+    color: #000;
+    background: #fff;
     padding: 10px;
     font-family: inherit;
     font-size: 14px;
@@ -3580,9 +3577,9 @@ button.icon-button.disabled i.fa-retweet {
     width: 100%;
     z-index: 99;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, .4);
-    background: #c8c4d4;
+    background: #282c37;
     border-radius: 0 0 4px 4px;
-    color: #504b68;;
+    color: #000;
     font-size: 14px;
     padding: 6px
 }
@@ -3601,7 +3598,7 @@ button.icon-button.disabled i.fa-retweet {
 .compose-form .autosuggest-textarea__suggestions__item:active,
 .compose-form .autosuggest-textarea__suggestions__item:focus,
 .compose-form .autosuggest-textarea__suggestions__item:hover {
-    background: #b9c8d5
+    background: #3d4455
 }
 
 .compose-form .autosuggest-account,
@@ -3623,14 +3620,14 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .compose-form .autosuggest-account .display-name__account {
-    color: #ada6bf
+    color: #282c37
 }
 
 .compose-form .compose-form__modifiers {
-    color: #504b68;;
+    color: #000;
     font-family: inherit;
     font-size: 14px;
-    background: #F8F8F2
+    background: #fff
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload-wrapper {
@@ -3661,7 +3658,7 @@ button.icon-button.disabled i.fa-retweet {
 
 .compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button {
     flex: 0 1 auto;
-    color: #c8c4d4;
+    color: #282c37;
     font-size: 14px;
     font-weight: 500;
     padding: 10px;
@@ -3671,7 +3668,7 @@ button.icon-button.disabled i.fa-retweet {
 .compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button:active,
 .compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button:focus,
 .compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button:hover {
-    color: #eff3f5
+    color: #191b22
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload__actions.active {
@@ -3693,7 +3690,7 @@ button.icon-button.disabled i.fa-retweet {
 
 .compose-form .compose-form__modifiers .compose-form__upload-description input {
     background: transparent;
-    color: #F8F8F2;
+    color: #282c37;
     border: 0;
     padding: 0;
     margin: 0;
@@ -3704,27 +3701,27 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload-description input:focus {
-    color: #F8F8F2
+    color: #fff
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload-description input::-webkit-input-placeholder {
     opacity: .75;
-    color: #F8F8F2
+    color: #282c37
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload-description input:-ms-input-placeholder {
     opacity: .75;
-    color: #F8F8F2
+    color: #282c37
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload-description input::-ms-input-placeholder {
     opacity: .75;
-    color: #F8F8F2
+    color: #282c37
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload-description input::placeholder {
     opacity: .75;
-    color: #F8F8F2
+    color: #282c37
 }
 
 .compose-form .compose-form__modifiers .compose-form__upload-description.active {
@@ -3743,7 +3740,7 @@ button.icon-button.disabled i.fa-retweet {
 
 .compose-form .compose-form__buttons-wrapper {
     padding: 10px;
-    background: #ebebeb;
+    background: #fff;
     border-radius: 0 0 4px 4px;
     display: flex;
     justify-content: space-between
@@ -3784,7 +3781,7 @@ button.icon-button.disabled i.fa-retweet {
     font-family: "mastodon-font-sans-serif", sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color: #ada6bf
+    color: #282c37
 }
 
 .compose-form .compose-form__buttons-wrapper .character-counter__wrapper .character-counter.character-counter--over {
@@ -3823,7 +3820,7 @@ button.icon-button.disabled i.fa-retweet {
 .reply-indicator {
     border-radius: 4px;
     margin-bottom: 10px;
-    background: #c8c4d4;
+    background: #9bcbed;
     padding: 10px
 }
 
@@ -3838,7 +3835,7 @@ button.icon-button.disabled i.fa-retweet {
 }
 
 .reply-indicator__display-name {
-    color: #504b68;;
+    color: #000;
     display: block;
     max-width: 100%;
     line-height: 24px;
@@ -3867,7 +3864,7 @@ button.icon-button.disabled i.fa-retweet {
     text-overflow: ellipsis;
     white-space: pre-wrap;
     padding-top: 2px;
-    color: #F8F8F2
+    color: #000
 }
 
 .reply-indicator__content:focus,
@@ -3904,16 +3901,8 @@ button.icon-button.disabled i.fa-retweet {
 
 .reply-indicator__content a,
 .status__content a {
-    color: #C2FFDF;
+    color: #282c37;
     text-decoration: underline
-}
-
-a.mention {
-    color: #FFB8D1;
-}
-
-a.hashtag {
-    color: #fdf6a2;
 }
 
 .reply-indicator__content a:hover,
@@ -3923,7 +3912,7 @@ a.hashtag {
 
 .reply-indicator__content a:hover .fa,
 .status__content a:hover .fa {
-    color: #c8c4d4
+    color: #353a48
 }
 
 .reply-indicator__content a.mention:hover,
@@ -3938,17 +3927,17 @@ a.hashtag {
 
 .reply-indicator__content a .fa,
 .status__content a .fa {
-    color: #2e2b3b
+    color: #444b5d
 }
 
 .reply-indicator__content .status__content__spoiler-link,
 .status__content .status__content__spoiler-link {
-    background: #ada6bf
+    background: #ffcbcb
 }
 
 .reply-indicator__content .status__content__spoiler-link:hover,
 .status__content .status__content__spoiler-link:hover {
-    background: #c8c4d4;
+    background: #ffdfdf;
     text-decoration: none
 }
 
@@ -3984,7 +3973,7 @@ a.hashtag {
     display: block;
     font-size: 15px;
     line-height: 20px;
-    color: #FF857F;
+    color: #5971AD;
     border: 0;
     background: transparent;
     padding: 8px 0 0
@@ -4000,7 +3989,7 @@ a.hashtag {
     border-radius: 2px;
     background: transparent;
     border: 0;
-    color: #504b68;;
+    color: #000;
     font-weight: 700;
     font-size: 11px;
     padding: 0 6px;
@@ -4011,7 +4000,7 @@ a.hashtag {
 }
 
 .status__wrapper--filtered {
-    color: #ada6bf;
+    color: #444b5d;
     border: 0;
     font-size: inherit;
     text-align: center;
@@ -4021,7 +4010,7 @@ a.hashtag {
     box-sizing: border-box;
     width: 100%;
     clear: both;
-    border-bottom: 1px solid #5f5676
+    border-bottom: 1px solid #c8dbee
 }
 
 .status__prepend-icon-wrapper {
@@ -4031,11 +4020,11 @@ a.hashtag {
 
 .focusable:focus {
     outline: 0;
-    background: #5A5475
+    background: #c8c4dd
 }
 
 .focusable:focus .status.status-direct {
-    background: #42485a
+    background: #ffcbcb
 }
 
 .focusable:focus .status.status-direct.muted {
@@ -4044,14 +4033,14 @@ a.hashtag {
 
 .focusable:focus .detailed-status,
 .focusable:focus .detailed-status__action-bar {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .status {
     padding: 8px 10px 8px 68px;
     position: relative;
     min-height: 54px;
-    border-bottom: 1px solid #5f5676;
+    border-bottom: 1px solid #eee;
     cursor: default;
     opacity: 1;
     -webkit-animation: fade .15s linear;
@@ -4087,38 +4076,38 @@ a.hashtag {
 }
 
 .status.status-direct:not(.read) {
-    background: #5f5676;
-    border-bottom-color: #42485a
+    background: #ebe9f3;
+    border-bottom-color: #ccc
 }
 
 .status.light .status__relative-time {
-    color: #c8c4d4
+    color: #444b5d
 }
 
 .status.light .display-name strong,
 .status.light .status__display-name {
-    color: #504b68;
+    color: #000
 }
 
 .status.light .display-name span {
-    color: #c8c4d4
+    color: #444b5d
 }
 
 .status.light .status__content {
-    color: #504b68;
+    color: #000
 }
 
 .status.light .status__content a {
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .status.light .status__content a.status__content__spoiler-link {
-    color: #F8F8F2;
-    background: #c8c4d4
+    color: #000;
+    background: #ffcbcb
 }
 
 .status.light .status__content a.status__content__spoiler-link:hover {
-    background: #b5c3d6
+    background: #ffdfdf
 }
 
 .notification-favourite .status.status-direct {
@@ -4126,18 +4115,18 @@ a.hashtag {
 }
 
 .notification-favourite .status.status-direct .icon-button.disabled {
-    color: #ada6bf
+    color: #444a5e
 }
 
 .notification__relative_time,
 .status__relative-time {
-    color: #ada6bf;
+    color: #444b5d;
     float: right;
     font-size: 14px
 }
 
 .status__display-name {
-    color: #ada6bf
+    color: #444b5d
 }
 
 .status__info .status__display-name {
@@ -4151,7 +4140,7 @@ a.hashtag {
 }
 
 .status-check-box {
-    border-bottom: 1px solid #c8c4d4;
+    border-bottom: 1px solid #282c37;
     display: flex
 }
 
@@ -4188,14 +4177,14 @@ a.hashtag {
 
 .status__prepend {
     margin-left: 68px;
-    color: #ada6bf;
+    color: #444b5d;
     padding: 8px 0 2px;
     font-size: 14px;
     position: relative
 }
 
 .status__prepend .status__display-name strong {
-    color: #ada6bf
+    color: #444b5d
 }
 
 .status__prepend>span {
@@ -4225,7 +4214,7 @@ a.hashtag {
     width: 14px;
     font-size: 12px;
     font-weight: 500;
-    color: #ada6bf
+    color: #606984
 }
 
 .status__action-bar-button {
@@ -4246,7 +4235,7 @@ a.hashtag {
 }
 
 .detailed-status {
-    background: #5A5475;
+    background: #c8c4dd;
     padding: 14px 10px
 }
 
@@ -4284,15 +4273,15 @@ a.hashtag {
 
 .detailed-status__meta {
     margin-top: 15px;
-    color: #ada6bf;
+    color: #444b5d;
     font-size: 14px;
     line-height: 18px
 }
 
 .detailed-status__action-bar {
-    background: #5A5475;
-    border-top: 1px solid #5f5676;
-    border-bottom: 1px solid #5f5676;
+    background: #c8c4dd;
+    border-top: 1px solid #c8dbee;
+    border-bottom: 1px solid #c8dbee;
     display: flex;
     flex-direction: row;
     padding: 10px 0
@@ -4312,23 +4301,23 @@ a.hashtag {
 }
 
 .reply-indicator__content {
-    color: #504b68;
+    color: #000;
     font-size: 14px
 }
 
 .reply-indicator__content a {
-    color: #2e2b3b;
+    color: #282c37
 }
 
 .domain {
     padding: 10px;
-    border-bottom: 1px solid #5f5676
+    border-bottom: 1px solid #c8dbee
 }
 
 .domain .domain__domain-name {
     flex: 1 1 auto;
     display: block;
-    color: #F8F8F2;
+    color: #000;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500
@@ -4346,7 +4335,7 @@ a.hashtag {
 
 .account {
     padding: 10px;
-    border-bottom: 1px solid #5f5676
+    border-bottom: 1px solid #c8dbee
 }
 
 .account.compact {
@@ -4361,7 +4350,7 @@ a.hashtag {
 .account .account__display-name {
     flex: 1 1 auto;
     display: block;
-    color: #c8c4d4;
+    color: #282c37;
     overflow: hidden;
     text-decoration: none;
     font-size: 14px
@@ -4451,7 +4440,7 @@ a .account__avatar {
 
 .account__header {
     flex: 0 0 auto;
-    background: #5A5475;
+    background: #c8c4dd;
     text-align: center;
     background-size: cover;
     background-position: 50%;
@@ -4468,20 +4457,20 @@ a .account__avatar {
 }
 
 .account__header.inactive .account__header__username {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .account__header>div {
-    background: rgba(49, 53, 67, .9);
+    background: rgba(200, 219, 238, .9);
     padding: 20px 10px
 }
 
 .account__header .account__header__content {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .account__header .account__header__display-name {
-    color: #F8F8F2;
+    color: #000;
     display: inline-block;
     width: 100%;
     font-size: 20px;
@@ -4492,7 +4481,7 @@ a .account__avatar {
 }
 
 .account__header .account__header__username {
-    color: #FFB8D1;
+    color: #5971AD;
     font-size: 14px;
     font-weight: 400;
     display: block;
@@ -4503,8 +4492,8 @@ a .account__avatar {
 
 .account__disclaimer {
     padding: 10px;
-    border-top: 1px solid #5f5676;
-    color: #ada6bf
+    border-top: 1px solid #c8dbee;
+    color: #444b5d
 }
 
 .account__disclaimer strong {
@@ -4532,7 +4521,7 @@ a .account__avatar {
 }
 
 .account__header__content {
-    color: #c8c4d4;
+    color: #282c37;
     font-size: 14px;
     font-weight: 400;
     overflow: hidden;
@@ -4549,7 +4538,7 @@ a .account__avatar {
 }
 
 .account__header__content a {
-    color: #C2FFDF;
+    color: inherit;
     text-decoration: underline
 }
 
@@ -4563,8 +4552,8 @@ a .account__avatar {
 }
 
 .account__action-bar {
-    border-top: 1px solid #5f5676;
-    border-bottom: 1px solid #5f5676;
+    border-top: 1px solid #c8dbee;
+    border-bottom: 1px solid #c8dbee;
     line-height: 36px;
     overflow: hidden;
     flex: 0 0 auto;
@@ -4602,27 +4591,27 @@ a .account__avatar {
     text-decoration: none;
     overflow: hidden;
     flex: 0 1 100%;
-    border-right: 1px solid #5f5676;
+    border-right: 1px solid #c8dbee;
     padding: 10px 0;
     border-bottom: 4px solid transparent
 }
 
 .account__action-bar__tab.active {
-    border-bottom: 4px solid #fdf6a2
+    border-bottom: 4px solid #5971AD
 }
 
 .account__action-bar__tab>span {
     display: block;
     text-transform: uppercase;
     font-size: 11px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .account__action-bar__tab strong {
     display: block;
     font-size: 15px;
     font-weight: 500;
-    color: #F8F8F2
+    color: #000
 }
 
 .account__action-bar__tab strong:lang(ja),
@@ -4668,7 +4657,7 @@ a .account__avatar {
 
 .account__display-name strong,
 .status__display-name strong {
-    color: #F8F8F2
+    color: #000
 }
 
 .muted .emojione {
@@ -4694,7 +4683,7 @@ a.account__display-name:hover strong {
 }
 
 .detailed-status__display-name {
-    color: #c8c4d4;
+    color: #282c37;
     display: block;
     line-height: 24px;
     margin-bottom: 15px;
@@ -4710,7 +4699,7 @@ a.account__display-name:hover strong {
 
 .detailed-status__display-name strong {
     font-size: 16px;
-    color: #F8F8F2
+    color: #000
 }
 
 .detailed-status__display-avatar {
@@ -4729,7 +4718,7 @@ a.account__display-name:hover strong {
 .muted .status__content a,
 .muted .status__content p,
 .muted .status__display-name strong {
-    color: #ada6bf
+    color: #444b5d
 }
 
 .muted .status__avatar {
@@ -4737,12 +4726,12 @@ a.account__display-name:hover strong {
 }
 
 .muted a.status__content__spoiler-link {
-    background: #ada6bf;
-    color: #504b68;
+    background: #ffcbcb;
+    color: #000
 }
 
 .muted a.status__content__spoiler-link:hover {
-    background: #c8c4d4;
+    background: #ffdfdf;
     text-decoration: none
 }
 
@@ -4750,14 +4739,14 @@ a.account__display-name:hover strong {
     margin: 0 10px 0 68px;
     padding: 8px 0 0;
     cursor: default;
-    color: #c8c4d4;
+    color: #282c37;
     font-size: 15px;
     line-height: 22px;
     position: relative
 }
 
 .notification__message .fa {
-    color: #C5A3FF
+    color: #5971AD
 }
 
 .notification__message>span {
@@ -4773,7 +4762,7 @@ a.account__display-name:hover strong {
 
 .notification__favourite-icon-wrapper .star-icon,
 .star-icon.active {
-    color: #fff683
+    color: #ca8f04
 }
 
 .notification__display-name {
@@ -4783,7 +4772,7 @@ a.account__display-name:hover strong {
 }
 
 .notification__display-name:hover {
-    color: #F8F8F2;
+    color: #000;
     text-decoration: underline
 }
 
@@ -4864,11 +4853,11 @@ a.account__display-name:hover strong {
     align-items: center;
     flex-shrink: 0;
     cursor: default;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .navigation-bar strong {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .navigation-bar a {
@@ -4928,13 +4917,13 @@ a.account__display-name:hover strong {
 }
 
 .dropdown-menu__separator {
-    border-bottom: 1px solid #c0cdd9;
+    border-bottom: 1px solid #393f4f;
     margin: 5px 7px 6px;
     height: 0
 }
 
 .dropdown-menu {
-    background: #F8F8F2;
+    background: #282c37;
     padding: 4px 0;
     border-radius: 4px;
     box-shadow: 2px 4px 15px rgba(0, 0, 0, .4);
@@ -4976,28 +4965,28 @@ a.account__display-name:hover strong {
     right: -5px;
     margin-top: -5px;
     border-width: 5px 0 5px 5px;
-    border-left-color: #F8F8F2
+    border-left-color: #282c37
 }
 
 .dropdown-menu__arrow.top {
     bottom: -5px;
     margin-left: -7px;
     border-width: 5px 7px 0;
-    border-top-color: #F8F8F2
+    border-top-color: #282c37
 }
 
 .dropdown-menu__arrow.bottom {
     top: -5px;
     margin-left: -7px;
     border-width: 0 7px 5px;
-    border-bottom-color: #F8F8F2
+    border-bottom-color: #282c37
 }
 
 .dropdown-menu__arrow.right {
     left: -5px;
     margin-top: -5px;
     border-width: 5px 5px 5px 0;
-    border-right-color: #F8F8F2
+    border-right-color: #282c37
 }
 
 .dropdown-menu__item a {
@@ -5007,8 +4996,8 @@ a.account__display-name:hover strong {
     padding: 4px 14px;
     box-sizing: border-box;
     text-decoration: none;
-    background: #F8F8F2;
-    color: #504b68;
+    background: #282c37;
+    color: #000;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap
@@ -5017,8 +5006,8 @@ a.account__display-name:hover strong {
 .dropdown-menu__item a:active,
 .dropdown-menu__item a:focus,
 .dropdown-menu__item a:hover {
-    background: #FF857F;
-    color: #F8F8F2;
+    background: #5971AD;
+    color: #282c37;
     outline: 0
 }
 
@@ -5033,7 +5022,7 @@ a.account__display-name:hover strong {
 
 .dropdown--active .dropdown__content>ul {
     list-style: none;
-    background: #F8F8F2;
+    background: #282c37;
     padding: 4px 0;
     border-radius: 4px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .4);
@@ -5056,8 +5045,8 @@ a.account__display-name:hover strong {
     padding: 4px 14px;
     box-sizing: border-box;
     text-decoration: none;
-    background: #F8F8F2;
-    color: #504b68;
+    background: #282c37;
+    color: #000;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap
@@ -5068,8 +5057,8 @@ a.account__display-name:hover strong {
 }
 
 .dropdown--active .dropdown__content>ul>li>a:hover {
-    background: #FF857F;
-    color: #F8F8F2
+    background: #5971AD;
+    color: #282c37
 }
 
 .dropdown__icon {
@@ -5121,7 +5110,7 @@ a.account__display-name:hover strong {
 }
 
 .column>.scrollable {
-    background: #504b68;
+    background: #dff6eb
 }
 
 .ui {
@@ -5129,7 +5118,7 @@ a.account__display-name:hover strong {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: #2e2b3b
+    background: #fffdef
 }
 
 .drawer,
@@ -5148,7 +5137,7 @@ a.account__display-name:hover strong {
     display: block;
     flex: 1 1 auto;
     padding: 15px 5px 13px;
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     text-align: center;
     font-size: 16px;
@@ -5228,7 +5217,7 @@ a.account__display-name:hover strong {
     position: absolute;
     top: 0;
     left: 0;
-    background: #5f5676;
+    background: #ffcbcb;
     flex-direction: column;
     overflow-y: auto;
     width: 100%;
@@ -5236,11 +5225,11 @@ a.account__display-name:hover strong {
 }
 
 .drawer__inner.darker {
-    background: #504b68;
+    background: #dff6eb
 }
 
 .drawer__inner__mastodon {
-    background: #5f5676 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="%23282C37"/></svg>') no-repeat bottom/100% auto;
+    background: #ffcbcb url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="#dff6eb"/></svg>') no-repeat bottom/100% auto;
     flex: 1;
     min-height: 47px
 }
@@ -5263,7 +5252,7 @@ a.account__display-name:hover strong {
 }
 
 .pseudo-drawer {
-    background: #5f5676;
+    background: #ffcbcb;
     font-size: 13px;
     text-align: left
 }
@@ -5271,7 +5260,7 @@ a.account__display-name:hover strong {
 .drawer__header {
     flex: 0 0 auto;
     font-size: 16px;
-    background: #5f5676;
+    background: #c8dbee;
     margin-bottom: 10px;
     display: flex;
     flex-direction: row
@@ -5282,13 +5271,13 @@ a.account__display-name:hover strong {
 }
 
 .drawer__header a:hover {
-    background: #39364a;
+    background: #aac7e5;
     transition: background .2s ease-out
 }
 
 .tabs-bar {
     display: flex;
-    background: #5f5676;
+    background: #c8dbee;
     flex: 0 0 auto;
     overflow-y: auto
 }
@@ -5297,12 +5286,12 @@ a.account__display-name:hover strong {
     display: block;
     flex: 1 1 auto;
     padding: 15px 10px;
-    color: #F8F8F2;
+    color: #000;
     text-decoration: none;
     text-align: center;
     font-size: 14px;
     font-weight: 500;
-    border-bottom: 2px solid #5f5676;
+    border-bottom: 2px solid #c8dbee;
     transition: all 50ms linear
 }
 
@@ -5312,15 +5301,15 @@ a.account__display-name:hover strong {
 }
 
 .tabs-bar__link.active {
-    border-bottom: 2px solid #C2FFDF;
-    color: #C2FFDF
+    border-bottom: 2px solid #5971AD;
+    color: #5971AD
 }
 
 @media screen and (min-width:631px) {
     .tabs-bar__link:active,
     .tabs-bar__link:focus,
     .tabs-bar__link:hover {
-        background: #464d60
+        background: #adbecd
     }
 }
 
@@ -5377,8 +5366,8 @@ a.account__display-name:hover strong {
 }
 
 .column-back-button {
-    background: #5A5475;
-    color: #FF857F;
+    background: #c8c4dd;
+    color: #5971AD;
     cursor: pointer;
     flex: 0 0 auto;
     font-size: 16px;
@@ -5395,15 +5384,11 @@ a.account__display-name:hover strong {
     text-decoration: underline
 }
 
-.column-header {
-    color: #c8c4d4;
-}
-
 .column-header__back-button {
-    background: #474059;
+    background: #c8c4dd;
     border: 0;
     font-family: inherit;
-    color: #FF857F;
+    color: #5971AD;
     cursor: pointer;
     white-space: nowrap;
     font-size: 16px;
@@ -5449,7 +5434,7 @@ a.account__display-name:hover strong {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-tap-highlight-color: transparent
 }
 
@@ -5475,20 +5460,20 @@ a.account__display-name:hover strong {
     height: 24px;
     padding: 0;
     border-radius: 30px;
-    background-color: #504b68;
+    background-color: #dff6eb;
     transition: all .2s ease
 }
 
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background-color: #504b68
+    background-color: #ffffff
 }
 
 .react-toggle--checked .react-toggle-track {
-    background-color: #FFB8D1
+    background-color: #5971AD
 }
 
 .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-    background-color: #FFB8D1
+    background-color: #7387ba
 }
 
 .react-toggle-track-check {
@@ -5534,21 +5519,21 @@ a.account__display-name:hover strong {
     left: 1px;
     width: 22px;
     height: 22px;
-    border: 1px solid #F8F8F2;
+    border: 1px solid #dff6eb;
     border-radius: 50%;
-    background-color: #fafafa;
+    background-color: #fff;
     box-sizing: border-box;
     transition: all .25s ease
 }
 
 .react-toggle--checked .react-toggle-thumb {
     left: 27px;
-    border-color: #F8F8F2
+    border-color: #5971AD
 }
 
 .column-link {
-    background: #5f5676;
-    color: #c8c4d4;
+    background: #c8dbee;
+    color: #000;
     display: block;
     font-size: 16px;
     padding: 15px;
@@ -5556,7 +5541,7 @@ a.account__display-name:hover strong {
 }
 
 .column-link:hover {
-    background: #776b94
+    background: #aac7e5
 }
 
 .column-link__icon {
@@ -5576,11 +5561,11 @@ a.account__display-name:hover strong {
 .column-subheading {
     font-size: 12px;
     font-weight: 500;
-    background: #504b68;
+    background: #dff6eb
 }
 
 .column-subheading {
-    color: #ada6bf;
+    color: #444b5d;
     padding: 8px 20px;
     text-transform: uppercase;
     cursor: default
@@ -5589,7 +5574,7 @@ a.account__display-name:hover strong {
 .flex-spacer,
 .getting-started,
 .getting-started__wrapper {
-    background: #504b68;
+    background: #dff6eb
 }
 
 .getting-started__wrapper {
@@ -5601,7 +5586,7 @@ a.account__display-name:hover strong {
 }
 
 .getting-started {
-    color: #ada6bf
+    color: #444b5d
 }
 
 .getting-started__footer {
@@ -5618,19 +5603,19 @@ a.account__display-name:hover strong {
 }
 
 .getting-started__footer p {
-    color: #ada6bf;
+    color: #444b5d;
     font-size: 13px;
     margin-bottom: 20px
 }
 
 .getting-started__footer p a {
-    color: #ada6bf;
+    color: #444b5d;
     text-decoration: underline
 }
 
 .getting-started__footer a {
     text-decoration: none;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .getting-started__footer a:active,
@@ -5640,7 +5625,7 @@ a.account__display-name:hover strong {
 }
 
 .getting-started__trends {
-    background: #504b68;;
+    background: #dff6eb;
     flex: 0 1 auto
 }
 
@@ -5684,15 +5669,15 @@ a.account__display-name:hover strong {
 .keyboard-shortcuts kbd {
     display: inline-block;
     padding: 3px 5px;
-    background-color: #5f5676;
-    border: 1px solid #2e2b3b
+    background-color: #c8dbee;
+    border: 1px solid #c8dbee
 }
 
 .setting-text {
-    color: #c8c4d4;
+    color: #282c37;
     background: transparent;
     border: none;
-    border-bottom: 2px solid #c8c4d4;
+    border-bottom: 2px solid #9bcbed;
     box-sizing: border-box;
     display: block;
     font-family: inherit;
@@ -5703,8 +5688,8 @@ a.account__display-name:hover strong {
 
 .setting-text:active,
 .setting-text:focus {
-    color: #F8F8F2;
-    border-bottom-color: #C2FFDF
+    color: #000;
+    border-bottom-color: #5971AD
 }
 
 @media screen and (max-width:600px) {
@@ -5732,20 +5717,20 @@ a.account__display-name:hover strong {
 }
 
 .reduce-motion button.icon-button i.fa-retweet {
-    color: #ada6bf;
+    color: #606984;
     transition: color .1s ease-in
 }
 
 .reduce-motion button.icon-button.active i.fa-retweet {
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .status-card {
     display: flex;
     font-size: 14px;
-    border: 1px solid #5f5676;
+    border: 1px solid #c8dbee;
     border-radius: 4px;
-    color: #ada6bf;
+    color: #444b5d;
     margin-top: 14px;
     text-decoration: none;
     overflow: hidden
@@ -5776,7 +5761,7 @@ a.account__display-name:hover strong {
 .status-card__actions a,
 .status-card__actions button {
     display: inline;
-    color: #F8F8F2;
+    color: #000;
     background: transparent;
     border: 0;
     padding: 0 5px;
@@ -5806,7 +5791,7 @@ a.status-card {
 }
 
 a.status-card:hover {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .status-card-photo {
@@ -5827,7 +5812,7 @@ a.status-card:hover {
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
-    color: #c8c4d4;
+    color: #282c37;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -5837,16 +5822,11 @@ a.status-card:hover {
 .status-card__content {
     flex: 1 1 auto;
     overflow: hidden;
-    background-color: #474059;
     padding: 14px 14px 14px 8px
 }
 
-.status-card__content:hover {
-    background-color: #2e2b3b;
-}
-
 .status-card__description {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .status-card__host {
@@ -5860,7 +5840,7 @@ a.status-card:hover {
 
 .status-card__image {
     flex: 0 0 100px;
-    background: #5f5676;
+    background: #c8dbee;
     position: relative
 }
 
@@ -5892,8 +5872,7 @@ a.status-card:hover {
 }
 
 .status-card.compact {
-    border-color: #2e2b3b;
-    background: #474059;
+    border-color: #c8c4dd
 }
 
 .status-card.compact.interactive {
@@ -5913,7 +5892,7 @@ a.status-card:hover {
 }
 
 a.status-card.compact:hover {
-    background: #2e2b3b
+    background-color: #c8c4dd
 }
 
 .status-card__image-image {
@@ -5931,7 +5910,7 @@ a.status-card.compact:hover {
 
 .load-more {
     display: block;
-    color: #ada6bf;
+    color: #444b5d;
     background-color: transparent;
     border: 0;
     font-size: inherit;
@@ -5946,19 +5925,19 @@ a.status-card.compact:hover {
 }
 
 .load-more:hover {
-    background: #2c313d
+    background: #c8dbee
 }
 
 .load-gap {
-    border-bottom: 1px solid #2e2b3b
+    border-bottom: 1px solid #c8dbee
 }
 
 .regeneration-indicator {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-    color: #ada6bf;
-    background: #504b68;
+    color: #444b5d;
+    background: #dff6eb;
     cursor: default;
     display: flex;
     flex: 1 1 auto;
@@ -6000,7 +5979,7 @@ a.status-card.compact:hover {
 .regeneration-indicator__label strong {
     display: block;
     margin-bottom: 10px;
-    color: #ada6bf
+    color: #444b5d
 }
 
 .regeneration-indicator__label span {
@@ -6025,13 +6004,13 @@ a.status-card.compact:hover {
     pointer-events: none;
     height: 28px;
     z-index: 1;
-    background: radial-gradient(ellipse, rgba(255, 255, 255, .23) 0, rgba(255, 255, 255, 0) 60%)
+    background: radial-gradient(ellipse, rgba(43, 95, 217, .23) 0, rgba(43, 95, 217, 0) 60%)
 }
 
 .column-header {
     display: flex;
     font-size: 16px;
-    background: #474059;
+    background: #c8c4dd;
     flex: 0 0 auto;
     cursor: pointer;
     position: relative;
@@ -6055,16 +6034,16 @@ a.status-card.compact:hover {
 }
 
 .column-header>.column-header__back-button {
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .column-header.active {
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0)
+    box-shadow: 0 1px 0 rgba(43, 95, 217, .3)
 }
 
 .column-header.active .column-header__icon {
-    color: #c8c4d4;
-    text-shadow: 0 0 10px rgba(255, 255, 255, .4)
+    color: #5971AD;
+    text-shadow: 0 0 10px rgba(43, 95, 217, .0)
 }
 
 .column-header:active,
@@ -6082,29 +6061,29 @@ a.status-card.compact:hover {
 }
 
 .column-header__button {
-    background: #474059;
+    background: #c8c4dd;
     border: 0;
-    color: #c8c4d4;
+    color: #282c37;
     cursor: pointer;
     font-size: 16px;
     padding: 0 15px
 }
 
 .column-header__button:hover {
-    color: #ada6bf
+    color: #191b22
 }
 
 .column-header__button.active,
 .column-header__button.active:hover {
-    color: #ada6bf;
-    background: #5f5676
+    color: #000;
+    background: #c8dbee
 }
 
 .column-header__collapsible {
     max-height: 70vh;
     overflow: hidden;
     overflow-y: auto;
-    color: #c8c4d4;
+    color: #282c37;
     transition: max-height .15s ease-in-out, opacity .3s linear;
     opacity: 1
 }
@@ -6122,17 +6101,17 @@ a.status-card.compact:hover {
     height: 0;
     background: transparent;
     border: 0;
-    border-top: 1px solid #42485a;
+    border-top: 1px solid #ffcbcb;
     margin: 10px 0
 }
 
 .column-header__collapsible-inner {
-    background: #5f5676;
+    background: #c8dbee;
     padding: 15px
 }
 
 .column-header__setting-btn:hover {
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: underline
 }
 
@@ -6165,7 +6144,7 @@ a.status-card.compact:hover {
 }
 
 .loading-indicator {
-    color: #ada6bf;
+    color: #444b5d;
     font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
@@ -6196,7 +6175,7 @@ a.status-card.compact:hover {
     height: 42px;
     box-sizing: border-box;
     background-color: transparent;
-    border: 6px solid #ada6bf;
+    border: 6px solid #86a0b6;
     border-radius: 50%
 }
 
@@ -6214,10 +6193,10 @@ a.status-card.compact:hover {
     0% {
         width: 0;
         height: 0;
-        background-color: #ada6bf
+        background-color: #86a0b6
     }
     29% {
-        background-color: #ada6bf
+        background-color: #86a0b6
     }
     30% {
         width: 42px;
@@ -6239,10 +6218,10 @@ a.status-card.compact:hover {
     0% {
         width: 0;
         height: 0;
-        background-color: #ada6bf
+        background-color: #86a0b6
     }
     29% {
-        background-color: #ada6bf
+        background-color: #86a0b6
     }
     30% {
         width: 42px;
@@ -6286,8 +6265,8 @@ a.status-card.compact:hover {
 
 .video-error-cover {
     align-items: center;
-    background: #2e2b3b;
-    color: #F8F8F2;
+    background: #fff;
+    color: #000;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -6300,8 +6279,8 @@ a.status-card.compact:hover {
 }
 
 .media-spoiler {
-    background: #2e2b3b;
-    color: #c8c4d4;
+    background: #fff;
+    color: #282c37;
     border: 0;
     padding: 0;
     width: 100%;
@@ -6316,7 +6295,7 @@ a.status-card.compact:hover {
 .media-spoiler:focus,
 .media-spoiler:hover {
     padding: 0;
-    color: #b5c3d6
+    color: #17191f
 }
 
 .media-spoiler__warning {
@@ -6334,7 +6313,7 @@ a.status-card.compact:hover {
     display: none;
     left: 4px;
     position: absolute;
-    text-shadow: 0 1px 1px #2e2b3b, 1px 0 1px #2e2b3b;
+    text-shadow: 0 1px 1px #000, 1px 0 1px #000;
     top: 4px;
     z-index: 100
 }
@@ -6344,13 +6323,13 @@ a.status-card.compact:hover {
 }
 
 .modal-container--preloader {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .account--panel {
-    background: #5A5475;
-    border-top: 1px solid #5f5676;
-    border-bottom: 1px solid #5f5676;
+    background: #c8c4dd;
+    border-top: 1px solid #c8dbee;
+    border-bottom: 1px solid #c8dbee;
     display: flex;
     flex-direction: row;
     padding: 10px 0
@@ -6363,12 +6342,12 @@ a.status-card.compact:hover {
 }
 
 .column-settings__outer {
-    background: #5f5676;
+    background: #c8dbee;
     padding: 15px
 }
 
 .column-settings__section {
-    color: #c8c4d4;
+    color: #282c37;
     cursor: default;
     display: block;
     font-weight: 500;
@@ -6382,8 +6361,8 @@ a.status-card.compact:hover {
     border: none;
     box-shadow: none;
     font-family: inherit;
-    background: #504b68;;
-    color: #c8c4d4;
+    background: #dff6eb;
+    color: #282c37;
     font-size: 14px;
     margin: 0
 }
@@ -6399,7 +6378,7 @@ a.status-card.compact:hover {
 }
 
 .column-settings__section .column-settings__hashtag-select__control:focus {
-    background: #5A5475
+    background: #c8c4dd
 }
 
 @media screen and (max-width:600px) {
@@ -6409,12 +6388,12 @@ a.status-card.compact:hover {
 }
 
 .column-settings__section .column-settings__hashtag-select__multi-value {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .column-settings__section .column-settings__hashtag-select__input,
 .column-settings__section .column-settings__hashtag-select__multi-value__label {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .column-settings__section .column-settings__hashtag-select__dropdown-indicator,
@@ -6432,13 +6411,13 @@ a.status-card.compact:hover {
 
 .account--follows-info,
 .account--muting-info {
-    color: #F8F8F2;
+    color: #000;
     position: absolute;
     left: 10px;
     opacity: .7;
     display: inline-block;
     vertical-align: top;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: hsla(0, 0%, 100%, .4);
     text-transform: uppercase;
     font-size: 11px;
     font-weight: 500;
@@ -6462,7 +6441,7 @@ a.status-card.compact:hover {
 }
 
 .setting-toggle__label {
-    color: #c8c4d4;
+    color: #282c37;
     display: inline-block;
     margin-bottom: 14px;
     margin-left: 8px;
@@ -6471,8 +6450,8 @@ a.status-card.compact:hover {
 
 .empty-column-indicator,
 .error-column {
-    color: #ada6bf;
-    background: #504b68;;
+    color: #444b5d;
+    background: #dff6eb;
     text-align: center;
     padding: 20px;
     font-size: 15px;
@@ -6493,7 +6472,7 @@ a.status-card.compact:hover {
 
 .empty-column-indicator a,
 .error-column a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: none
 }
 
@@ -6655,7 +6634,7 @@ a.status-card.compact:hover {
 }
 
 .emoji-picker-dropdown__menu {
-    background: #F8F8F2;
+    background: #fff;
     position: absolute;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, .4);
     border-radius: 4px;
@@ -6682,7 +6661,7 @@ a.status-card.compact:hover {
     z-index: 4;
     top: -4px;
     left: -8px;
-    background: #F8F8F2;
+    background: #fff;
     border-radius: 4px;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, .2);
     overflow: hidden
@@ -6699,7 +6678,7 @@ a.status-card.compact:hover {
 .emoji-picker-dropdown__modifiers__menu button:active,
 .emoji-picker-dropdown__modifiers__menu button:focus,
 .emoji-picker-dropdown__modifiers__menu button:hover {
-    background: rgba(217, 225, 232, .4)
+    background: rgba(40, 44, 55, .4)
 }
 
 .emoji-picker-dropdown__modifiers__menu .emoji-mart-emoji {
@@ -6712,7 +6691,7 @@ a.status-card.compact:hover {
 
 .upload-area {
     align-items: center;
-    background: rgba(0, 0, 0, .8);
+    background: hsla(0, 0%, 100%, .8);
     display: flex;
     height: 100%;
     justify-content: center;
@@ -6746,7 +6725,7 @@ a.status-card.compact:hover {
     left: 0;
     z-index: -1;
     border-radius: 4px;
-    background: #504b68;;
+    background: #dff6eb;
     box-shadow: 0 0 5px rgba(0, 0, 0, .2)
 }
 
@@ -6755,16 +6734,16 @@ a.status-card.compact:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #c8c4d4;
+    color: #282c37;
     font-size: 18px;
     font-weight: 500;
-    border: 2px dashed #ada6bf;
+    border: 2px dashed #ffcbcb;
     border-radius: 4px
 }
 
 .upload-progress {
     padding: 10px;
-    color: #ada6bf;
+    color: #282c37;
     overflow: hidden;
     display: flex
 }
@@ -6789,7 +6768,7 @@ a.status-card.compact:hover {
     width: 100%;
     height: 6px;
     border-radius: 6px;
-    background: #ada6bf;
+    background: #ffcbcb;
     position: relative;
     margin-top: 5px
 }
@@ -6799,7 +6778,7 @@ a.status-card.compact:hover {
     left: 0;
     top: 0;
     height: 6px;
-    background: #FF857F;
+    background: #5971AD;
     border-radius: 6px
 }
 
@@ -6839,7 +6818,7 @@ a.status-card.compact:hover {
 
 .privacy-dropdown__dropdown {
     position: absolute;
-    background: #F8F8F2;
+    background: #fff;
     box-shadow: 2px 4px 15px rgba(0, 0, 0, .4);
     border-radius: 4px;
     margin-left: 40px;
@@ -6857,7 +6836,7 @@ a.status-card.compact:hover {
 }
 
 .privacy-dropdown__option {
-    color: #504b68;
+    color: #000;
     padding: 10px;
     cursor: pointer;
     display: flex
@@ -6865,8 +6844,8 @@ a.status-card.compact:hover {
 
 .privacy-dropdown__option.active,
 .privacy-dropdown__option:hover {
-    background: #FF857F;
-    color: #F8F8F2;
+    background: #5971AD;
+    color: #000;
     outline: 0
 }
 
@@ -6874,11 +6853,11 @@ a.status-card.compact:hover {
 .privacy-dropdown__option.active .privacy-dropdown__option__content strong,
 .privacy-dropdown__option:hover .privacy-dropdown__option__content,
 .privacy-dropdown__option:hover .privacy-dropdown__option__content strong {
-    color: #F8F8F2
+    color: #000
 }
 
 .privacy-dropdown__option.active:hover {
-    background: #FF857F
+    background: #2456cb
 }
 
 .privacy-dropdown__option__icon {
@@ -6890,13 +6869,13 @@ a.status-card.compact:hover {
 
 .privacy-dropdown__option__content {
     flex: 1 1 auto;
-    color: #2e2b3b
+    color: #282c37
 }
 
 .privacy-dropdown__option__content strong {
     font-weight: 500;
     display: block;
-    color: #504b68;
+    color: #000
 }
 
 .privacy-dropdown__option__content strong:lang(ja),
@@ -6908,7 +6887,7 @@ a.status-card.compact:hover {
 }
 
 .privacy-dropdown.active .privacy-dropdown__value {
-    background: #F8F8F2;
+    background: #fff;
     border-radius: 4px 4px 0 0;
     box-shadow: 0 -4px 4px rgba(0, 0, 0, .1)
 }
@@ -6918,11 +6897,11 @@ a.status-card.compact:hover {
 }
 
 .privacy-dropdown.active .privacy-dropdown__value.active {
-    background: #FF857F
+    background: #5971AD
 }
 
 .privacy-dropdown.active .privacy-dropdown__value.active .icon-button {
-    color: #F8F8F2
+    color: #000
 }
 
 .privacy-dropdown.active.top .privacy-dropdown__value {
@@ -6947,8 +6926,8 @@ a.status-card.compact:hover {
     border: none;
     box-shadow: none;
     font-family: inherit;
-    background: #504b68;;
-    color: #c8c4d4;
+    background: #dff6eb;
+    color: #282c37;
     font-size: 14px;
     margin: 0
 }
@@ -6964,11 +6943,7 @@ a.status-card.compact:hover {
 }
 
 .search__input:focus {
-    background: #5A5475
-}
-
-.search__input::placeholder {
-    color: #ada6bf;
+    background: #c8c4dd
 }
 
 @media screen and (max-width:600px) {
@@ -6997,7 +6972,7 @@ a.status-card.compact:hover {
     font-size: 18px;
     width: 18px;
     height: 18px;
-    color: #c8c4d4;
+    color: #282c37;
     cursor: default;
     pointer-events: none
 }
@@ -7022,7 +6997,7 @@ a.status-card.compact:hover {
     top: 11px;
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    color: #ada6bf;
+    color: #606984;
     cursor: pointer
 }
 
@@ -7032,12 +7007,12 @@ a.status-card.compact:hover {
 }
 
 .search__icon .fa-times-circle:hover {
-    color: #c8c4d4
+    color: #51596f
 }
 
 .search-results__header {
-    color: #ada6bf;
-    background: #2c313d;
+    color: #444b5d;
+    background: #d3dce4;
     padding: 15px;
     font-weight: 500;
     font-size: 16px;
@@ -7054,14 +7029,14 @@ a.status-card.compact:hover {
 }
 
 .search-results__section h5 {
-    background: #2e2b3b;
-    border-bottom: 1px solid #5f5676;
+    background: #c8dbee;
+    border-bottom: 1px solid #c8dbee;
     cursor: default;
     display: flex;
     padding: 15px;
     font-weight: 500;
     font-size: 16px;
-    color: #ada6bf
+    color: #444b5d
 }
 
 .search-results__section h5 .fa {
@@ -7077,14 +7052,14 @@ a.status-card.compact:hover {
 .search-results__hashtag {
     display: block;
     padding: 10px;
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none
 }
 
 .search-results__hashtag:active,
 .search-results__hashtag:focus,
 .search-results__hashtag:hover {
-    color: #e6ebf0;
+    color: #1f232b;
     text-decoration: underline
 }
 
@@ -7101,7 +7076,7 @@ a.status-card.compact:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, .7)
+    background: hsla(0, 0%, 100%, .7)
 }
 
 .modal-root__container {
@@ -7182,10 +7157,10 @@ a.status-card.compact:hover {
 }
 
 .media-modal__nav {
-    background: rgba(0, 0, 0, .5);
+    background: hsla(0, 0%, 100%, .5);
     box-sizing: border-box;
     border: 0;
-    color: #F8F8F2;
+    color: #000;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -7220,7 +7195,7 @@ a.status-card.compact:hover {
 }
 
 .media-modal__button {
-    background-color: #F8F8F2;
+    background-color: #000;
     height: 12px;
     width: 12px;
     border-radius: 6px;
@@ -7231,7 +7206,7 @@ a.status-card.compact:hover {
 }
 
 .media-modal__button--active {
-    background-color: #FF857F
+    background-color: #5971AD
 }
 
 .media-modal__close {
@@ -7244,8 +7219,8 @@ a.status-card.compact:hover {
 .embed-modal,
 .error-modal,
 .onboarding-modal {
-    background: #c8c4d4;
-    color: #504b68;;
+    background: #282c37;
+    color: #000;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
@@ -7292,7 +7267,7 @@ a.status-card.compact:hover {
 .error-modal__footer,
 .onboarding-modal__paginator {
     flex: 0 0 auto;
-    background: #c0cdd9;
+    background: #393f4f;
     display: flex;
     padding: 25px
 }
@@ -7306,7 +7281,7 @@ a.status-card.compact:hover {
 .error-modal__footer .onboarding-modal__nav,
 .onboarding-modal__paginator .error-modal__nav,
 .onboarding-modal__paginator .onboarding-modal__nav {
-    color: #ada6bf;
+    color: #282c37;
     border: 0;
     font-size: 14px;
     font-weight: 500;
@@ -7330,46 +7305,43 @@ a.status-card.compact:hover {
 .onboarding-modal__paginator .onboarding-modal__nav:active,
 .onboarding-modal__paginator .onboarding-modal__nav:focus,
 .onboarding-modal__paginator .onboarding-modal__nav:hover {
-    color: #576078;
-    background-color: #a6b9c9
+    color: #313543;
+    background-color: #4a5266
 }
 
 .error-modal__footer .error-modal__nav.onboarding-modal__done,
-.error-modal__footer .error-modal__nav.onboarding-modal__next,
-.error-modal__footer .onboarding-modal__nav.onboarding-modal__done,
-.error-modal__footer .onboarding-modal__nav.onboarding-modal__next,
-.onboarding-modal__paginator .error-modal__nav.onboarding-modal__done,
-.onboarding-modal__paginator .error-modal__nav.onboarding-modal__next,
-.onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__done,
-.onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__next {
-    color: #504b68;
-}
-
 .error-modal__footer .error-modal__nav.onboarding-modal__done:active,
 .error-modal__footer .error-modal__nav.onboarding-modal__done:focus,
 .error-modal__footer .error-modal__nav.onboarding-modal__done:hover,
+.error-modal__footer .error-modal__nav.onboarding-modal__next,
 .error-modal__footer .error-modal__nav.onboarding-modal__next:active,
 .error-modal__footer .error-modal__nav.onboarding-modal__next:focus,
 .error-modal__footer .error-modal__nav.onboarding-modal__next:hover,
+.error-modal__footer .onboarding-modal__nav.onboarding-modal__done,
 .error-modal__footer .onboarding-modal__nav.onboarding-modal__done:active,
 .error-modal__footer .onboarding-modal__nav.onboarding-modal__done:focus,
 .error-modal__footer .onboarding-modal__nav.onboarding-modal__done:hover,
+.error-modal__footer .onboarding-modal__nav.onboarding-modal__next,
 .error-modal__footer .onboarding-modal__nav.onboarding-modal__next:active,
 .error-modal__footer .onboarding-modal__nav.onboarding-modal__next:focus,
 .error-modal__footer .onboarding-modal__nav.onboarding-modal__next:hover,
+.onboarding-modal__paginator .error-modal__nav.onboarding-modal__done,
 .onboarding-modal__paginator .error-modal__nav.onboarding-modal__done:active,
 .onboarding-modal__paginator .error-modal__nav.onboarding-modal__done:focus,
 .onboarding-modal__paginator .error-modal__nav.onboarding-modal__done:hover,
+.onboarding-modal__paginator .error-modal__nav.onboarding-modal__next,
 .onboarding-modal__paginator .error-modal__nav.onboarding-modal__next:active,
 .onboarding-modal__paginator .error-modal__nav.onboarding-modal__next:focus,
 .onboarding-modal__paginator .error-modal__nav.onboarding-modal__next:hover,
+.onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__done,
 .onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__done:active,
 .onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__done:focus,
 .onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__done:hover,
+.onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__next,
 .onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__next:active,
 .onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__next:focus,
 .onboarding-modal__paginator .onboarding-modal__nav.onboarding-modal__next:hover {
-    color: #5A5475
+    color: #000
 }
 
 .error-modal__footer {
@@ -7384,15 +7356,15 @@ a.status-card.compact:hover {
 
 .display-case__label {
     font-weight: 500;
-    color: #504b68;;
+    color: #000;
     margin-bottom: 5px;
     text-transform: uppercase;
     font-size: 12px
 }
 
 .display-case__case {
-    background: #504b68;;
-    color: #c8c4d4;
+    background: #dff6eb;
+    color: #282c37;
     font-weight: 500;
     padding: 10px;
     border-radius: 4px
@@ -7410,8 +7382,8 @@ a.status-card.compact:hover {
 .confirmation-modal,
 .mute-modal,
 .report-modal {
-    background: #f2f5f7;
-    color: #504b68;;
+    background: #17191f;
+    color: #000;
     border-radius: 8px;
     overflow: hidden;
     max-width: 90vw;
@@ -7447,18 +7419,18 @@ a.status-card.compact:hover {
 .confirmation-modal .status__content__spoiler-link,
 .mute-modal .status__content__spoiler-link,
 .report-modal .status__content__spoiler-link {
-    color: #f2f5f7
+    color: #17191f
 }
 
 .actions-modal .status {
-    background: #F8F8F2;
+    background: #fff;
     padding-top: 10px;
     padding-bottom: 10px
 }
 
 .actions-modal .dropdown-menu__separator,
 .actions-modal .status {
-    border-bottom-color: #c8c4d4
+    border-bottom-color: #282c37
 }
 
 .boost-modal__container {
@@ -7479,7 +7451,7 @@ a.status-card.compact:hover {
 .mute-modal__action-bar {
     display: flex;
     justify-content: space-between;
-    background: #c8c4d4;
+    background: #282c37;
     padding: 10px;
     line-height: 36px
 }
@@ -7489,7 +7461,7 @@ a.status-card.compact:hover {
 .mute-modal__action-bar>div {
     flex: 1 1 auto;
     text-align: right;
-    color: #ada6bf;
+    color: #282c37;
     padding-right: 10px
 }
 
@@ -7533,7 +7505,7 @@ a.status-card.compact:hover {
 
 .report-modal__container {
     display: flex;
-    border-top: 1px solid #c8c4d4
+    border-top: 1px solid #282c37
 }
 
 @media screen and (max-width:480px) {
@@ -7565,12 +7537,12 @@ a.status-card.compact:hover {
 }
 
 .report-modal__statuses .status__content a {
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .report-modal__statuses .status__content,
 .report-modal__statuses .status__content p {
-    color: #504b68;
+    color: #000
 }
 
 @media screen and (max-width:480px) {
@@ -7581,7 +7553,7 @@ a.status-card.compact:hover {
 
 .report-modal__comment {
     padding: 20px;
-    border-right: 1px solid #c8c4d4;
+    border-right: 1px solid #282c37;
     max-width: 320px
 }
 
@@ -7595,20 +7567,20 @@ a.status-card.compact:hover {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    color: #504b68;;
-    background: #F8F8F2;
+    color: #000;
+    background: #fff;
     padding: 10px;
     font-family: inherit;
     font-size: 14px;
     resize: vertical;
     outline: 0;
     border-radius: 4px;
-    border: 1px solid #c8c4d4;
+    border: 1px solid #282c37;
     margin: 0 0 20px
 }
 
 .report-modal__comment .setting-text:focus {
-    border: 1px solid #c0cdd9
+    border: 1px solid #393f4f
 }
 
 .report-modal__comment .setting-toggle {
@@ -7617,7 +7589,7 @@ a.status-card.compact:hover {
 }
 
 .report-modal__comment .setting-toggle__label {
-    color: #504b68;;
+    color: #000;
     font-size: 14px
 }
 
@@ -7656,7 +7628,7 @@ a.status-card.compact:hover {
 }
 
 .actions-modal ul li:not(:empty) a {
-    color: #504b68;;
+    color: #000;
     display: flex;
     padding: 12px 16px;
     font-size: 15px;
@@ -7677,8 +7649,8 @@ a.status-card.compact:hover {
 .actions-modal ul li:not(:empty) a:focus button,
 .actions-modal ul li:not(:empty) a:hover,
 .actions-modal ul li:not(:empty) a:hover button {
-    background: #FF857F;
-    color: #F8F8F2
+    background: #5971AD;
+    color: #000
 }
 
 .actions-modal ul li:not(:empty) a button:first-child {
@@ -7690,7 +7662,7 @@ a.status-card.compact:hover {
 .mute-modal__action-bar .confirmation-modal__cancel-button,
 .mute-modal__action-bar .mute-modal__cancel-button {
     background-color: transparent;
-    color: #ada6bf;
+    color: #282c37;
     font-size: 14px;
     font-weight: 500
 }
@@ -7707,7 +7679,7 @@ a.status-card.compact:hover {
 .mute-modal__action-bar .mute-modal__cancel-button:active,
 .mute-modal__action-bar .mute-modal__cancel-button:focus,
 .mute-modal__action-bar .mute-modal__cancel-button:hover {
-    color: #576078
+    color: #313543
 }
 
 .confirmation-modal__container,
@@ -7752,7 +7724,7 @@ a.status-card.compact:hover {
 }
 
 .loading-bar {
-    background-color: #C2FFDF;
+    background-color: #ffcbcb;
     height: 3px;
     position: absolute;
     top: 0;
@@ -7762,8 +7734,8 @@ a.status-card.compact:hover {
 .media-gallery__gifv__label {
     display: block;
     position: absolute;
-    color: #F8F8F2;
-    background: rgba(0, 0, 0, .5);
+    color: #000;
+    background: hsla(0, 0%, 100%, .5);
     bottom: 6px;
     left: 6px;
     padding: 2px 6px;
@@ -7787,7 +7759,7 @@ a.status-card.compact:hover {
 .attachment-list {
     display: flex;
     font-size: 14px;
-    border: 1px solid #5f5676;
+    border: 1px solid #c8dbee;
     border-radius: 4px;
     margin-top: 14px;
     overflow: hidden
@@ -7795,10 +7767,10 @@ a.status-card.compact:hover {
 
 .attachment-list__icon {
     flex: 0 0 auto;
-    color: #ada6bf;
+    color: #444b5d;
     padding: 8px 18px;
     cursor: default;
-    border-right: 1px solid #5f5676;
+    border-right: 1px solid #c8dbee;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7825,7 +7797,7 @@ a.status-card.compact:hover {
 
 .attachment-list__list a {
     text-decoration: none;
-    color: #ada6bf;
+    color: #444b5d;
     font-weight: 500
 }
 
@@ -7844,7 +7816,7 @@ a.status-card.compact:hover {
 }
 
 .attachment-list.compact .fa {
-    color: #ada6bf
+    color: #444b5d
 }
 
 .media-gallery {
@@ -7877,7 +7849,7 @@ a.status-card.compact:hover {
     cursor: zoom-in;
     display: block;
     text-decoration: none;
-    color: #c8c4d4;
+    color: #282c37;
     line-height: 0
 }
 
@@ -7922,7 +7894,7 @@ a.status-card.compact:hover {
 }
 
 .status__video-player {
-    background: #2e2b3b;
+    background: #fff;
     box-sizing: border-box;
     cursor: default;
     margin-top: 8px;
@@ -7945,19 +7917,19 @@ a.status-card.compact:hover {
 
 .status__video-player-expand,
 .status__video-player-mute {
-    color: #F8F8F2;
+    color: #000;
     opacity: .8;
     position: absolute;
     right: 4px;
-    text-shadow: 0 1px 1px #2e2b3b, 1px 0 1px #2e2b3b
+    text-shadow: 0 1px 1px #000, 1px 0 1px #000
 }
 
 .status__video-player-spoiler {
     display: none;
-    color: #F8F8F2;
+    color: #000;
     left: 4px;
     position: absolute;
-    text-shadow: 0 1px 1px #2e2b3b, 1px 0 1px #2e2b3b;
+    text-shadow: 0 1px 1px #000, 1px 0 1px #000;
     top: 4px;
     z-index: 100
 }
@@ -7991,7 +7963,7 @@ a.status-card.compact:hover {
 .video-player {
     overflow: hidden;
     position: relative;
-    background: #2e2b3b;
+    background: #000;
     max-width: 100%;
     border-radius: 4px
 }
@@ -8060,8 +8032,8 @@ a.status-card.compact:hover {
     height: 100%;
     z-index: 4;
     border: 0;
-    background: #2e2b3b;
-    color: #c8c4d4;
+    background: #fff;
+    color: #282c37;
     transition: none;
     pointer-events: none
 }
@@ -8074,7 +8046,7 @@ a.status-card.compact:hover {
 .video-player__spoiler.active:active,
 .video-player__spoiler.active:focus,
 .video-player__spoiler.active:hover {
-    color: #b2c1d5
+    color: #191b22
 }
 
 .video-player__spoiler__title {
@@ -8120,7 +8092,7 @@ a.status-card.compact:hover {
 .video-player__buttons button:active,
 .video-player__buttons button:focus,
 .video-player__buttons button:hover {
-    color: #F8F8F2
+    color: #fff
 }
 
 .video-player__time-current,
@@ -8131,7 +8103,7 @@ a.status-card.compact:hover {
 }
 
 .video-player__time-current {
-    color: #F8F8F2;
+    color: #fff;
     margin-left: 60px
 }
 
@@ -8142,7 +8114,7 @@ a.status-card.compact:hover {
 
 .video-player__time-sep,
 .video-player__time-total {
-    color: #F8F8F2
+    color: #fff
 }
 
 .video-player__volume {
@@ -8168,7 +8140,7 @@ a.status-card.compact:hover {
 }
 
 .video-player__volume__current {
-    background: #FF857F
+    background: #5971AD
 }
 
 .video-player__volume__handle {
@@ -8180,7 +8152,7 @@ a.status-card.compact:hover {
     bottom: 16px;
     left: 70px;
     transition: opacity .1s ease;
-    background: #FF857F;
+    background: #5971AD;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, .2);
     pointer-events: none
 }
@@ -8209,7 +8181,7 @@ a.status-card.compact:hover {
     height: 4px;
     border-radius: 4px;
     top: 10px;
-    background: #FF857F
+    background: #5971AD
 }
 
 .video-player__seek__buffer {
@@ -8226,7 +8198,7 @@ a.status-card.compact:hover {
     top: 6px;
     margin-left: -6px;
     transition: opacity .1s ease;
-    background: #FF857F;
+    background: #5971AD;
     box-shadow: 1px 2px 6px rgba(0, 0, 0, .2);
     pointer-events: none
 }
@@ -8255,7 +8227,7 @@ a.status-card.compact:hover {
 
 .media-spoiler-video-play-icon {
     border-radius: 100px;
-    color: hsla(0, 0%, 100%, .8);
+    color: rgba(0, 0, 0, .8);
     font-size: 36px;
     left: 50%;
     padding: 5px;
@@ -8292,11 +8264,11 @@ a.status-card.compact:hover {
     margin: 2px;
     top: 0;
     left: 0;
-    background-color: #2e2b3b;
+    background-color: #fff;
     background-size: cover;
     background-position: 50%;
     position: absolute;
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     border-radius: 4px
 }
@@ -8305,7 +8277,7 @@ a.status-card.compact:hover {
 .account-gallery__item a:focus,
 .account-gallery__item a:hover {
     outline: 0;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .account-gallery__item a:active:before,
@@ -8315,7 +8287,7 @@ a.status-card.compact:hover {
     display: block;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .3);
+    background: hsla(0, 0%, 100%, .3);
     border-radius: 4px
 }
 
@@ -8330,8 +8302,8 @@ a.status-card.compact:hover {
 
 .account__section-headline,
 .notification__filter-bar {
-    background: #2e2b3b;
-    border-bottom: 1px solid #5f5676;
+    background: #dff6eb;
+    border-bottom: 1px solid #d9fceb;
     cursor: default;
     display: flex;
     flex-shrink: 0
@@ -8339,7 +8311,7 @@ a.status-card.compact:hover {
 
 .account__section-headline button,
 .notification__filter-bar button {
-    background: #2e2b3b;
+    background: #dff6eb;
     border: 0;
     margin: 0
 }
@@ -8350,7 +8322,7 @@ a.status-card.compact:hover {
 .notification__filter-bar button {
     display: block;
     flex: 1 1 auto;
-    color: #c8c4d4;
+    color: #282c37;
     padding: 15px 0;
     font-size: 14px;
     font-weight: 500;
@@ -8363,7 +8335,7 @@ a.status-card.compact:hover {
 .account__section-headline button.active,
 .notification__filter-bar a.active,
 .notification__filter-bar button.active {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .account__section-headline a.active:after,
@@ -8383,7 +8355,7 @@ a.status-card.compact:hover {
     height: 0;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    border-color: transparent transparent #5f5676;
+    border-color: transparent transparent #ebe9f3;
     border-style: solid;
     border-width: 0 10px 10px
 }
@@ -8393,7 +8365,7 @@ a.status-card.compact:hover {
 .notification__filter-bar a.active:after,
 .notification__filter-bar button.active:after {
     bottom: -1px;
-    border-color: transparent transparent #504b68;
+    border-color: transparent transparent #ebe9f3
 }
 
 ::-webkit-scrollbar-thumb {
@@ -8401,17 +8373,17 @@ a.status-card.compact:hover {
 }
 
 .search-popout {
-    background: #F8F8F2;
+    background: #fff;
     border-radius: 4px;
     padding: 10px 14px 14px;
     margin-top: 10px;
-    color: #5f5676;
+    color: #444b5d;
     box-shadow: 2px 4px 15px rgba(0, 0, 0, .4)
 }
 
 .search-popout h4 {
     text-transform: uppercase;
-    color: #2e2b3b;
+    color: #444b5d;
     font-size: 13px;
     font-weight: 500;
     margin-bottom: 10px
@@ -8427,7 +8399,7 @@ a.status-card.compact:hover {
 
 .search-popout em {
     font-weight: 500;
-    color: #2e2b3b;
+    color: #000
 }
 
 noscript {
@@ -8444,12 +8416,12 @@ noscript img {
 noscript div {
     font-size: 14px;
     margin: 30px auto;
-    color: #c8c4d4;
+    color: #282c37;
     max-width: 400px
 }
 
 noscript div a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
@@ -8571,8 +8543,8 @@ noscript div a:hover {
     border: none;
     padding: 10px;
     font-family: "mastodon-font-monospace", monospace;
-    background: #504b68;;
-    color: #F8F8F2;
+    background: #dff6eb;
+    color: #000;
     font-size: 14px;
     margin: 0 0 15px
 }
@@ -8588,7 +8560,7 @@ noscript div a:hover {
 }
 
 .embed-modal .embed-modal__container .embed-modal__html:focus {
-    background: #5A5475
+    background: #c8c4dd
 }
 
 @media screen and (max-width:600px) {
@@ -8606,15 +8578,15 @@ noscript div a:hover {
 
 .account__moved-note {
     padding: 14px 10px 16px;
-    background: #5A5475;
-    border-top: 1px solid #5f5676;
-    border-bottom: 1px solid #5f5676
+    background: #c8c4dd;
+    border-top: 1px solid #c8dbee;
+    border-bottom: 1px solid #c8dbee
 }
 
 .account__moved-note__message {
     position: relative;
     margin-left: 58px;
-    color: #ada6bf;
+    color: #444b5d;
     padding: 0 0 4px;
     font-size: 14px
 }
@@ -8643,7 +8615,7 @@ noscript div a:hover {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: #5A5475
+    background: #c8c4dd
 }
 
 .column-inline-form label {
@@ -8671,11 +8643,11 @@ noscript div a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .5)
+    background: hsla(0, 0%, 100%, .5)
 }
 
 .list-editor {
-    background: #504b68;;
+    background: #dff6eb;
     flex-direction: column;
     border-radius: 8px;
     box-shadow: 2px 4px 15px rgba(0, 0, 0, .4);
@@ -8691,7 +8663,7 @@ noscript div a:hover {
 
 .list-editor h4 {
     padding: 15px 0;
-    background: #5f5676;
+    background: #ffcbcb;
     font-weight: 500;
     font-size: 16px;
     text-align: center;
@@ -8729,7 +8701,7 @@ noscript div a:hover {
 }
 
 .list-adder {
-    background: #504b68;;
+    background: #dff6eb;
     flex-direction: column;
     border-radius: 8px;
     box-shadow: 2px 4px 15px rgba(0, 0, 0, .4);
@@ -8744,11 +8716,11 @@ noscript div a:hover {
 }
 
 .list-adder__account {
-    background: #5f5676
+    background: #ffcbcb
 }
 
 .list-adder__lists {
-    background: #5f5676;
+    background: #ffcbcb;
     height: 50vh;
     border-radius: 0 0 8px 8px;
     overflow-y: auto
@@ -8756,7 +8728,7 @@ noscript div a:hover {
 
 .list-adder .list {
     padding: 10px;
-    border-bottom: 1px solid #5f5676
+    border-bottom: 1px solid #c8dbee
 }
 
 .list-adder .list__wrapper {
@@ -8823,8 +8795,8 @@ noscript div a:hover {
     height: 3.9375rem;
     bottom: 1.3125rem;
     right: 1.3125rem;
-    background: #FF857F;
-    color: #F8F8F2;
+    background: #5971AD;
+    color: #fff;
     border-radius: 50%;
     font-size: 21px;
     line-height: 21px;
@@ -8835,7 +8807,7 @@ noscript div a:hover {
 .floating-action-button:active,
 .floating-action-button:focus,
 .floating-action-button:hover {
-    background: #49a0de
+    background: #7387ba
 }
 
 .account__header .roles {
@@ -8854,7 +8826,7 @@ noscript div a:hover {
 }
 
 .account__header .account__header__fields dl {
-    border-top: 1px solid #5A5475;
+    border-top: 1px solid #c8c4dd;
     border-bottom: 0;
     display: flex
 }
@@ -8871,8 +8843,8 @@ noscript div a:hover {
 }
 
 .account__header .account__header__fields dt {
-    color: #c8c4d4;
-    background: #2e2b3b;
+    color: #282c37;
+    background: #ffcbcb;
     width: 120px;
     flex: 0 0 auto;
     font-weight: 500
@@ -8880,19 +8852,19 @@ noscript div a:hover {
 
 .account__header .account__header__fields dd {
     flex: 1 1 auto;
-    color: #F8F8F2;
-    background: #504b68;
+    color: #000;
+    background: #dff6eb
 }
 
 .account__header .account__header__fields dd.verified {
-    border: 1px solid rgba(121, 189, 154, .5);
-    background: rgba(121, 189, 154, .25)
+    border: 1px solid rgba(60, 117, 77, .5);
+    background: rgba(60, 117, 77, .25)
 }
 
 .trends__header {
-    color: #ada6bf;
-    background: #2c313d;
-    border-bottom: 1px solid #2e2b3b;
+    color: #444b5d;
+    background: #d3dce4;
+    border-bottom: 1px solid #c8dbee;
     font-weight: 500;
     padding: 15px;
     font-size: 16px;
@@ -8908,7 +8880,7 @@ noscript div a:hover {
     display: flex;
     align-items: center;
     padding: 15px;
-    border-bottom: 1px solid #5f5676
+    border-bottom: 1px solid #c8dbee
 }
 
 .trends__item:last-child {
@@ -8917,7 +8889,7 @@ noscript div a:hover {
 
 .trends__item__name {
     flex: 1 1 auto;
-    color: #ada6bf;
+    color: #444b5d;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap
@@ -8928,7 +8900,7 @@ noscript div a:hover {
 }
 
 .trends__item__name a {
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -8951,7 +8923,7 @@ noscript div a:hover {
     line-height: 36px;
     font-weight: 500;
     text-align: center;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .trends__item__sparkline {
@@ -8960,7 +8932,7 @@ noscript div a:hover {
 }
 
 .trends__item__sparkline path {
-    stroke: #459ede!important
+    stroke: #2353c3!important
 }
 
 .introduction {
@@ -8972,13 +8944,13 @@ noscript div a:hover {
 
 @media screen and (max-width:920px) {
     .introduction {
-        background: #2e2b3b;
+        background: #fffdef;
         display: block!important
     }
 }
 
 .introduction__pager {
-    background: #2e2b3b;
+    background: #fffdef;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
     overflow: hidden
 }
@@ -9035,7 +9007,7 @@ noscript div a:hover {
 }
 
 .introduction__text {
-    border-top: 2px solid #C2FFDF
+    border-top: 2px solid #5971AD
 }
 
 .introduction__text--columnized {
@@ -9069,14 +9041,14 @@ noscript div a:hover {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .introduction__text p code {
     display: inline-block;
-    background: #2e2b3b;
+    background: #fffdef;
     font-size: 15px;
-    border: 1px solid #5f5676;
+    border: 1px solid #c8dbee;
     border-radius: 2px;
     padding: 1px 3px
 }
@@ -9103,19 +9075,19 @@ noscript div a:hover {
     width: 14px;
     height: 14px;
     border-radius: 14px;
-    border: 1px solid #C2FFDF;
+    border: 1px solid #5971AD;
     background: transparent;
     margin: 0 3px;
     cursor: pointer
 }
 
 .introduction__dot:hover {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .introduction__dot.active {
     cursor: default;
-    background: #C2FFDF
+    background: #5971AD
 }
 
 .introduction__action {
@@ -9126,7 +9098,7 @@ noscript div a:hover {
 }
 
 .modal-layout {
-    /* background: #504b68; url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="%23ada6bf"/></svg>') repeat-x bottom fixed; */
+    background: #dff6eb url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="#ffcbcb"/></svg>') repeat-x bottom fixed;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -9155,7 +9127,7 @@ noscript div a:hover {
 .emoji-mart {
     font-size: 13px;
     display: inline-block;
-    color: #504b68;
+    color: #000
 }
 
 .emoji-mart,
@@ -9169,14 +9141,14 @@ noscript div a:hover {
 }
 
 .emoji-mart-bar {
-    border: 0 solid #c0cdd9
+    border: 0 solid #393f4f
 }
 
 .emoji-mart-bar:first-child {
     border-bottom-width: 1px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background: #c8c4d4
+    background: #282c37
 }
 
 .emoji-mart-bar:last-child {
@@ -9190,7 +9162,7 @@ noscript div a:hover {
     display: flex;
     justify-content: space-between;
     padding: 0 6px;
-    color: #5f5676;
+    color: #282c37;
     line-height: 0
 }
 
@@ -9205,15 +9177,15 @@ noscript div a:hover {
 }
 
 .emoji-mart-anchor:hover {
-    color: #2e2b3b
+    color: #313543
 }
 
 .emoji-mart-anchor-selected {
-    color: #5f5676
+    color: #5971AD
 }
 
 .emoji-mart-anchor-selected:hover {
-    color: #5f5676
+    color: #3c6cdc
 }
 
 .emoji-mart-anchor-selected .emoji-mart-anchor-bar {
@@ -9226,7 +9198,7 @@ noscript div a:hover {
     left: 0;
     width: 100%;
     height: 4px;
-    background-color: #2e2b3b
+    background-color: #5971AD
 }
 
 .emoji-mart-anchors i {
@@ -9245,18 +9217,18 @@ noscript div a:hover {
     height: 270px;
     max-height: 35vh;
     padding: 0 6px 6px;
-    background: #F8F8F2;
+    background: #fff;
     will-change: transform
 }
 
 .emoji-mart-scroll::-webkit-scrollbar-track:active,
 .emoji-mart-scroll::-webkit-scrollbar-track:hover {
-    background-color: rgba(0, 0, 0, .3)
+    background-color: hsla(0, 0%, 100%, .3)
 }
 
 .emoji-mart-search {
     padding: 10px 45px 10px 10px;
-    background: #F8F8F2
+    background: #fff
 }
 
 .emoji-mart-search input {
@@ -9266,9 +9238,9 @@ noscript div a:hover {
     font-family: inherit;
     display: block;
     width: 100%;
-    background: rgba(217, 225, 232, .3);
-    color: #504b68;;
-    border: 1px solid #c8c4d4;
+    background: rgba(40, 44, 55, .3);
+    color: #000;
+    border: 1px solid #282c37;
     border-radius: 4px
 }
 
@@ -9300,7 +9272,7 @@ noscript div a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(217, 225, 232, .7);
+    background-color: rgba(40, 44, 55, .7);
     border-radius: 100%
 }
 
@@ -9317,7 +9289,7 @@ noscript div a:hover {
     width: 100%;
     font-weight: 500;
     padding: 5px 6px;
-    background: #F8F8F2
+    background: #fff
 }
 
 .emoji-mart-emoji {
@@ -9335,7 +9307,7 @@ noscript div a:hover {
     font-size: 14px;
     text-align: center;
     padding-top: 70px;
-    color: #c8c4d4
+    color: #444b5d
 }
 
 .emoji-mart-no-results .emoji-mart-category-label {
@@ -9373,12 +9345,12 @@ noscript div a:hover {
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
-    color: #c8c4d4;
+    color: #282c37;
     padding-right: 10px
 }
 
 .rich-formatting a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
@@ -9389,12 +9361,12 @@ noscript div a:hover {
     font-size: 16px;
     line-height: 30px;
     margin-bottom: 12px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .rich-formatting li a,
 .rich-formatting p a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
@@ -9412,7 +9384,7 @@ noscript div a:hover {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color: #c8c4d4
+    color: #131419
 }
 
 .rich-formatting h1 {
@@ -9421,7 +9393,7 @@ noscript div a:hover {
     line-height: 30px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .rich-formatting h1 small {
@@ -9429,7 +9401,7 @@ noscript div a:hover {
     display: block;
     font-size: 18px;
     font-weight: 400;
-    color: #c8c4d4
+    color: #131419
 }
 
 .rich-formatting h2 {
@@ -9438,7 +9410,7 @@ noscript div a:hover {
     line-height: 26px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .rich-formatting h3 {
@@ -9451,7 +9423,7 @@ noscript div a:hover {
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .rich-formatting h4 {
@@ -9468,7 +9440,7 @@ noscript div a:hover {
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .rich-formatting h6 {
@@ -9507,7 +9479,7 @@ noscript div a:hover {
     width: 100%;
     height: 0;
     border: 0;
-    border-bottom: 1px solid rgba(96, 105, 132, .6);
+    border-bottom: 1px solid rgba(176, 192, 207, .6);
     margin: 20px 0
 }
 
@@ -9517,7 +9489,7 @@ noscript div a:hover {
 }
 
 .information-board {
-    background: #2e2b3b;
+    background: #c8dbee;
     padding: 20px 0
 }
 
@@ -9537,7 +9509,7 @@ noscript div a:hover {
     font-family: "mastodon-font-sans-serif", sans-serif;
     font-size: 16px;
     line-height: 28px;
-    color: #F8F8F2;
+    color: #000;
     text-align: right;
     padding: 10px 15px
 }
@@ -9548,7 +9520,7 @@ noscript div a:hover {
 }
 
 .information-board__section span:last-child {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .information-board__section strong {
@@ -9567,7 +9539,7 @@ noscript div a:hover {
     position: absolute;
     width: 280px;
     box-sizing: border-box;
-    background: #2e2b3b;
+    background: #fffdef;
     padding: 10px 20px 20px;
     border-radius: 4px 4px 0 0;
     right: 0;
@@ -9579,10 +9551,10 @@ noscript div a:hover {
     font-size: 14px;
     line-height: 24px;
     font-weight: 500;
-    color: #c8c4d4;
+    color: #282c37;
     padding-bottom: 5px;
     margin-bottom: 15px;
-    border-bottom: 1px solid #5A5475;
+    border-bottom: 1px solid #c8c4dd;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden
@@ -9591,7 +9563,7 @@ noscript div a:hover {
 .information-board .panel .panel-header a,
 .information-board .panel .panel-header span {
     font-weight: 400;
-    color: #7a93b6
+    color: #3d4455
 }
 
 .information-board .panel .panel-header a {
@@ -9621,7 +9593,7 @@ noscript div a:hover {
 
 .information-board .owner .name a {
     display: block;
-    color: #F8F8F2;
+    color: #000;
     text-decoration: none
 }
 
@@ -9631,7 +9603,7 @@ noscript div a:hover {
 
 .information-board .owner .name .username {
     display: block;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page .grid {
@@ -9758,7 +9730,7 @@ noscript div a:hover {
     display: block;
     width: 100%;
     height: 0;
-    border-bottom: 1px solid rgba(96, 105, 132, .6);
+    border-bottom: 1px solid rgba(176, 192, 207, .6);
     position: absolute;
     top: 50%;
     left: 0
@@ -9766,10 +9738,10 @@ noscript div a:hover {
 
 .landing-page .separator-or span {
     display: inline-block;
-    background: #504b68;;
+    background: #dff6eb;
     font-size: 12px;
     font-weight: 500;
-    color: #c8c4d4;
+    color: #282c37;
     text-transform: uppercase;
     position: relative;
     z-index: 1;
@@ -9784,12 +9756,12 @@ noscript div a:hover {
     font-size: 16px;
     line-height: 30px;
     margin-bottom: 12px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page li a,
 .landing-page p a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
@@ -9802,13 +9774,13 @@ noscript div a:hover {
     text-align: center;
     font-size: 12px;
     line-height: 18px;
-    color: #c8c4d4;
+    color: #282c37;
     margin-bottom: 0
 }
 
 .landing-page .closed-registrations-message a,
 .landing-page .closed-registrations-message p a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
@@ -9825,7 +9797,7 @@ noscript div a:hover {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color: #c8c4d4
+    color: #131419
 }
 
 .landing-page h1 {
@@ -9834,7 +9806,7 @@ noscript div a:hover {
     line-height: 30px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page h1 small {
@@ -9842,7 +9814,7 @@ noscript div a:hover {
     display: block;
     font-size: 18px;
     font-weight: 400;
-    color: #c8c4d4
+    color: #131419
 }
 
 .landing-page h2 {
@@ -9851,7 +9823,7 @@ noscript div a:hover {
     line-height: 26px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page h3 {
@@ -9864,7 +9836,7 @@ noscript div a:hover {
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page h4 {
@@ -9881,7 +9853,7 @@ noscript div a:hover {
     line-height: 24px;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page h6 {
@@ -9920,7 +9892,7 @@ noscript div a:hover {
     width: 100%;
     height: 0;
     border: 0;
-    border-bottom: 1px solid rgba(96, 105, 132, .6);
+    border-bottom: 1px solid rgba(176, 192, 207, .6);
     margin: 20px 0
 }
 
@@ -9939,13 +9911,13 @@ noscript div a:hover {
 
 .landing-page .header-wrapper {
     padding-top: 15px;
-    background: #504b68;;
-    background: linear-gradient(150deg, #5f5676, #504b68);
+    background: #dff6eb;
+    background: linear-gradient(150deg, #c8dbee, #dff6eb);
     position: relative
 }
 
 .landing-page .header-wrapper.compact {
-    background: #504b68;;
+    background: #dff6eb;
     padding-bottom: 15px
 }
 
@@ -9955,18 +9927,18 @@ noscript div a:hover {
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page .header-wrapper.compact .hero .heading a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
 .landing-page .brand a {
     padding-left: 0;
     padding-right: 0;
-    color: #F8F8F2
+    color: #fff
 }
 
 .landing-page .brand img {
@@ -9995,7 +9967,7 @@ noscript div a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     padding: 12px 16px;
     line-height: 32px;
@@ -10005,7 +9977,7 @@ noscript div a:hover {
 }
 
 .landing-page .header .links a:hover {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page .header .links ul {
@@ -10041,7 +10013,7 @@ noscript div a:hover {
 
 .landing-page .header .hero .closed-registrations-message,
 .landing-page .header .hero .simple_form {
-    background: #2e2b3b;
+    background: #c8dbee;
     width: 280px;
     padding: 15px 20px;
     border-radius: 4px 4px 0 0;
@@ -10069,17 +10041,17 @@ noscript div a:hover {
 }
 
 .landing-page .about-short {
-    background: #2e2b3b;
+    background: #c8dbee;
     padding: 50px 0 30px;
     font-family: "mastodon-font-sans-serif", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 30px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page .about-short a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
@@ -10117,7 +10089,7 @@ noscript div a:hover {
 }
 
 .landing-page__call-to-action {
-    background: #2e2b3b;
+    background: #c8dbee;
     border-radius: 4px;
     padding: 25px 40px;
     overflow: hidden;
@@ -10235,7 +10207,7 @@ noscript div a:hover {
 .landing-page__forms,
 .landing-page__information {
     box-sizing: border-box;
-    background: #504b68;;
+    background: #dff6eb;
     border-radius: 4px;
     box-shadow: 0 0 6px rgba(0, 0, 0, .1)
 }
@@ -10266,21 +10238,18 @@ noscript div a:hover {
 }
 
 .landing-page__short-description p a {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page__short-description h1 {
     font-weight: 500;
-    color: #F8F8F2;
+    color: #000;
     margin-bottom: 0
 }
 
-.landing-page__short-description h1 small {
-    color: #c8c4d4
-}
-
+.landing-page__short-description h1 small,
 .landing-page__short-description h1 small span {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page__short-description p:last-child {
@@ -10318,7 +10287,7 @@ noscript div a:hover {
         margin-bottom: 40px
     }
     .landing-page__forms .separator-or span {
-        background: #2e2b3b
+        background: #fffdef
     }
 }
 
@@ -10348,7 +10317,7 @@ noscript div a:hover {
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
-    color: #F8F8F2;
+    color: #000;
     width: 100%;
     flex: 1 1 auto;
     overflow: hidden;
@@ -10380,7 +10349,7 @@ noscript div a:hover {
     font-size: inherit;
     line-height: inherit;
     font-weight: inherit;
-    color: #F8F8F2;
+    color: #000;
     margin-bottom: 20px
 }
 
@@ -10389,7 +10358,7 @@ noscript div a:hover {
 }
 
 .landing-page #mastodon-timeline p a {
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none
 }
 
@@ -10406,7 +10375,7 @@ noscript div a:hover {
 }
 
 .landing-page #mastodon-timeline .attachment-list__list li a {
-    color: #ada6bf;
+    color: #444b5d;
     text-decoration: none
 }
 
@@ -10447,14 +10416,14 @@ noscript div a:hover {
 
 .landing-page .features-list .features-list__row .visual .fa {
     display: block;
-    color: #c8c4d4;
+    color: #282c37;
     font-size: 48px
 }
 
 .landing-page .features-list .features-list__row .text {
     font-size: 16px;
     line-height: 30px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .landing-page .features-list .features-list__row .text h6 {
@@ -10477,7 +10446,7 @@ noscript div a:hover {
 .landing-page .footer-links {
     padding-bottom: 50px;
     text-align: right;
-    color: #ada6bf
+    color: #444b5d
 }
 
 .landing-page .footer-links p {
@@ -10492,7 +10461,7 @@ noscript div a:hover {
 .landing-page__footer {
     margin-top: 10px;
     text-align: center;
-    color: #ada6bf
+    color: #444b5d
 }
 
 .landing-page__footer p {
@@ -10538,7 +10507,7 @@ noscript div a:hover {
     }
     .landing-page .header .links {
         padding-top: 15px;
-        background: #2e2b3b
+        background: #c8dbee
     }
     .landing-page .header .links a {
         padding: 12px 8px
@@ -10562,7 +10531,7 @@ noscript div a:hover {
     }
     .landing-page .header .hero .closed-registrations-message,
     .landing-page .header .hero .simple_form {
-        background: #2e2b3b;
+        background: #fffdef;
         width: 100%;
         border-radius: 0;
         box-sizing: border-box
@@ -10639,14 +10608,14 @@ noscript div a:hover {
     padding: 8px;
     line-height: 18px;
     vertical-align: top;
-    border-top: 1px solid #504b68;;
+    border-top: 1px solid #dff6eb;
     text-align: left;
-    background: #2e2b3b
+    background: #c8dbee
 }
 
 .table>thead>tr>th {
     vertical-align: bottom;
-    border-bottom: 2px solid #504b68;;
+    border-bottom: 2px solid #dff6eb;
     border-top: 0;
     font-weight: 500
 }
@@ -10657,11 +10626,11 @@ noscript div a:hover {
 
 .table>tbody>tr:nth-child(odd)>td,
 .table>tbody>tr:nth-child(odd)>th {
-    background: #504b68;
+    background: #dff6eb
 }
 
 .table a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: underline
 }
 
@@ -10692,19 +10661,19 @@ noscript div a:hover {
 }
 
 .table.batch-table>thead>tr>th {
-    background: #504b68;;
-    border-top: 1px solid #2e2b3b;
-    border-bottom: 1px solid #2e2b3b
+    background: #dff6eb;
+    border-top: 1px solid #fffdef;
+    border-bottom: 1px solid #fffdef
 }
 
 .table.batch-table>thead>tr>th:first-child {
     border-radius: 4px 0 0;
-    border-left: 1px solid #2e2b3b
+    border-left: 1px solid #fffdef
 }
 
 .table.batch-table>thead>tr>th:last-child {
     border-radius: 0 4px 0 0;
-    border-right: 1px solid #2e2b3b
+    border-right: 1px solid #fffdef
 }
 
 .table-wrapper {
@@ -10728,13 +10697,13 @@ button.table-action-link {
     display: inline-block;
     margin-right: 5px;
     padding: 0 10px;
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 500
 }
 
 a.table-action-link:hover,
 button.table-action-link:hover {
-    color: #F8F8F2
+    color: #000
 }
 
 a.table-action-link i.fa,
@@ -10775,8 +10744,8 @@ button.table-action-link:first-child {
 }
 
 .batch-table__toolbar {
-    border: 1px solid #2e2b3b;
-    background: #504b68;;
+    border: 1px solid #fffdef;
+    background: #dff6eb;
     border-radius: 4px 0 0;
     height: 47px;
     align-items: center
@@ -10788,21 +10757,21 @@ button.table-action-link:first-child {
 }
 
 .batch-table__row {
-    border: 1px solid #2e2b3b;
+    border: 1px solid #fffdef;
     border-top: 0;
-    background: #2e2b3b
+    background: #c8dbee
 }
 
 .batch-table__row:hover {
-    background: #242731
+    background: #dfe6ec
 }
 
 .batch-table__row:nth-child(2n) {
-    background: #504b68;
+    background: #dff6eb
 }
 
 .batch-table__row:nth-child(2n):hover {
-    background: #2c313d
+    background: #d3dce4
 }
 
 .batch-table__row__content {
@@ -10831,7 +10800,7 @@ button.table-action-link:first-child {
 .admin-wrapper .sidebar-wrapper {
     flex: 1 1 240px;
     height: 100%;
-    background: #504b68;;
+    background: #dff6eb;
     display: flex;
     justify-content: flex-end
 }
@@ -10872,7 +10841,7 @@ button.table-action-link:first-child {
 .admin-wrapper .sidebar ul a {
     display: block;
     padding: 15px;
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     transition: all .2s linear;
     border-radius: 4px 0 0 4px
@@ -10883,18 +10852,18 @@ button.table-action-link:first-child {
 }
 
 .admin-wrapper .sidebar ul a:hover {
-    color: #F8F8F2;
-    background-color: #5f5676;
+    color: #000;
+    background-color: #aac7e5;
     transition: all .1s linear
 }
 
 .admin-wrapper .sidebar ul a.selected {
-    background: #242731;
+    background: #c8c4dd;
     border-radius: 4px 0 0
 }
 
 .admin-wrapper .sidebar ul ul {
-    background: #2e2b3b;
+    background: #c8dbee;
     border-radius: 0 0 0 4px;
     margin: 0
 }
@@ -10905,14 +10874,14 @@ button.table-action-link:first-child {
 }
 
 .admin-wrapper .sidebar ul .simple-navigation-active-leaf a {
-    color: #F8F8F2;
-    background-color: #5f5676;
+    color: #000;
+    background-color: #5971AD;
     border-bottom: 0;
     border-radius: 0
 }
 
 .admin-wrapper .sidebar ul .simple-navigation-active-leaf a:hover {
-    background-color: #776b94
+    background-color: #7387ba
 }
 
 .admin-wrapper .sidebar>ul>.simple-navigation-active-leaf a {
@@ -10937,17 +10906,17 @@ button.table-action-link:first-child {
 }
 
 .admin-wrapper .content h2 {
-    color: #c8c4d4;
+    color: #282c37;
     font-size: 24px;
     line-height: 28px;
     font-weight: 400;
     padding-bottom: 40px;
-    border-bottom: 1px solid #5f5676;
+    border-bottom: 1px solid #c8dbee;
     margin-bottom: 40px
 }
 
 .admin-wrapper .content h3 {
-    color: #c8c4d4;
+    color: #282c37;
     font-size: 20px;
     line-height: 28px;
     font-weight: 400;
@@ -10958,21 +10927,21 @@ button.table-action-link:first-child {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    color: #c8c4d4;
+    color: #282c37;
     padding-bottom: 8px;
     margin-bottom: 8px;
-    border-bottom: 1px solid #5f5676
+    border-bottom: 1px solid #c8dbee
 }
 
 .admin-wrapper .content h6 {
     font-size: 16px;
-    color: #c8c4d4;
+    color: #282c37;
     line-height: 28px;
     font-weight: 400
 }
 
 .admin-wrapper .content .fields-group h6 {
-    color: #F8F8F2;
+    color: #000;
     font-weight: 500
 }
 
@@ -10983,7 +10952,7 @@ button.table-action-link:first-child {
 .admin-wrapper .content .directory__tag h4 {
     font-size: 18px;
     font-weight: 700;
-    color: #F8F8F2;
+    color: #000;
     text-transform: none;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -10993,12 +10962,12 @@ button.table-action-link:first-child {
 .admin-wrapper .content>p {
     font-size: 14px;
     line-height: 18px;
-    color: #c8c4d4;
+    color: #282c37;
     margin-bottom: 20px
 }
 
 .admin-wrapper .content>p strong {
-    color: #F8F8F2;
+    color: #000;
     font-weight: 500
 }
 
@@ -11014,7 +10983,7 @@ button.table-action-link:first-child {
     width: 100%;
     height: 0;
     border: 0;
-    border-bottom: 1px solid rgba(96, 105, 132, .6);
+    border-bottom: 1px solid rgba(176, 192, 207, .6);
     margin: 20px 0
 }
 
@@ -11024,15 +10993,15 @@ button.table-action-link:first-child {
 }
 
 .admin-wrapper .content .muted-hint {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .admin-wrapper .content .muted-hint a {
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .admin-wrapper .content .positive-hint {
-    color: #79bd9a;
+    color: #3c754d;
     font-weight: 500
 }
 
@@ -11100,22 +11069,22 @@ button.table-action-link:first-child {
 
 .filters .filter-subset a {
     display: inline-block;
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 500;
-    border-bottom: 2px solid #504b68;
+    border-bottom: 2px solid #dff6eb
 }
 
 .filters .filter-subset a:hover {
-    color: #F8F8F2;
-    border-bottom: 2px solid #333846
+    color: #000;
+    border-bottom: 2px solid #c9d4de
 }
 
 .filters .filter-subset a.selected {
-    color: #C2FFDF;
-    border-bottom: 2px solid #C2FFDF
+    color: #5971AD;
+    border-bottom: 2px solid #5971AD
 }
 
 .report-accounts {
@@ -11137,7 +11106,7 @@ button.table-action-link:first-child {
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .report-accounts__item>strong:lang(ja),
@@ -11221,7 +11190,7 @@ button.table-action-link:first-child {
 }
 
 .back-link a {
-    color: #C2FFDF;
+    color: #5971AD;
     text-decoration: none
 }
 
@@ -11243,8 +11212,8 @@ button.table-action-link:first-child {
     justify-content: flex-start;
     align-items: center;
     padding: 10px;
-    background: #504b68;;
-    color: #c8c4d4;
+    background: #dff6eb;
+    color: #282c37;
     border-radius: 4px 4px 0 0;
     font-size: 14px;
     position: relative
@@ -11271,14 +11240,14 @@ button.table-action-link:first-child {
 }
 
 .log-entry__timestamp {
-    color: #ada6bf
+    color: #444b5d
 }
 
 .log-entry__extras {
-    background: #353a49;
+    background: #c6d2dc;
     border-radius: 0 0 4px 4px;
     padding: 10px;
-    color: #c8c4d4;
+    color: #282c37;
     font-family: "mastodon-font-monospace", monospace;
     font-size: 12px;
     word-wrap: break-word;
@@ -11288,7 +11257,7 @@ button.table-action-link:first-child {
 .log-entry__icon {
     font-size: 28px;
     margin-right: 10px;
-    color: #ada6bf
+    color: #444b5d
 }
 
 .log-entry__icon__overlay {
@@ -11301,35 +11270,35 @@ button.table-action-link:first-child {
 }
 
 .log-entry__icon__overlay.positive {
-    background: #79bd9a
+    background: #3c754d
 }
 
 .log-entry__icon__overlay.negative {
-    background: #e87487
+    background: #c1203b
 }
 
 .log-entry__icon__overlay.neutral {
-    background: #C2FFDF
+    background: #5971AD
 }
 
 .log-entry .target,
 .log-entry .username,
 .log-entry a {
-    color: #c8c4d4;
+    color: #282c37;
     text-decoration: none;
     font-weight: 500
 }
 
 .log-entry .diff-old {
-    color: #e87487
+    color: #c1203b
 }
 
 .log-entry .diff-neutral {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .log-entry .diff-new {
-    color: #79bd9a
+    color: #3c754d
 }
 
 .inline-name-tag,
@@ -11337,7 +11306,7 @@ button.table-action-link:first-child {
 a.inline-name-tag,
 a.name-tag {
     text-decoration: none;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .inline-name-tag .username,
@@ -11352,7 +11321,7 @@ a.name-tag .username {
 a.inline-name-tag.suspended .username,
 a.name-tag.suspended .username {
     text-decoration: line-through;
-    color: #e87487
+    color: #c1203b
 }
 
 .inline-name-tag.suspended .avatar,
@@ -11386,19 +11355,19 @@ a.name-tag.suspended .avatar {
 
 .speech-bubble {
     margin-bottom: 20px;
-    border-left: 4px solid #C2FFDF
+    border-left: 4px solid #5971AD
 }
 
 .speech-bubble.positive {
-    border-left-color: #79bd9a
+    border-left-color: #3c754d
 }
 
 .speech-bubble.negative {
-    border-left-color: #e87487
+    border-left-color: #c1203b
 }
 
 .speech-bubble.warning {
-    border-left-color: #fff683
+    border-left-color: #ca8f04
 }
 
 .speech-bubble__bubble {
@@ -11411,7 +11380,7 @@ a.name-tag.suspended .avatar {
 }
 
 .speech-bubble__bubble a {
-    color: #c8c4d4
+    color: #282c37
 }
 
 .speech-bubble__owner {
@@ -11419,11 +11388,11 @@ a.name-tag.suspended .avatar {
 }
 
 .speech-bubble time {
-    color: #ada6bf
+    color: #444b5d
 }
 
 .report-card {
-    background: #504b68;;
+    background: #dff6eb;
     border-radius: 4px;
     margin-bottom: 20px
 }
@@ -11447,7 +11416,7 @@ a.name-tag.suspended .avatar {
 .report-card__profile__stats {
     flex: 0 0 auto;
     font-weight: 500;
-    color: #c8c4d4;
+    color: #282c37;
     text-transform: uppercase;
     text-align: right
 }
@@ -11460,7 +11429,7 @@ a.name-tag.suspended .avatar {
 .report-card__profile__stats a:active,
 .report-card__profile__stats a:focus,
 .report-card__profile__stats a:hover {
-    color: #b5c3d6
+    color: #17191f
 }
 
 .report-card__profile__stats .red {
@@ -11470,11 +11439,11 @@ a.name-tag.suspended .avatar {
 .report-card__summary__item {
     display: flex;
     justify-content: flex-start;
-    border-top: 1px solid #2e2b3b
+    border-top: 1px solid #c8dbee
 }
 
 .report-card__summary__item:hover {
-    background: #2c313d
+    background: #d3dce4
 }
 
 .report-card__summary__item__assigned,
@@ -11483,7 +11452,7 @@ a.name-tag.suspended .avatar {
     flex: 0 0 auto;
     box-sizing: border-box;
     width: 150px;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .report-card__summary__item__assigned,
@@ -11501,7 +11470,7 @@ a.name-tag.suspended .avatar {
 }
 
 .report-card__summary__item__content__icon {
-    color: #ada6bf;
+    color: #444b5d;
     margin-right: 4px;
     font-weight: 500
 }
@@ -11512,7 +11481,7 @@ a.name-tag.suspended .avatar {
     width: 100%;
     padding: 15px;
     text-decoration: none;
-    color: #c8c4d4
+    color: #282c37
 }
 
 .one-line {
@@ -11537,7 +11506,7 @@ a.name-tag.suspended .avatar {
 .dashboard__counters>div>a,
 .dashboard__counters>div>div {
     padding: 20px;
-    background: #5A5475;
+    background: #c8c4dd;
     border-radius: 4px
 }
 
@@ -11550,7 +11519,7 @@ a.name-tag.suspended .avatar {
 .dashboard__counters>div>a:active,
 .dashboard__counters>div>a:focus,
 .dashboard__counters>div>a:hover {
-    background: #5f5676
+    background: #c8dbee
 }
 
 .dashboard__counters__num,
@@ -11559,7 +11528,7 @@ a.name-tag.suspended .avatar {
     font-weight: 500;
     font-size: 24px;
     line-height: 21px;
-    color: #F8F8F2;
+    color: #000;
     font-family: mastodon-font-display, sans-serif;
     margin-bottom: 20px;
     line-height: 30px
@@ -11571,7 +11540,7 @@ a.name-tag.suspended .avatar {
 
 .dashboard__counters__label {
     font-size: 14px;
-    color: #c8c4d4;
+    color: #282c37;
     text-align: center;
     font-weight: 500
 }
@@ -11592,7 +11561,7 @@ a.name-tag.suspended .avatar {
 }
 
 .dashboard__widgets a:not(.name-tag) {
-    color: #c8c4d4;
+    color: #282c37;
     font-weight: 500;
     text-decoration: none
 }
@@ -11837,11 +11806,11 @@ body.rtl .simple_form .label_input__append {
 body.rtl .simple_form .label_input__append:after {
     right: auto;
     left: 0;
-    background-image: linear-gradient(270deg, rgba(19, 20, 25, 0), #131419)
+    background-image: linear-gradient(270deg, rgba(249, 250, 251, 0), #ffffff)
 }
 
 body.rtl .simple_form select {
-    background: #131419 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.933 18.467' height='19.698' width='15.929'><path d='M3.467 14.967l-3.393-3.5H14.86l-3.392 3.5c-1.866 1.925-3.666 3.5-4 3.5-.335 0-2.135-1.575-4-3.5zm.266-11.234L7.467 0 11.2 3.733l3.733 3.734H0l3.733-3.734z' fill='%2342485A'/></svg>") no-repeat left 8px center/auto 16px
+    background: #ffffff url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14.933 18.467' height='19.698' width='15.929'><path d='M3.467 14.967l-3.393-3.5H14.86l-3.392 3.5c-1.866 1.925-3.666 3.5-4 3.5-.335 0-2.135-1.575-4-3.5zm.266-11.234L7.467 0 11.2 3.733l3.733 3.734H0l3.733-3.734z' fill='#B3C3D1'/></svg>") no-repeat left 8px center/auto 16px
 }
 
 body.rtl .table td,
@@ -12022,10 +11991,338 @@ body.rtl .simple_form .input.radio_buttons .radio>label input {
 .emojione[title=":water_buffalo:"],
 .emojione[title=":waving_black_flag:"],
 .emojione[title=":wavy_dash:"] {
-    -webkit-filter: drop-shadow(1px 1px 0 #F8F8F2) drop-shadow(-1px 1px 0 #F8F8F2) drop-shadow(1px -1px 0 #F8F8F2) drop-shadow(-1px -1px 0 #F8F8F2);
-    filter: drop-shadow(1px 1px 0 #F8F8F2fff) drop-shadow(-1px 1px 0 #F8F8F2fff) drop-shadow(1px -1px 0 #F8F8F2fff) drop-shadow(-1px -1px 0 #F8F8F2fff);
+    -webkit-filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px 1px 0 #fff) drop-shadow(1px -1px 0 #fff) drop-shadow(-1px -1px 0 #fff);
+    filter: drop-shadow(1px 1px 0 #ffffff) drop-shadow(-1px 1px 0 #ffffff) drop-shadow(1px -1px 0 #ffffff) drop-shadow(-1px -1px 0 #ffffff);
     -webkit-transform: scale(.71);
     transform: scale(.71)
+}
+
+.button,
+.button.button-alternative-2 {
+    color: #fff
+}
+
+.column>.scrollable {
+    background: #fff
+}
+
+.drawer__inner {
+    background: #ffcbcb
+}
+
+.drawer__inner__mastodon {
+    background: #ffcbcb url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="#FFFFFF"/></svg>') no-repeat bottom/100% auto
+}
+
+.compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button {
+    color: #ededed
+}
+
+.compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button:active,
+.compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button:focus,
+.compose-form .compose-form__modifiers .compose-form__upload__actions .icon-button:hover {
+    color: #fff
+}
+
+.compose-form .compose-form__modifiers .compose-form__upload-description input {
+    color: #ededed
+}
+
+.compose-form .compose-form__modifiers .compose-form__upload-description input::-webkit-input-placeholder {
+    color: #ededed
+}
+
+.compose-form .compose-form__modifiers .compose-form__upload-description input:-ms-input-placeholder {
+    color: #ededed
+}
+
+.compose-form .compose-form__modifiers .compose-form__upload-description input::-ms-input-placeholder {
+    color: #ededed
+}
+
+.compose-form .compose-form__modifiers .compose-form__upload-description input::placeholder {
+    color: #ededed
+}
+
+.compose-form .autosuggest-textarea__suggestions,
+.compose-form .compose-form__buttons-wrapper {
+    background: #ebe9f3
+}
+
+.compose-form .autosuggest-textarea__suggestions__item.selected,
+.compose-form .autosuggest-textarea__suggestions__item:active,
+.compose-form .autosuggest-textarea__suggestions__item:focus,
+.compose-form .autosuggest-textarea__suggestions__item:hover {
+    background: #ebe9f3
+}
+
+.emoji-mart-bar {
+    border-color: #ebe9f3
+}
+
+.emoji-mart-bar:first-child {
+    background: #ebe9f3
+}
+
+.emoji-mart-search input {
+    background: rgba(217, 225, 232, .3);
+    border-color: #dff6eb
+}
+
+.focusable:focus {
+    background: #dff6eb
+}
+
+.status.status-direct {
+    background: #ebe9f3
+}
+
+.focusable:focus .status.status-direct {
+    background: #c8dbee
+}
+
+.detailed-status,
+.detailed-status__action-bar {
+    background: #ebe9f3
+}
+
+.reply-indicator__content .status__content__spoiler-link,
+.status__content .status__content__spoiler-link {
+    background: #ffcbcb
+}
+
+.reply-indicator__content .status__content__spoiler-link:hover,
+.status__content .status__content__spoiler-link:hover {
+    background: #ffdfdf
+}
+
+.media-spoiler,
+.video-player__spoiler {
+    background: #dff6eb
+}
+
+.account-gallery__item a {
+    background-color: #dff6eb
+}
+
+.dropdown-menu {
+    background: #fff
+}
+
+.dropdown-menu__arrow.left {
+    border-left-color: #fff
+}
+
+.dropdown-menu__arrow.top {
+    border-top-color: #fff
+}
+
+.dropdown-menu__arrow.bottom {
+    border-bottom-color: #fff
+}
+
+.dropdown-menu__arrow.right {
+    border-right-color: #fff
+}
+
+.dropdown-menu__item a {
+    background: #fff;
+    color: #282c37
+}
+
+.actions-modal ul li:not(:empty) a.active,
+.actions-modal ul li:not(:empty) a.active button,
+.actions-modal ul li:not(:empty) a:active,
+.actions-modal ul li:not(:empty) a:active button,
+.actions-modal ul li:not(:empty) a:focus,
+.actions-modal ul li:not(:empty) a:focus button,
+.actions-modal ul li:not(:empty) a:hover,
+.actions-modal ul li:not(:empty) a:hover button,
+.admin-wrapper .sidebar ul ul a.selected,
+.dropdown-menu__item a:active,
+.dropdown-menu__item a:focus,
+.dropdown-menu__item a:hover,
+.privacy-dropdown__option.active .privacy-dropdown__option__content,
+.privacy-dropdown__option.active .privacy-dropdown__option__content strong,
+.privacy-dropdown__option:hover .privacy-dropdown__option__content,
+.privacy-dropdown__option:hover .privacy-dropdown__option__content strong,
+.simple_form .block-button,
+.simple_form .button,
+.simple_form button {
+    color: #fff
+}
+
+.dropdown-menu__separator {
+    border-bottom-color: #ffcbcb
+}
+
+.actions-modal,
+.boost-modal,
+.confirmation-modal,
+.embed-modal,
+.error-modal,
+.mute-modal,
+.onboarding-modal,
+.report-modal {
+    background: #dff6eb
+}
+
+.boost-modal__action-bar,
+.confirmation-modal__action-bar,
+.error-modal__footer,
+.mute-modal__action-bar,
+.onboarding-modal__paginator {
+    background: #ebe9f3
+}
+
+.boost-modal__action-bar .error-modal__nav:active,
+.boost-modal__action-bar .error-modal__nav:focus,
+.boost-modal__action-bar .error-modal__nav:hover,
+.boost-modal__action-bar .onboarding-modal__nav:active,
+.boost-modal__action-bar .onboarding-modal__nav:focus,
+.boost-modal__action-bar .onboarding-modal__nav:hover,
+.confirmation-modal__action-bar .error-modal__nav:active,
+.confirmation-modal__action-bar .error-modal__nav:focus,
+.confirmation-modal__action-bar .error-modal__nav:hover,
+.confirmation-modal__action-bar .onboarding-modal__nav:active,
+.confirmation-modal__action-bar .onboarding-modal__nav:focus,
+.confirmation-modal__action-bar .onboarding-modal__nav:hover,
+.error-modal__footer .error-modal__nav:active,
+.error-modal__footer .error-modal__nav:focus,
+.error-modal__footer .error-modal__nav:hover,
+.error-modal__footer .onboarding-modal__nav:active,
+.error-modal__footer .onboarding-modal__nav:focus,
+.error-modal__footer .onboarding-modal__nav:hover,
+.mute-modal__action-bar .error-modal__nav:active,
+.mute-modal__action-bar .error-modal__nav:focus,
+.mute-modal__action-bar .error-modal__nav:hover,
+.mute-modal__action-bar .onboarding-modal__nav:active,
+.mute-modal__action-bar .onboarding-modal__nav:focus,
+.mute-modal__action-bar .onboarding-modal__nav:hover,
+.onboarding-modal__paginator .error-modal__nav:active,
+.onboarding-modal__paginator .error-modal__nav:focus,
+.onboarding-modal__paginator .error-modal__nav:hover,
+.onboarding-modal__paginator .onboarding-modal__nav:active,
+.onboarding-modal__paginator .onboarding-modal__nav:focus,
+.onboarding-modal__paginator .onboarding-modal__nav:hover {
+    background-color: #fff
+}
+
+.display-case__case,
+.embed-modal .embed-modal__container .embed-modal__html {
+    background: #fff
+}
+
+.embed-modal .embed-modal__container .embed-modal__html:focus {
+    background: #ebe9f3
+}
+
+.react-toggle-track {
+    background: #282c37
+}
+
+.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background: #3d4455
+}
+
+.react-toggle.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background: #7387ba
+}
+
+.empty-column-indicator,
+.error-column {
+    color: #000
+}
+
+.activity-stream-tabs {
+    background: #fff;
+    border-bottom-color: #c8dbee
+}
+
+.activity-stream .entry {
+    background: #fff
+}
+
+.activity-stream .entry .detailed-status.light,
+.activity-stream .entry .more.light,
+.activity-stream .entry .status.light {
+    border-bottom-color: #c8dbee
+}
+
+.activity-stream .status.light .display-name strong,
+.activity-stream .status.light .status__content {
+    color: #000
+}
+
+.accounts-grid .account-grid-card .controls .icon-button {
+    color: #282c37
+}
+
+.accounts-grid .account-grid-card .name a {
+    color: #000
+}
+
+.accounts-grid .account-grid-card .username {
+    color: #282c37
+}
+
+.accounts-grid .account-grid-card .account__header__content {
+    color: #000
+}
+
+.simple_form .warning,
+.table-form .warning {
+    box-shadow: none;
+    background: rgba(223, 64, 90, .5);
+    text-shadow: none
+}
+
+.reply-indicator__content a,
+.status__content a {
+    color: #5971AD
+}
+
+.button.logo-button {
+    color: #fff
+}
+
+.button.logo-button svg path:first-child {
+    fill: #fff
+}
+
+.public-layout .header,
+.public-layout .public-account-bio,
+.public-layout .public-account-header {
+    box-shadow: none
+}
+
+.public-layout .header,
+.public-layout .public-account-header__image {
+    background: #ffcbcb
+}
+
+.public-layout .public-account-header__image:after {
+    box-shadow: none
+}
+
+.public-layout .public-account-header__tabs__name h1,
+.public-layout .public-account-header__tabs__name h1 small {
+    color: #fff
+}
+
+.account__section-headline a.active:after {
+    border-color: transparent transparent #fff
+}
+
+.activity-stream,
+.box-widget,
+.contact-widget,
+.hero-widget,
+.landing-page__information.contact-widget,
+.memoriam-widget,
+.moved-account-widget,
+.nothing-here {
+    box-shadow: none
 }
 
 .follow-requests-reminder {
@@ -12034,7 +12331,7 @@ body.rtl .simple_form .input.radio_buttons .radio>label input {
 }
 
 .follow-requests-reminder .follow-requests-link {
-    color: #C2FFDF
+    color: #5971AD
 }
 
 .fc-never-ask {
@@ -12046,5 +12343,13 @@ body.rtl .simple_form .input.radio_buttons .radio>label input {
     max-width: 100%
 }
 
+a.mention {
+    color: #9C6B98;
+}
 
-/*# sourceMappingURL=default-0fd1620efd59263681b7.css.map*/
+a.hashtag {
+    color: #698B69;
+}
+
+
+/*# sourceMappingURL=mastodon-light-bb9cb6e2771e166ef23a.css.map*/
