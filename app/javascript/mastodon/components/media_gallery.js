@@ -265,6 +265,8 @@ class MediaGallery extends React.PureComponent {
         warning = <FormattedMessage id='status.media_hidden' defaultMessage='Media hidden' />;
       }
 
+      style.height = style.height / 2;
+
       children = (
         <button type='button' className='media-spoiler' onClick={this.handleOpen} style={style} ref={this.handleRef}>
           <span className='media-spoiler__warning'>{warning}</span>
