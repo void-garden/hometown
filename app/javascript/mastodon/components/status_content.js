@@ -5,6 +5,7 @@ import { isRtl } from '../rtl';
 import { FormattedMessage } from 'react-intl';
 import Permalink from './permalink';
 import classnames from 'classnames';
+import Icon from 'mastodon/components/icon';
 
 const MAX_HEIGHT = 642; // 20px * 32 (+ 2px padding at the top)
 
@@ -169,7 +170,7 @@ export default class StatusContent extends React.PureComponent {
 
     const readMoreButton = (
       <button className='status__content__read-more-button' onClick={this.props.onClick} key='read-more'>
-        <FormattedMessage id='status.read_more' defaultMessage='Read more' /><i className='fa fa-fw fa-angle-right' />
+        <FormattedMessage id='status.read_more' defaultMessage='Read more' /><Icon id='angle-right' fixedWidth />
       </button>
     );
 
@@ -191,17 +192,14 @@ export default class StatusContent extends React.PureComponent {
       return (
         <div className={classNames} ref={this.setRef} tabIndex='0' style={directionStyle} onMouseDown={this.handleMouseDown} onMouseUp={this.handleMouseUp}>
           <p style={{ marginBottom: hidden && status.get('mentions').isEmpty() ? '0px' : null }}>
-            <span dangerouslySetInnerHTML={spoilerContent} />
+            <span dangerouslySetInnerHTML={spoilerContent} lang={status.get('language')} />
             {' '}
             <button tabIndex='0' className={`status__content__spoiler-link ${hidden ? 'status__content__spoiler-link--show-more' : 'status__content__spoiler-link--show-less'}`} onClick={this.handleSpoilerClick}>{toggleText}</button> <span>{media ? <i className='fa fa-eye' /> : ''}</span>
           </p>
 
           {mentionsPlaceholder}
 
-          <div tabIndex={!hidden ? 0 : null} className={`status__content__text ${!hidden ? 'status__content__text--visible' : ''}`} style={directionStyle}>
-            <span dangerouslySetInnerHTML={content} />
-            {media}
-          </div>
+          <div tabIndex={!hidden ? 0 : null} className={`status__content__text ${!hidden ? 'status__content__text--visible' : ''}`} style={directionStyle} dangerouslySetInnerHTML={content} lang={status.get('language')} />
         </div>
       );
     } else if (this.props.onClick) {
@@ -213,6 +211,7 @@ export default class StatusContent extends React.PureComponent {
           className={classNames}
           style={directionStyle}
           dangerouslySetInnerHTML={content}
+          lang={status.get('language')}
           onMouseDown={this.handleMouseDown}
           onMouseUp={this.handleMouseUp}
         />,
@@ -230,10 +229,9 @@ export default class StatusContent extends React.PureComponent {
           ref={this.setRef}
           className='status__content'
           style={directionStyle}
-        >
-          <span dangerouslySetInnerHTML={content} />
-          {media ? media : <span />}
-        </div>
+          dangerouslySetInnerHTML={content}
+          lang={status.get('language')}
+        />
       );
     }
   }
