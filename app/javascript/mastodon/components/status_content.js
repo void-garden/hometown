@@ -57,7 +57,7 @@ export default class StatusContent extends React.PureComponent {
       } else if (link.textContent[0] === '#' || (link.previousSibling && link.previousSibling.textContent && link.previousSibling.textContent[link.previousSibling.textContent.length - 1] === '#')) {
         link.addEventListener('click', this.onHashtagClick.bind(this, link.text), false);
       } else if (link.href && link.href.match(/\.mp3$/)) {
-        link.innerHTML += `<br><br><audio class="fc-audio" controls src="${link.href}"></audio>`;
+        link.innerHTML += `<p><audio class="fc-audio" controls src="${link.href}"></audio></p>`;
       } else {
         link.setAttribute('title', link.href);
       }
