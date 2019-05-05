@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_09_054914) do
+ActiveRecord::Schema.define(version: 2019_05_04_014020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -362,6 +362,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_054914) do
     t.bigint "account_id"
     t.text "description"
     t.bigint "scheduled_status_id"
+    t.string "blurhash"
     t.index ["account_id"], name: "index_media_attachments_on_account_id"
     t.index ["scheduled_status_id"], name: "index_media_attachments_on_scheduled_status_id"
     t.index ["shortcode"], name: "index_media_attachments_on_shortcode", unique: true
@@ -625,6 +626,7 @@ ActiveRecord::Schema.define(version: 2019_04_09_054914) do
     t.bigint "in_reply_to_account_id"
     t.boolean "local_only"
     t.bigint "poll_id"
+    t.string "activity_pub_type"
     t.index ["account_id", "id", "visibility", "updated_at"], name: "index_statuses_20180106", order: { id: :desc }
     t.index ["in_reply_to_account_id"], name: "index_statuses_on_in_reply_to_account_id"
     t.index ["in_reply_to_id"], name: "index_statuses_on_in_reply_to_id"
