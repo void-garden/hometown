@@ -29,6 +29,9 @@
 
     = f.input :setting_default_federation, as: :boolean, wrapper: :with_label
 
+    %strong Experimental feature, do not touch:
+    %a{:id => 'lockdown', :href => '#', :onclick => "localStorage.setItem('lockdown',Number(!Number(localStorage.getItem('lockdown')))); document.getElementById('lockdown').innerText = Number(localStorage.getItem('lockdown')) ? 'lockdown is now enabled' : 'lockdown is now disabled'"} Toggle lockdown
+
   %hr#settings_other/
 
   .fields-group
