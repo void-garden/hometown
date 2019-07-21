@@ -19,12 +19,29 @@ class Sanitize
       node['class'] = class_list.join(' ')
     end
 
+    UNSUPPORTED_ELEMENTS_TRANSFORMER = lambda do |env|
+      return unless %w(h1 h2 h3 h4 h5 h6 blockquote pre ul ol li).include?(env[:node_name])
+
+      case env[:node_name]
+      when 'li'
+        env[:node].traverse do |node|
+          node.add_next_sibling('<br>') if node.next_sibling
+          node.replace(node.children) unless node.text?
+        end
+      else
+        env[:node].name = 'p'
+      end
+    end
+
     MASTODON_STRICT ||= freeze_config(
-      elements: %w(p br span a),
+      elements: %w(p br span a abbr del pre blockquote code b strong i em h1 h2 h3 h4 h5 ul ol li img),
 
       attributes: {
-        'a'    => %w(href rel class),
-        'span' => %w(class),
+        'a'          => %w(href rel class title),
+        'span'       => %w(class),
+        'abbr'       => %w(title),
+        'blockquote' => %w(cite),
+        'img'        => %w(src alt),
       },
 
       add_attributes: {
@@ -32,14 +49,19 @@ class Sanitize
           'rel' => 'nofollow noopener',
           'target' => '_blank',
         },
+        'span' => {
+          'class' => 'article-type',
+        },
       },
 
       protocols: {
-        'a' => { 'href' => HTTP_PROTOCOLS },
+        'a'          => { 'href' => HTTP_PROTOCOLS },
+        'blockquote' => { 'cite' => HTTP_PROTOCOLS },
       },
 
       transformers: [
         CLASS_WHITELIST_TRANSFORMER,
+        UNSUPPORTED_ELEMENTS_TRANSFORMER,
       ]
     )
 

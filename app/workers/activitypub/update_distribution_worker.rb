@@ -2,10 +2,12 @@
 
 class ActivityPub::UpdateDistributionWorker
   include Sidekiq::Worker
+  include Payloadable
 
   sidekiq_options queue: 'push'
 
-  def perform(account_id)
+  def perform(account_id, options = {})
+    @options = options.with_indifferent_access
     @account = Account.find(account_id)
 
     ActivityPub::DeliveryWorker.push_bulk(inboxes) do |inbox_url|
@@ -26,14 +28,6 @@ class ActivityPub::UpdateDistributionWorker
   end
 
   def signed_payload
-    @signed_payload ||= Oj.dump(ActivityPub::LinkedDataSignature.new(payload).sign!(@account))
-  end
-
-  def payload
-    @payload ||= ActiveModelSerializers::SerializableResource.new(
-      @account,
-      serializer: ActivityPub::UpdateSerializer,
-      adapter: ActivityPub::Adapter
-    ).as_json
+    @signed_payload ||= Oj.dump(serialize_payload(@account, ActivityPub::UpdateSerializer, signer: @account, sign_with: @options[:sign_with]))
   end
 end

@@ -17,8 +17,7 @@ class Api::V1::StatusesController < Api::BaseController
   CONTEXT_LIMIT = 4_096
 
   def show
-    cached  = Rails.cache.read(@status.cache_key)
-    @status = cached unless cached.nil?
+    @status = cache_collection([@status], Status).first
     render json: @status, serializer: REST::StatusSerializer
   end
 
@@ -46,16 +45,19 @@ class Api::V1::StatusesController < Api::BaseController
 
   def create
     @status = PostStatusService.new.call(current_user.account,
-                                         status_params[:status],
-                                         status_params[:in_reply_to_id].blank? ? nil : Status.find(status_params[:in_reply_to_id]),
+                                         text: status_params[:status],
+                                         thread: status_params[:in_reply_to_id].blank? ? nil : Status.find(status_params[:in_reply_to_id]),
                                          media_ids: status_params[:media_ids],
                                          sensitive: status_params[:sensitive],
                                          spoiler_text: status_params[:spoiler_text],
                                          visibility: status_params[:visibility],
+                                         scheduled_at: status_params[:scheduled_at],
                                          application: doorkeeper_token.application,
-                                         idempotency: request.headers['Idempotency-Key'])
+                                         poll: status_params[:poll],
+                                         idempotency: request.headers['Idempotency-Key'],
+                                         local_only: status_params[:local_only])
 
-    render json: @status, serializer: REST::StatusSerializer
+    render json: @status, serializer: @status.is_a?(ScheduledStatus) ? REST::ScheduledStatusSerializer : REST::StatusSerializer
   end
 
   def destroy
@@ -64,7 +66,7 @@ class Api::V1::StatusesController < Api::BaseController
 
     RemovalWorker.perform_async(@status.id)
 
-    render_empty
+    render json: @status, serializer: REST::StatusSerializer, source_requested: true
   end
 
   private
@@ -73,12 +75,26 @@ class Api::V1::StatusesController < Api::BaseController
     @status = Status.find(params[:id])
     authorize @status, :show?
   rescue Mastodon::NotPermittedError
-    # Reraise in order to get a 404 instead of a 403 error code
     raise ActiveRecord::RecordNotFound
   end
 
   def status_params
-    params.permit(:status, :in_reply_to_id, :sensitive, :spoiler_text, :visibility, media_ids: [])
+    params.permit(
+      :status,
+      :in_reply_to_id,
+      :sensitive,
+      :spoiler_text,
+      :visibility,
+      :scheduled_at,
+      :local_only,
+      media_ids: [],
+      poll: [
+        :multiple,
+        :hide_totals,
+        :expires_in,
+        options: [],
+      ]
+    )
   end
 
   def pagination_params(core_params)

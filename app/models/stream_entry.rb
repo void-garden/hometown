@@ -26,8 +26,9 @@ class StreamEntry < ApplicationRecord
   default_scope { where(activity_type: 'Status') }
   scope :recent, -> { reorder(id: :desc) }
   scope :with_includes, -> { includes(:account, status: STATUS_INCLUDES) }
+  scope :without_local_only, -> { where(statuses: { local_only: [false, nil] }) }
 
-  delegate :target, :title, :content, :thread,
+  delegate :target, :title, :content, :thread, :local_only?,
            to: :status,
            allow_nil: true
 
@@ -48,7 +49,7 @@ class StreamEntry < ApplicationRecord
   end
 
   def mentions
-    orphaned? ? [] : status.mentions.map(&:account)
+    orphaned? ? [] : status.active_mentions.map(&:account)
   end
 
   private

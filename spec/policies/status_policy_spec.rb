@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'pundit/rspec'
 
@@ -71,6 +73,18 @@ RSpec.describe StatusPolicy, type: :model do
 
       expect(subject).to_not permit(viewer, status)
     end
+
+    it 'denies access when local-only and the viewer is not logged in' do
+      allow(status).to receive(:local_only?) { true }
+
+      expect(subject).to_not permit(nil, status)
+    end
+
+    it 'denies access when local-only and the viewer is from another domain' do
+      viewer = Fabricate(:account, domain: 'remote-domain')
+      allow(status).to receive(:local_only?) { true }
+      expect(subject).to_not permit(viewer, status)
+    end
   end
 
   permissions :reblog? do
@@ -104,6 +118,32 @@ RSpec.describe StatusPolicy, type: :model do
 
     it 'denies access when no deleter' do
       expect(subject).to_not permit(nil, status)
+    end
+  end
+
+  permissions :favourite? do
+    it 'grants access when viewer is not blocked' do
+      follow         = Fabricate(:follow)
+      status.account = follow.target_account
+
+      expect(subject).to permit(follow.account, status)
+    end
+
+    it 'denies when viewer is blocked' do
+      block          = Fabricate(:block)
+      status.account = block.target_account
+
+      expect(subject).to_not permit(block.account, status)
+    end
+  end
+
+  permissions :index?, :update? do
+    it 'grants access if staff' do
+      expect(subject).to permit(admin.account)
+    end
+
+    it 'denies access unless staff' do
+      expect(subject).to_not permit(alice)
     end
   end
 end

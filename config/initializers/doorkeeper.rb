@@ -58,6 +58,7 @@ Doorkeeper.configure do
   optional_scopes :write,
                   :'write:accounts',
                   :'write:blocks',
+                  :'write:conversations',
                   :'write:favourites',
                   :'write:filters',
                   :'write:follows',
@@ -76,11 +77,16 @@ Doorkeeper.configure do
                   :'read:lists',
                   :'read:mutes',
                   :'read:notifications',
-                  :'read:reports',
                   :'read:search',
                   :'read:statuses',
                   :follow,
-                  :push
+                  :push,
+                  :'admin:read',
+                  :'admin:read:accounts',
+                  :'admin:read:reports',
+                  :'admin:write',
+                  :'admin:write:accounts',
+                  :'admin:write:reports'
 
   # Change the way client credentials are retrieved from the request object.
   # By default it retrieves first from the `HTTP_AUTHORIZATION` header, then
