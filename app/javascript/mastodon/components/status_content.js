@@ -50,15 +50,8 @@ export default class StatusContent extends React.PureComponent {
       if (mention) {
         link.addEventListener('click', this.onMentionClick.bind(this, mention), false);
         link.setAttribute('title', mention.get('acct'));
-        if (mention.get('acct') === mention.get('username')) {
-          link.innerHTML = `@<span class="fc-mention-local">${mention.get('acct')}</span>`;
-        } else {
-          link.innerHTML = `@<span class="fc-mention-remote">${mention.get('acct')}</span>`;
-        }
       } else if (link.textContent[0] === '#' || (link.previousSibling && link.previousSibling.textContent && link.previousSibling.textContent[link.previousSibling.textContent.length - 1] === '#')) {
         link.addEventListener('click', this.onHashtagClick.bind(this, link.text), false);
-      } else if (link.href && link.href.match(/\.mp3$/)) {
-        link.innerHTML += `<p><audio class="fc-audio" controls src="${link.href}"></audio></p>`;
       } else {
         link.setAttribute('title', link.href);
       }
@@ -152,9 +145,7 @@ export default class StatusContent extends React.PureComponent {
   render () {
     const { status } = this.props;
 
-    let media = null;
-
-    if (status.get('content').length === 0 && status.get('media_attachments').size === 0) {
+    if (status.get('content').length === 0) {
       return null;
     }
 
@@ -205,13 +196,12 @@ export default class StatusContent extends React.PureComponent {
           <p style={{ marginBottom: hidden && status.get('mentions').isEmpty() ? '0px' : null }}>
             <span dangerouslySetInnerHTML={spoilerContent} lang={status.get('language')} />
             {' '}
-            {status.get('activity_pub_type') === 'Article' ? '' : <div><button tabIndex='0' className={`status__content__spoiler-link ${hidden ? 'status__content__spoiler-link--show-more' : 'status__content__spoiler-link--show-less'}`} onClick={this.handleSpoilerClick}>{toggleText}</button> <span>{media ? <i className='fa fa-eye' /> : ''}</span></div>}
+            {status.get('activity_pub_type') === 'Article' ? '' : <div><button tabIndex='0' className={`status__content__spoiler-link ${hidden ? 'status__content__spoiler-link--show-more' : 'status__content__spoiler-link--show-less'}`} onClick={this.handleSpoilerClick}>{toggleText}</button></div>}
           </p>
 
           {mentionsPlaceholder}
 
           <div tabIndex={!hidden ? 0 : null} className={`status__content__text ${!hidden ? 'status__content__text--visible' : ''}`} style={directionStyle} dangerouslySetInnerHTML={content} lang={status.get('language')} />
-
           {!hidden && !!status.get('poll') && <PollContainer pollId={status.get('poll')} />}
         </div>,
       ];
