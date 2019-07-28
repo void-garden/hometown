@@ -1018,6 +1018,7 @@ en:
     mastodon-light: Mastodon (light)
     fairy-floss: Fairy Floss (by @deerful)
     macaron: Macaron (by @deerful)
+    fixmacaron: Macaron with fixes (by @deerful)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
